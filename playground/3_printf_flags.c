@@ -3,11 +3,9 @@
 /* %d flag */
 int		main()
 {
+
 	int x = 123456783;
 	int y = 12;
-	// if length of int is x = x' + n, width will offset by n units
-
-	// offsets 4 units to the right (provides a block of 6 units)
 	printf("W | width is 6 -- offsets 4 units to the right ⏬\n");
 	printf("%6d", y);
 	printf("\n-------\n");
