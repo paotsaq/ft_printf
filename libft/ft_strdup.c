@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2_parser.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 04:45:06 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/16 05:57:16 by apinto           ###   ########.fr       */
+/*   Created: 2021/02/10 09:27:18 by apinto            #+#    #+#             */
+/*   Updated: 2021/02/12 07:18:18 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "ft_printf.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+char	*ft_strdup(const char *s1)
 {
-	char 	*str;
-	int 	i;
-	int 	j;
-	t_flags	tr;
+	int		size;
+	char	*ptr;
 
-	i = -1;
-	// initializes tr
-	initializes_tr(tr);
-	while (str[++i])
-		if (str[i] == '%')
-		{
-			i++;
-			checks_flags(&tr, &str[i], &i);
-			// both missing va arg!
-			checks_width(&tr, &str[i], &i);
-			checks_prec(&tr, &str[i], &i);
-		}
+	size = ft_strlen(s1);
+	ptr = ft_calloc(1, size + 1);
+	if (ptr != 0)
+	{
+		ft_strlcpy(ptr, s1, size + 1);
+		return (ptr);
+	}
+	return (0);
 }

@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2_parser.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 04:45:06 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/16 05:57:16 by apinto           ###   ########.fr       */
+/*   Created: 2021/02/09 05:10:51 by apinto            #+#    #+#             */
+/*   Updated: 2021/02/23 06:33:43 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "ft_printf.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char 	*str;
-	int 	i;
-	int 	j;
-	t_flags	tr;
+	int i;
 
-	i = -1;
-	// initializes tr
-	initializes_tr(tr);
-	while (str[++i])
-		if (str[i] == '%')
-		{
+	i = 0;
+	while (n-- > 0)
+	{
+		if (s1[i] && s2[i] && s1[i] == s2[i])
 			i++;
-			checks_flags(&tr, &str[i], &i);
-			// both missing va arg!
-			checks_width(&tr, &str[i], &i);
-			checks_prec(&tr, &str[i], &i);
-		}
+		else
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	}
+	return (0);
 }

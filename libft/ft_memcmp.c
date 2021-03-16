@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2_parser.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/16 04:45:06 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/16 05:57:16 by apinto           ###   ########.fr       */
+/*   Created: 2021/02/09 15:11:47 by apinto            #+#    #+#             */
+/*   Updated: 2021/02/23 06:21:37 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "ft_printf.h"
+#include "libft.h"
 
-int		main(int argc, char **argv)
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char 	*str;
-	int 	i;
-	int 	j;
-	t_flags	tr;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	int				i;
 
-	i = -1;
-	// initializes tr
-	initializes_tr(tr);
-	while (str[++i])
-		if (str[i] == '%')
-		{
-			i++;
-			checks_flags(&tr, &str[i], &i);
-			// both missing va arg!
-			checks_width(&tr, &str[i], &i);
-			checks_prec(&tr, &str[i], &i);
-		}
+	if ((int)n == 0)
+		return (0);
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	i = 0;
+	while (i != (int)(n - 1) && p1[i] == p2[i])
+		i++;
+	return ((int)(p1[i] - p2[i]));
 }
