@@ -10,6 +10,9 @@ int		main()
    	printf("W | width is 6 -- offsets 4 units to the right, whitespace on the left ⏬\n");
 	printf("this is a test with %6d", y);
 	printf("\n-------\n");
+   	printf("0W | simple test ⏬\n");
+	printf("%0*d", 4, 42);
+	printf("\n-------\n");
 	printf("W0 | the same, but whitespace is now 0 ⏬\n");
 	printf("this is a test with %06d", y);
 	printf("\n-------\n");

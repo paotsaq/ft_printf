@@ -16,7 +16,22 @@ int		main()
 	printf("000 | many 0 are allowed! ⏬\n");
 	printf("%000d", y);
 	printf("\n-------\n");
-	printf("-.* | many 0 are allowed w/ * ⏬\n");
-	printf("%0004*d", 7, y);
+	printf("0W.* | . trumps width if larger (w/ smaller number) ⏬\n");
+	printf("%004.*d", 5, y);
+	printf("\n-------\n");
+	printf("W.* | precision larger than width without 0 flag ⏬\n");
+	printf("%4.*d", 5, y);
+	printf("\n-------\n");
+	printf("W | no precision  ⏬\n");
+	printf("%4d", y);
+	printf("\n-------\n");
+	printf("0W.* | width trumps . if larger (w/ smaller number) ⏬\n");
+	printf("%006.*d", 5, y);
+	printf("\n-------\n");
+	printf("0W.* | . trumps width if larger (w/ larger number) ⏬\n");
+	printf("%004.*d", 5, x);
+	printf("\n-------\n");
+	printf("0W.* | width trumps . if larger (w/ larger number) ⏬\n");
+	printf("%006.*d", 5, x);
 	printf("\n-------\n");
 }
