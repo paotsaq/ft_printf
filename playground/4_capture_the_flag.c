@@ -34,4 +34,7 @@ int		main()
 	printf("0W.* | width trumps . if larger (w/ larger number) ⏬\n");
 	printf("%006.*d", 5, x);
 	printf("\n-------\n");
+	printf("3-d | test on wrong order 🔴 \n");
+	printf("%3-d", x);
+	printf("\n-------\n");
 }

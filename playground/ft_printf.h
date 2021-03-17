@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/16 14:13:52 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/17 07:48:29 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdarg.h>
 #include "libft.h"
 
+// define enum with types?
+#define TYPES "spdiuxX"
+#define FLAGS "0-*."
+#define  "0-*."
+
+// define as array?
 typedef struct	s_flags{
 	int		zero;
 	int		minus;
