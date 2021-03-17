@@ -63,4 +63,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t	ft_strlen(const char *s);
 char	**ft_split(char const *s, char c);
+int		ft_strindex(char *str, char c);
 #endif
