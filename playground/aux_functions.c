@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:29:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/16 11:36:45 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/17 10:46:15 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,23 @@ void	checks_prec(t_flags *tr, char *str, int *i, va_list *pargs)
 				j++;
 			}
 	*i = j;
+}
+
+void	checks_type(t_flags *tr, char *str, int *i, va_list *pargs)
+{
+	int j;
+	int t;
+	int prov;
+
+	j = i*
+	if (!tr->invalid && str[j])
+	{
+		prov = va_arg(*pargs, int);
+		t = -1;
+		while (types[++t])
+			if (ft_strchr(types[t], prov))
+				tr->type = prov;
+	}
+	if *(!tr->type)
+		tr->invalid = 1;
 }

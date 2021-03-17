@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/17 07:48:29 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/17 12:02:48 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,28 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
-#include "libft.h"
 
 // define enum with types?
-#define TYPES "spdiuxX"
-#define FLAGS "0-*."
-#define  "0-*."
+static char types[8] = "spdiuxX";
+static char legal_conv[7][6] = {{0, 1, 1, 0, 1, 1},
+								{0, 1, 0, 0, 0, 1},
+								{1, 1, 1, 1, 1, 1},
+								{1, 1, 1, 1, 1, 1},
+								{1, 1, 1, 1, 1, 1},
+								{1, 1, 1, 1, 1, 1},
+								{1, 1, 1, 1, 1, 1}};
 
 // define as array?
 typedef struct	s_flags{
+	int		invalid;
 	int		zero;
 	int		minus;
 	int		width;
-	int		p_aster;
 	int		prec;
+	int		p_aster;
 	int		w_aster;
-	int		invalid;
+	char	type;
+	char*	CONVS[];
 }				t_flags;
 
 void			initializes_tr(t_flags *tr);
