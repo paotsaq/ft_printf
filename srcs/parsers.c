@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/18 05:15:25 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/18 08:43:32 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	retrieves_width(t_flags *tr, char *str, int *i, va_list *pargs)
 		}
 		else if (ft_isdigit(str[j]) && !tr->w_aster)
 		{
-			tr->width = tr->width * 10 + str[j];
+			tr->width = tr->width * 10 + str[j] - '0';
 			j++;
 		}
 	}
@@ -58,20 +58,20 @@ void	retrieves_prec(t_flags *tr, char *str, int *i, va_list *pargs)
 	int prov;
 
 	j = *i;
-	while (str[j] && (str[j] == '.' || str[j] == '*'))
-		if (str[j] == '*' && !tr->prec)
+	while (str[j] && (str[j] == '.'))
+	{
+		if (str[j + 1] == '*' && !tr->prec)
 		{
 			prov = va_arg(*pargs, int);
-			tr->width = prov;
-			tr->w_aster = 1;
+			tr->prec = prov;
+			tr->p_aster = 1;
 			j++;
 		}
 		else if (str[j] == '.' && !tr->p_aster)
-			while (ft_isdigit(str[j]))
-			{
-				tr->prec = tr->prec * 10 + str[j];
-				j++;
-			}
+			while (ft_isdigit(str[++j]))
+				tr->prec = tr->prec * 10 + str[j] - '0';
+		j++;
+	}
 	*i = j;
 }
 

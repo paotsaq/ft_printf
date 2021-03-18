@@ -24,4 +24,7 @@ int		main()
 	printf("► width on unsigned ints ✅\n");
 	printf("%7u", z);
 	printf("\n-------\n");
+	printf("► precision on ints ◄ 🔴\n");
+	printf("%2.2i", 123456789);
+	printf("\n-------\n");
 }

@@ -11,4 +11,7 @@ int		main()
 	printf("o | precision lower than converted number of digits✅\n");
 	printf("%0.1o", z);
 	printf("\n-------\n");
+	printf("*.*s | double asterisk precision on strings ✅\n");
+	printf("%*.*s", 4, 3, s);
+	printf("\n-------\n");
 }
