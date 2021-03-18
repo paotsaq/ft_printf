@@ -14,4 +14,10 @@ int		main()
 	printf("*.*s | double asterisk precision on strings ✅\n");
 	printf("%*.*s", 4, 3, s);
 	printf("\n-------\n");
+	printf("-.*s | - and . options on strings ✅\n");
+	printf("%-.*s", 30, s);
+	printf("\n-------\n");
+	printf(".*s | without - ✅\n");
+	printf("%.*s", 30, s);
+	printf("\n-------\n");
 }

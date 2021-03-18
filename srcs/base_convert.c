@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/18 10:12:43 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/18 17:14:10 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,17 @@ static void	recursive_step(int nbr, char *base, char *src, int *i)
 
 static void	ft_putnbr_base(int nbr, char *base, char *src, int *i)
 {
-	int 	len_of_base;
-	char 	*res;
-	int 	*i;
+	const int 	len_of_base;
+	char		*res;
+	int 		*i;
 
 	i = 0;
 	res = ft_calloc(1024, sizeof(char));
 	if (!res)
 		return (-1);
-	len_of_base = ft_length(base);
+	len_of_base = 16;
 	if (nbr < 0)
-	{
-		write(1, "-", 1);
-		nbr *= (-1);
-	}
+		*(res++) = '-';
 	if (len_of_base > 1)
 		recursive_step(nbr, base, len_of_base);
 }
