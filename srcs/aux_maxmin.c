@@ -33,7 +33,7 @@ int max(int args, int init, ...)
 	while (++i < args)
     {
         current = va_arg(valist, int);
-        if(max < current || max == INT_MAX)
+        if (max < current || max == INT_MAX)
             max = current;
     }
     va_end(valist);

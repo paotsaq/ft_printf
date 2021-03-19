@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/18 08:43:32 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/19 14:08:25 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	retrieves_flags(t_flags *tr, char *str, int *i)
+void	retrieves_flags(t_info *tr, char *str, int *i)
 {
 	int j;
 
@@ -28,14 +28,13 @@ void	retrieves_flags(t_flags *tr, char *str, int *i)
 	*i = j;
 }
 
-void	retrieves_width(t_flags *tr, char *str, int *i, va_list *pargs)
+void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int prov;
 
 	j = *i;
 	while (str[j] && (ft_isdigit(str[j]) || str[j] == '*'))
-	{
 		if (str[j] == '*' && !(tr->width || tr->w_aster))
 		{
 			prov = va_arg(*pargs, int);
@@ -48,11 +47,10 @@ void	retrieves_width(t_flags *tr, char *str, int *i, va_list *pargs)
 			tr->width = tr->width * 10 + str[j] - '0';
 			j++;
 		}
-	}
 	*i = j;
 }
 
-void	retrieves_prec(t_flags *tr, char *str, int *i, va_list *pargs)
+void	retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int prov;
@@ -75,7 +73,7 @@ void	retrieves_prec(t_flags *tr, char *str, int *i, va_list *pargs)
 	*i = j;
 }
 
-void	retrieves_type(t_flags *tr, char *str, int *i, va_list *pargs)
+void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int t;
@@ -92,7 +90,7 @@ void	retrieves_type(t_flags *tr, char *str, int *i, va_list *pargs)
 	}
 }
 
-void	parses_string(t_flags *tr, char *str, va_list *pargs)
+void	parses_string(t_info *tr, char *str, va_list *pargs)
 {
 	int i;
 

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/19 05:47:28 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/19 14:09:46 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static const char types[NBR_OF_TYPES] = "cspdiuxX";
 // os params que forem invalidos, multiplicam pela flag 0
 // antes de chegarem a impressao; a variavel passa para dentro
 // de uma func intermedia.
+//
+// resolver conflito entre z, m
 										   // z  m  w  p  p  w  p
 static const char prios[NBR_OF_TYPES][7] = { {0, 1, 1, 0, 0, 1, 1},
 											 {0, 1, 1, 1, 1, 1, 1},
@@ -36,9 +38,9 @@ static const char prios[NBR_OF_TYPES][7] = { {0, 1, 1, 0, 0, 1, 1},
 											 {1, 1, 1, 0, 0, 1, 1},
 											 {1, 1, 1, 0, 0, 1, 1},
 											 {1, 1, 1, 0, 0, 1, 1},
-											 {1, 1, 1, 0, 0, 1, 1}};
+											 {1, 1, 1, 0, 0, 1, 1} };
 // legal_conv[conv_s][space] == true;
-typedef struct	s_flags{
+typedef struct	s_info{
 	int				zero;
 	int				minus;
 	int				width; //
@@ -48,7 +50,7 @@ typedef struct	s_flags{
 	int				p_aster;
 	char			type;
 	// last added for print
-	unsigned char	*content;
+	void			*content;
 	int				len;  //
 }				t_info;
 
