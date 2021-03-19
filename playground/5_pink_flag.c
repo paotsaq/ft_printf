@@ -27,4 +27,7 @@ int		main()
 	printf("► precision on ints ◄ 🔴\n");
 	printf("%2.2i", 123456789);
 	printf("\n-------\n");
+	printf("► hexa print◄ 🔴\n");
+	printf("%x", y);
+	printf("\n-------\n");
 }
