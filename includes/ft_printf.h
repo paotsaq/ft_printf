@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 13:38:39 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 21:47:53 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 //# define U_FLAGS 0b1111011
 //# define X_FLAGS 0b1111011
 
-//	     		   zp
+//	     		     zp
 //# define C_FLAGS 0b00
 //# define S_FLAGS 0b01
 //# define P_FLAGS 0b00
