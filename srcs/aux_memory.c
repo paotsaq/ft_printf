@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 05:36:44 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 10:25:58 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	initializes_tr(t_flags *tr)
 	tr->w_aster = 0;
 	tr->p_aster = 0;
 	tr->prec = 0;
+	tr->type = 0;
+	tr->len = 0;
+	tr->base = 0;
+	tr->negative = 0;
+	tr->invalid = 0;
 }
 
 void	*ft_calloc(size_t count, size_t size)

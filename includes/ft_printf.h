@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 06:01:32 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 10:24:24 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <unistd.h>
 
 #define TYPES "cspdiuxX"
+#define DEC_BASE "0123456789"
+#define HEX_BASE "0123456789abcdef"
 
 // 0, -, w, p existem sempre...
 //	     		   zmwppwp
@@ -50,7 +52,10 @@ typedef struct	s_info{
 	char			type;
 	void			*content;
 	int				len;
-	int				valid;
+	// for numbers only!
+	int				base;
+	int				negative;
+	int				invalid;
 }				t_info;
 
 int				ft_printf(char *str, ...);
@@ -63,6 +68,5 @@ void			*ft_reallocates_memory(void *old,
 					size_t count, size_t size, int offset);
 char			*creates_buffer(t_info *info);
 void			cleans_info_with_prios(t_info *tr);
-
 int				min(int args, int init, ...);
 int				max(int args, int init, ...);
