@@ -49,4 +49,10 @@ int		main()
 	printf("10.-* | width + asterisk ⏬\n");
 	printf("%10-.*d", 4, y);
 	printf("\n-------\n");
+	printf("10 | pointer with width ⏬\n");
+	printf("%20p", &y);
+	printf("\n-------\n");
+	printf("10 | pointer with precision ⏬\n");
+	printf("%.4p", &y);
+	printf("\n-------\n");
 }

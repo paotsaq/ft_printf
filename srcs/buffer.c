@@ -6,13 +6,12 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/19 11:52:36 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 05:46:05 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// zero and minus conflict must have been solved by now!
 char	*creates_buffer(t_info *info)
 {
 	int		count;

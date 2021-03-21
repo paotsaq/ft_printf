@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/19 04:10:24 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 05:36:44 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,27 @@ void	*ft_calloc(size_t count, size_t size)
 	return (mem);
 }
 
+void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset)
+{
+	void	*ptr;
+	int		i;
+
+	i = -1;
+	if (count == 0 || size == 0)
+		free(old);
+	ptr = ft_calloc(count, size);
+	if (ptr)
+	{
+		while (++i < (int)count - 1)
+			if (size == 1)
+				((char*)ptr)[i] = ((char*)old)[i + offset];
+			else
+				((char**)ptr)[i] = ((char**)old)[i + offset];
+		if (size == 1)
+			((char*)ptr)[i] = 0;
+		else
+			((char**)ptr)[i] = 0;
+		free(old);
+	}
+	return (ptr);
+}

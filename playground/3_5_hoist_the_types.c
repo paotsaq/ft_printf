@@ -51,4 +51,10 @@ int		main()
    	printf("-*d | omg? ⚠️\n");
 	printf("%0*d", -4, 123);
 	printf("\n-------\n");
+
+   	printf("INVALID TYPE TESTS 💫 \n");
+   	printf("invalid flag with width ⏬\n");
+	printf("%20r", 123);
+	printf("\n-------\n");
+
 }

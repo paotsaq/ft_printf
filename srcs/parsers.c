@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/19 14:08:25 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 06:00:26 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	retrieves_flags(t_info *tr, char *str, int *i)
+static	void	retrieves_flags(t_info *tr, char *str, int *i)
 {
 	int j;
 
@@ -28,7 +28,7 @@ void	retrieves_flags(t_info *tr, char *str, int *i)
 	*i = j;
 }
 
-void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)
+static	void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int prov;
@@ -50,7 +50,7 @@ void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)
 	*i = j;
 }
 
-void	retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs)
+static	void	retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int prov;
@@ -73,7 +73,7 @@ void	retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs)
 	*i = j;
 }
 
-void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
+static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int t;
@@ -90,7 +90,7 @@ void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 	}
 }
 
-void	parses_string(t_info *tr, char *str, va_list *pargs)
+void			parses_string(t_info *tr, char *str, va_list *pargs)
 {
 	int i;
 
@@ -105,5 +105,6 @@ void	parses_string(t_info *tr, char *str, va_list *pargs)
 			retrieves_prec(tr, str, &i, pargs);
 			retrieves_type(tr, str, &i, pargs);
 		}
+		// more conversions
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/19 14:09:46 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 06:01:32 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,53 +17,52 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-// define enum with types?
-// enum conv_type(c, s, p, d, i, u, x, X);
-#define NBR_OF_TYPES 8
-static const char types[NBR_OF_TYPES] = "cspdiuxX";
-// usar prios apenas na recolha da info?
-// nao, estupido, porque o tipo e a ultima informacao a recolher.
-// usar prios para FILTRAR info? 💫
+#define TYPES "cspdiuxX"
 
-// os params que forem invalidos, multiplicam pela flag 0
-// antes de chegarem a impressao; a variavel passa para dentro
-// de uma func intermedia.
-//
-// resolver conflito entre z, m
-										   // z  m  w  p  p  w  p
-static const char prios[NBR_OF_TYPES][7] = { {0, 1, 1, 0, 0, 1, 1},
-											 {0, 1, 1, 1, 1, 1, 1},
-											 {0, 1, 0, 0, 0, 0, 1},
-											 {1, 1, 1, 0, 0, 1, 1},
-											 {1, 1, 1, 0, 0, 1, 1},
-											 {1, 1, 1, 0, 0, 1, 1},
-											 {1, 1, 1, 0, 0, 1, 1},
-											 {1, 1, 1, 0, 0, 1, 1} };
-// legal_conv[conv_s][space] == true;
+// 0, -, w, p existem sempre...
+//	     		   zmwppwp
+//# define C_FLAGS 0b0111011
+//# define S_FLAGS 0b0111111
+//# define P_FLAGS 0b0101001
+//# define D_FLAGS 0b1111011
+//# define I_FLAGS 0b1111011
+//# define U_FLAGS 0b1111011
+//# define X_FLAGS 0b1111011
+
+//# define TYPES "cspdiuxX"
+//	     		   zp
+//# define C_FLAGS 0b00
+//# define S_FLAGS 0b01
+//# define P_FLAGS 0b00
+//# define D_FLAGS 0b10
+//# define I_FLAGS 0b10
+//# define U_FLAGS 0b10
+//# define X_FLAGS 0b10
+
+// struct content is not bits because
 typedef struct	s_info{
 	int				zero;
 	int				minus;
-	int				width; //
-	int				prec;  //
-	int				prec_trim;
+	int				width;
+	int				prec;
 	int				w_aster;
 	int				p_aster;
 	char			type;
-	// last added for print
 	void			*content;
-	int				len;  //
+	int				len;
+	int				valid;
 }				t_info;
 
 int				ft_printf(char *str, ...);
 void			initializes_tr(t_info *tr);
-void			retrieves_flags(t_info *tr, char *str, int *i);
-void			retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs);
-void			retrieves_width(t_info *tr, char *str, int *i, va_list *pargs);
-void			retrieves_type(t_info *tr, char *str, int *i, va_list *pargs);
 void			parses_string(t_info *tr, char *str, va_list *pargs);
 int				ft_isdigit(int c);
 char			*ft_strchr(const char *s, int c);
 void			*ft_calloc(size_t count, size_t size);
-//
+void			*ft_reallocates_memory(void *old,
+					size_t count, size_t size, int offset);
+char			*creates_buffer(t_info *info);
+void			cleans_info_with_prios(t_info *tr);
+
 int				min(int args, int init, ...);
 int				max(int args, int init, ...);

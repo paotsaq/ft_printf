@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/18 05:00:31 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 06:03:16 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	prints_params(t_flags *tr)
 	printf("%d\n", tr->prec);
 	printf("%d\n", tr->p_aster);
 	printf("%d\n", tr->w_aster);
+	printf("%c\n", tr->type);
+	printf("%d\n", tr->len);
+	printf("%d\n", tr->valid);
 }
 
 int		ft_printf(char *str, ...)
@@ -29,11 +32,11 @@ int		ft_printf(char *str, ...)
 	t_flags		tr;
 
 	initializes_tr(&tr);
-
 	va_start(pargs, str);
 	parses_string(&tr, str, &pargs);
+	va_end(pargs);
+	cleans_info_with_prios(&tr);
 
 	prints_params(&tr);
-	va_end(pargs);
 	return (0);
 }

@@ -35,6 +35,6 @@ int		main()
 	printf("%006.*d", 5, x);
 	printf("\n-------\n");
 	printf("3-d | test on wrong order 🔴 \n");
-	printf("%3-d", x);
+	printf("%30-s", x);
 	printf("\n-------\n");
 }
