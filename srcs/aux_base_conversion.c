@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 10:32:25 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 15:58:36 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,37 +34,37 @@ static void		ft_putnbr_base(t_info *tr, char *base)
 	int			len_of_base;
 	char		*res;
 	char		digit;
+	char		*begg;
 
 	res = ft_calloc(20, sizeof(char));
 	if (!res)
 		return;
+	begg = res;
 	len_of_base = strlen(base);
 	if (tr->content < 0)
 		tr->negative = 1;
 	if (tr->content < 0)
-		tr->content *= -1;
-	while (tr->content != 0)
+		*((int *)tr->content) *= -1;
+	while (*(int *)tr->content != 0)
 	{
-		digit = base[(int)tr->content % len_of_base] + '0';
+		digit = base[*(int *)tr->content % len_of_base];
 		*(res++) = digit;
-		(int)tr->content /= len_of_base;
+		*((int *)tr->content) = *((int *)tr->content) / len_of_base;
 	}
-	res = ft_reallocates_memory(strrev(res), strlen(res), 1, 0);
+	res = ft_reallocates_memory(strrev(begg), strlen(begg), 1, 0);
+	tr->content = begg;
 }
 
-
-int		main()
-{
-	t_info	tr;
-
-	initializes_tr(&tr);
-	// missing initialization of params
-	tr.content = 1234;
-	tr.base = 10;
-	str = ft_putnbr_base(&tr, DEC_BASE);
-	fprintf("%d\n", str);
-	free(str);
-	str = ft_putnbr_base(1234, "0123456789abcdef");
-	fprintf("%d\n", str);
-	free(str);
-}
+// int		main()
+// {
+// 	t_info	tr;
+// 	char 	*str;
+// 	int		x;
+// 
+// 	initializes_tr(&tr);
+// 	x = 1234;
+// 	tr.content = &x;
+// 	tr.base = 16;
+// 	ft_putnbr_base(&tr, HEX_BASE);
+// 	printf("%s\n", tr.content);
+// }

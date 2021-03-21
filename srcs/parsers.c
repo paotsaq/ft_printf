@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 06:00:26 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 13:38:56 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 	{
 		prov = va_arg(*pargs, int);
 		t = -1;
-		while (types[++t])
-			if (ft_strchr(&types[t], prov))
+		while (TYPES[++t])
+			if (ft_strchr(&TYPES[t], prov))
 				tr->type = prov;
 	}
 }

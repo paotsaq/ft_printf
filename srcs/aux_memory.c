@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 10:25:58 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/21 13:49:03 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	initializes_tr(t_flags *tr)
+void	initializes_tr(t_info *tr)
 {
 	tr->zero = 0;
 	tr->minus = 0;
