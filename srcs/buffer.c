@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 05:49:59 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 06:15:19 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*creates_buffer(t_info *info)
 	if (!res)
 		return (0);
 	begg = res;
+	if (info->negative)
+		memset(res++, '-', 1);
 	if (info->zero)
 	{
 		memset(res, '0', count - info->len);
