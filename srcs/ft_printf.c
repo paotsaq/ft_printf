@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 05:17:09 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 11:13:47 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int		ft_printf(char *str, ...)
 	printf("prints after cleaning 🧹\n");
 	prints_params(&tr);
 	buffer_string = creates_buffer(&tr);
-	printf("res is %s\n", buffer_string);
+	printf("%s\n", buffer_string);
 
 
 

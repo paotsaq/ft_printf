@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 09:22:39 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 11:31:52 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ char	*creates_buffer(t_info *info)
 	if (!res)
 		return (0);
 	begg = res;
-	width_chars = (info->width - info->prec);
-	while (width_chars--)
+	while (*(info->width)--)
 		*(res++) = ' ';
 	if (info->negative)
 		memset(res++, '-', 1);
 	if (info->zero || (info->prec > info->len))
 	{
+		// corrigir 
 		min_number = min(2, 100000, info->prec - info->len, info->width - info->len);
 		memset(res, '0', min_number);
 		res = res + (count - min_number);
@@ -45,19 +45,3 @@ char	*creates_buffer(t_info *info)
 			*(res++) = ' ';
 	return (begg);
 }
-
-//int		main()
-//{
-//	t_info info;
-//	char *str;
-//
-//	info.content = strdup("what boi🍔");
-//	info.len = 10;
-//	info.minus = 1;
-//	info.width = 100;
-//	str = creates_buffer(&info);
-//	free(info.content);
-//	printf("%s\n", str);
-//	free(str);
-//	return (0);
-//}
