@@ -6,11 +6,12 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 21:57:37 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 05:16:08 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 
 static	void	retrieves_flags(t_info *tr, char *str, int *i)
 {
@@ -77,16 +78,22 @@ static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int t;
+	int prov;
 
 	j = *i;
 	t = -1;
 	if (str[j])
+	{
 		while (TYPES[++t])
-			if (TYPES[t] == str[j])
+			if (str[j] == TYPES[t])
 			{
 				tr->type = str[j];
-				break;
+				if (strchr("csp", tr->type))
+					char_family_allocation(tr, pargs);
+				else
+					int_family_allocation(tr, pargs);
 			}
+	}
 	if (!tr->type)
 		tr->invalid = 1;
 }
@@ -98,6 +105,8 @@ void			parses_string(t_info *tr, char *str, va_list *pargs)
 	i = -1;
 	while (str[++i])
 	{
+		// if (str[i] == '%' && str[i + 1] == '%')
+		// write percentage
 		if (str[i] == '%')
 		{
 			i++;

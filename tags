@@ -1,0 +1,68 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CC	Makefile	/^CC = gcc$/;"	m
+COMP	Makefile	/^COMP = $(CC) $(OPT)$/;"	m
+DEC_BASE	includes/ft_printf.h	/^#define DEC_BASE /;"	d
+HDRS	Makefile	/^HDRS = .$/;"	m
+HEX_BASE	includes/ft_printf.h	/^#define HEX_BASE /;"	d
+LST	Makefile	/^LST := ft_lst*.c$/;"	m
+LST_OBJS	Makefile	/^LST_OBJS := ${LST:.c=.o}$/;"	m
+NAME	Makefile	/^NAME = libft.a$/;"	m
+OPT	Makefile	/^OPT = -Wall -Wextra -Werror$/;"	m
+RM	Makefile	/^RM = rm -f$/;"	m
+SRCS	Makefile	/^SRCS = *.c$/;"	m
+SRCS_OBJS	Makefile	/^SRCS_OBJS := ${SRCS:.c=.o}$/;"	m
+TYPES	includes/ft_printf.h	/^#define TYPES /;"	d
+base	includes/ft_printf.h	/^	int				base;$/;"	m	struct:s_info
+char_family_allocation	srcs/aux_base_conversion.c	/^void	char_family_allocation(t_info *tr, va_list *pargs)$/;"	f
+cleans_info_with_prios	srcs/input_validation.c	/^void			cleans_info_with_prios(t_info *tr)$/;"	f
+content	includes/ft_printf.h	/^	void			*content;$/;"	m	struct:s_info
+creates_buffer	srcs/buffer.c	/^char	*creates_buffer(t_info *info)$/;"	f
+flag_info	srcs/input_validation.c	/^static	int		flag_info(char c)$/;"	f	file:
+ft_calloc	srcs/aux_memory.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f
+ft_isdigit	srcs/aux_strings.c	/^int		ft_isdigit(int c)$/;"	f
+ft_printf	srcs/ft_printf.c	/^int		ft_printf(char *str, ...)$/;"	f
+ft_putnbr_base	srcs/aux_base_conversion.c	/^void	ft_putnbr_base(t_info *tr, unsigned int content, char *base)$/;"	f
+ft_reallocates_memory	srcs/aux_memory.c	/^void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset)$/;"	f
+ft_strchr	srcs/aux_strings.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
+ft_strindex	srcs/aux_strings.c	/^static	int		ft_strindex(char *str, char c)$/;"	f	file:
+initializes_tr	srcs/aux_memory.c	/^void	initializes_tr(t_info *tr)$/;"	f
+int_family_allocation	srcs/aux_base_conversion.c	/^void	int_family_allocation(t_info *tr, va_list *pargs)$/;"	f
+invalid	includes/ft_printf.h	/^	int				invalid;$/;"	m	struct:s_info
+len	includes/ft_printf.h	/^	int				len;$/;"	m	struct:s_info
+main	main.c	/^int		main()$/;"	f
+main	playground/0_vargs.c	/^int		main()$/;"	f
+main	playground/1_validity.c	/^int		main()$/;"	f
+main	playground/3_5_hoist_the_types.c	/^int		main()$/;"	f
+main	playground/3_printf_flags.c	/^int		main()$/;"	f
+main	playground/4_capture_the_flag.c	/^int		main()$/;"	f
+main	playground/5_pink_flag.c	/^int		main()$/;"	f
+main	playground/6_money_printer_goes_brrrrrr.c	/^int		main()$/;"	f
+main	playground/7_weird_case.c	/^int		main()$/;"	f
+main	playground/8_bitmasks.c	/^int		main()$/;"	f
+main	playground/tests_params.c	/^int		main()$/;"	f
+max	srcs/aux_maxmin.c	/^int max(int args, int init, ...)$/;"	f
+min	srcs/aux_maxmin.c	/^int min(int args, int init, ...)$/;"	f
+minus	includes/ft_printf.h	/^	int				minus;$/;"	m	struct:s_info
+negative	includes/ft_printf.h	/^	int				negative;$/;"	m	struct:s_info
+p_aster	includes/ft_printf.h	/^	int				p_aster;$/;"	m	struct:s_info
+parses_string	srcs/parsers.c	/^void			parses_string(t_info *tr, char *str, va_list *pargs)$/;"	f
+prec	includes/ft_printf.h	/^	int				prec;$/;"	m	struct:s_info
+prints	playground/types/prints.c	/^void	prints(t_flags *info, (void *) content)$/;"	f
+prints_params	srcs/ft_printf.c	/^void	prints_params(t_info *tr)$/;"	f
+retrieves_flags	srcs/parsers.c	/^static	void	retrieves_flags(t_info *tr, char *str, int *i)$/;"	f	file:
+retrieves_prec	srcs/parsers.c	/^static	void	retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs)$/;"	f	file:
+retrieves_type	srcs/parsers.c	/^static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)$/;"	f	file:
+retrieves_width	srcs/parsers.c	/^static	void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)$/;"	f	file:
+s_info	includes/ft_printf.h	/^typedef struct	s_info{$/;"	s
+strrev	srcs/aux_strings.c	/^char	*strrev(char *s1)$/;"	f
+t_info	includes/ft_printf.h	/^}				t_info;$/;"	t	typeref:struct:s_info
+testing_args	playground/0_vargs.c	/^void	testing_args(char *str, ...)$/;"	f
+type	includes/ft_printf.h	/^	char			type;$/;"	m	struct:s_info
+w_aster	includes/ft_printf.h	/^	int				w_aster;$/;"	m	struct:s_info
+width	includes/ft_printf.h	/^	int				width;$/;"	m	struct:s_info
+zero	includes/ft_printf.h	/^	int				zero;$/;"	m	struct:s_info

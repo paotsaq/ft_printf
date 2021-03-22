@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 21:52:04 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 05:17:09 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_printf(char *str, ...)
 	va_list 	pargs;
 	int			arg;
 	t_info		tr;
+	char		*buffer_string;
 
 	initializes_tr(&tr);
 	va_start(pargs, str);
@@ -40,6 +41,10 @@ int		ft_printf(char *str, ...)
 	cleans_info_with_prios(&tr);
 	printf("prints after cleaning 🧹\n");
 	prints_params(&tr);
+	buffer_string = creates_buffer(&tr);
+	printf("res is %s\n", buffer_string);
+
+
 
 	return (0);
 }

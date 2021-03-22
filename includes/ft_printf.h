@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 21:47:53 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 05:18:53 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,9 @@ void			*ft_reallocates_memory(void *old,
 					size_t count, size_t size, int offset);
 char			*creates_buffer(t_info *info);
 void			cleans_info_with_prios(t_info *tr);
+void			int_family_allocation(t_info *tr, va_list *pargs);
+void			char_family_allocation(t_info *tr, va_list *pargs);
+char			*strrev(char *s1);
+void			ft_putnbr_base(t_info *tr, unsigned int content, char *base);
 int				min(int args, int init, ...);
 int				max(int args, int init, ...);

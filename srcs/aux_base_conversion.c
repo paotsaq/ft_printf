@@ -6,30 +6,62 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/21 15:58:36 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 05:22:30 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	char	*strrev(char *s1)
+void	char_family_allocation(t_info *tr, va_list *pargs)
 {
-	char	swp;
-	int		i;
-	int		len;
+	char *prov_str;
 
-	i = -1;
-	len = strlen(s1);
-	while (++i < len / 2)
+	if (tr->type == 'c')
 	{
-		swp = s1[i];
-		s1[i] = s1[len - i - 1];
-		s1[len - i - 1] = swp;
+		(tr->content) = malloc(2 * sizeof(char));
+		if (!tr->content)
+			return;
+		*(char *)(tr->content) = va_arg(*pargs, int);
 	}
-	return (s1);
+	else if (tr->type == 's')
+	{
+		*prov_str = va_arg(*pargs, int);
+		(tr->content) = malloc(2 * strlen(prov_str));
+		if (!tr->content)
+			return;
+		*(char *)(tr->content) = *prov_str;
+	}
+	// needs to be done!
+	else if (tr->type == 'p')
+		return;
 }
 
-static void		ft_putnbr_base(t_info *tr, char *base)
+void	int_family_allocation(t_info *tr, va_list *pargs)
+{
+	int				prov_number;
+	unsigned int	number;
+
+	if (tr->type == 'd' || tr->type == 'i')
+	{
+		prov_number = va_arg(*pargs, int);
+		if (prov_number < 0)
+		{
+			tr->negative = 1;
+			prov_number *= -1;
+		}
+		ft_putnbr_base(tr, (unsigned int)prov_number, DEC_BASE);
+	}
+	else
+	{
+		number = va_arg(*pargs, unsigned int);
+		if (tr->type == 'u')
+			ft_putnbr_base(tr, number, DEC_BASE);
+		else
+			ft_putnbr_base(tr, number, DEC_BASE);
+	}
+}
+
+void	ft_putnbr_base(t_info *tr, unsigned int content, char *base)
 {
 	int			len_of_base;
 	char		*res;
@@ -41,30 +73,12 @@ static void		ft_putnbr_base(t_info *tr, char *base)
 		return;
 	begg = res;
 	len_of_base = strlen(base);
-	if (tr->content < 0)
-		tr->negative = 1;
-	if (tr->content < 0)
-		*((int *)tr->content) *= -1;
-	while (*(int *)tr->content != 0)
+	while (content != 0)
 	{
-		digit = base[*(int *)tr->content % len_of_base];
+		digit = base[content % len_of_base];
 		*(res++) = digit;
-		*((int *)tr->content) = *((int *)tr->content) / len_of_base;
+		content = content / len_of_base;
 	}
 	res = ft_reallocates_memory(strrev(begg), strlen(begg), 1, 0);
 	tr->content = begg;
 }
-
-// int		main()
-// {
-// 	t_info	tr;
-// 	char 	*str;
-// 	int		x;
-// 
-// 	initializes_tr(&tr);
-// 	x = 1234;
-// 	tr.content = &x;
-// 	tr.base = 16;
-// 	ft_putnbr_base(&tr, HEX_BASE);
-// 	printf("%s\n", tr.content);
-// }
