@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 05:22:30 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/22 05:52:26 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,5 @@ void	ft_putnbr_base(t_info *tr, unsigned int content, char *base)
 	}
 	res = ft_reallocates_memory(strrev(begg), strlen(begg), 1, 0);
 	tr->content = begg;
+	tr->len = strlen(begg);
 }

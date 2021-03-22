@@ -22,20 +22,20 @@ int min(int args, int init, ...)
 
 int max(int args, int init, ...)
 {
-    int i;
+	int i;
 	int	max;
 	int	current;
-    va_list valist;
-    va_start(valist, init);
+	va_list valist;
+	va_start(valist, init);
 
 	i = -1;
 	max = init;
 	while (++i < args)
-    {
-        current = va_arg(valist, int);
-        if (max < current || max == INT_MAX)
-            max = current;
-    }
-    va_end(valist);
-    return max;
+	{
+		current = va_arg(valist, int);
+		if (max < current || max == INT_MAX)
+		max = current;
+	}
+	va_end(valist);
+	return max;
 }
