@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/23 05:58:20 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/23 06:13:14 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*creates_buffer(t_info *info)
 		res = res + min_number;
 	}
 	strlcat(res, info->content, info->len + 1);
+	res = res + info->len;
+	// generate whitespace function?
 	if (info->minus)
 		while ((res - begg) != count)
 			*(res++) = ' ';
