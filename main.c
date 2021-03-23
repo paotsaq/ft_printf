@@ -10,5 +10,7 @@ int		main()
 	ft_printf("%0*.*s\n", 9, 5, "abcdef");
 	printf("%-0*.*s\n", 9, 5, "abcdef");
 	ft_printf("%-0*.*s\n", 9, 5, "abcdef");
+	printf("%-5c\n", 'e');
+	ft_printf("%-5c\n", 'e');
 	return (0);
 }
