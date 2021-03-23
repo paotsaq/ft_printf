@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 11:25:36 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/23 06:01:17 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ void			cleans_info_with_prios(t_info *tr)
 		tr->invalid = 1;
 		return;
 	}
-	if (tr->zero && (flag_info(tr->type) >> 0 & 0 || tr->minus))
+	if (tr->minus)
 		tr->zero = 0;
-	if (tr->prec > tr->len && tr->type != 'c' && tr->type != 's')
-		tr->width -= tr->prec - tr->len;
-	if (tr->prec && (tr->prec < tr->len) && (flag_info(tr->type) >> 1) & 1)
+	if (tr->type == 's' && tr->prec && (tr->prec < tr->len))
 	{
 		temp = tr->content;
-		tr->content = ft_reallocates_memory(temp, tr->prec, 1, 0);
-		free(temp);
+		tr->content = ft_reallocates_memory(temp, tr->prec + 1, 1, 0);
+		tr->len = tr->prec;
 	}
+	//if (tr->prec > tr->len && tr->type != 'c' && tr->type != 's')
+	//	tr->width -= tr->prec - tr->len;
 }

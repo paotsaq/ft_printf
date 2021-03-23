@@ -1,41 +1,41 @@
 #include "ft_printf.h"
 
-int min(int args, int init, ...)
+int min(int args, ...)
 {
     int i;
-	int	min;
+	int	min_value;
 	int	current;
     va_list valist;
-    va_start(valist, init);
+    va_start(valist, args);
 
 	i = -1;
-	min = init;
+	min_value = INT_MIN;
 	while (++i < args)
     {
         current = va_arg(valist, int);
-        if(min > current || min == INT_MIN)
-            min = current;
+        if (min_value > current || min_value == INT_MIN)
+            min_value = current;
     }
     va_end(valist);
-    return min;
+    return min_value;
 }
 
-int max(int args, int init, ...)
+int max(int args, ...)
 {
 	int i;
-	int	max;
+	int	max_value;
 	int	current;
 	va_list valist;
-	va_start(valist, init);
+	va_start(valist, args);
 
 	i = -1;
-	max = init;
+	max_value = INT_MAX;
 	while (++i < args)
 	{
 		current = va_arg(valist, int);
-		if (max < current || max == INT_MAX)
-		max = current;
+		if (max_value < current || max_value == INT_MAX)
+		max_value = current;
 	}
 	va_end(valist);
-	return max;
+	return max_value;
 }

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 11:31:52 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/23 05:58:20 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,29 @@ char	*creates_buffer(t_info *info)
 	int	min_number;
 	int	width_chars;
 
-	count = max(3, 0, info->width, info->len, info->prec);
+	if (info->width > info->prec)
+		width_chars = info->width - (info->prec + info->negative);
+	count = max(3, info->width, info->len, info->prec);
 	res = calloc(count + 1, sizeof(char));
 	if (!res)
 		return (0);
 	begg = res;
-	while (*(info->width)--)
+	while (!info->minus && info->prec && !(info->type == 's' && info->zero)  && width_chars--)
 		*(res++) = ' ';
 	if (info->negative)
 		memset(res++, '-', 1);
 	if (info->zero || (info->prec > info->len))
 	{
-		// corrigir 
-		min_number = min(2, 100000, info->prec - info->len, info->width - info->len);
+		if (info->prec && !(info->type == 's' && info->zero))
+			min_number = min(2, info->prec - info->len, info->width - info->len);
+		else
+			min_number = info->width - info->len;
 		memset(res, '0', min_number);
-		res = res + (count - min_number);
-		count -= min_number;
+		res = res + min_number;
 	}
-	strlcat(begg, info->content, max(3, 0, info->width, info->len, info->prec) + 1);
-	res += info->len;
-	count -= info->len;
+	strlcat(res, info->content, info->len + 1);
 	if (info->minus)
-		while (count--)
+		while ((res - begg) != count)
 			*(res++) = ' ';
 	return (begg);
 }

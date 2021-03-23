@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 05:18:53 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/23 04:04:50 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,5 @@ void			int_family_allocation(t_info *tr, va_list *pargs);
 void			char_family_allocation(t_info *tr, va_list *pargs);
 char			*strrev(char *s1);
 void			ft_putnbr_base(t_info *tr, unsigned int content, char *base);
-int				min(int args, int init, ...);
-int				max(int args, int init, ...);
+int				min(int args, ...);
+int				max(int args, ...);

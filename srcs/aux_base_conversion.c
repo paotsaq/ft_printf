@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/22 10:27:28 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/23 04:55:55 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	char_family_allocation(t_info *tr, va_list *pargs)
 		if (!tr->content)
 			return;
 		*(char *)(tr->content) = va_arg(*pargs, int);
+		tr->len = 1;
 	}
 	else if (tr->type == 's')
 	{
@@ -29,7 +30,8 @@ void	char_family_allocation(t_info *tr, va_list *pargs)
 		(tr->content) = malloc(2 * strlen(prov_str));
 		if (!tr->content)
 			return;
-		*(char *)(tr->content) = *prov_str;
+		(tr->content) = strdup(prov_str);
+		tr->len = strlen(prov_str);
 	}
 	// needs to be done!
 	else if (tr->type == 'p')
@@ -57,7 +59,7 @@ void	int_family_allocation(t_info *tr, va_list *pargs)
 		if (tr->type == 'u')
 			ft_putnbr_base(tr, number, DEC_BASE);
 		else
-			ft_putnbr_base(tr, number, DEC_BASE);
+			ft_putnbr_base(tr, number, HEX_BASE);
 	}
 }
 
