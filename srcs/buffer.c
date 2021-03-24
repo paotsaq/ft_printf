@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 04:14:20 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 11:46:34 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*creates_buffer(t_info *info)
 
 	if (info->width > info->prec)
 		width_chars = info->width - (info->prec + info->negative);
-	count = max(3, info->width, info->len, info->prec);
+	count = ft_max(3, info->width, info->len, info->prec);
 	res = calloc(count + 1, sizeof(char));
 	if (!res)
 		return (0);
@@ -36,7 +36,7 @@ char	*creates_buffer(t_info *info)
 	if (info->zero || (info->prec > info->len))
 	{
 		if (info->prec && !(info->type == 's' && info->zero))
-			min_number = min(2, info->prec - info->len, info->width - info->len);
+			min_number = ft_min(2, info->prec - info->len, info->width - info->len);
 		else
 			min_number = info->width - info->len;
 		memset(res, '0', min_number);

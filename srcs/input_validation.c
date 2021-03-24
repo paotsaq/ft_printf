@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 04:10:21 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 11:58:21 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void			cleans_info_with_prios(t_info *tr)
 	void	*temp;
 
 	// needs handling this case; should return?
+	// have a function that reallocates content
+	// up until the % (or end of command)?
 	if (!strchr(TYPES, tr->type))
 	{
 		tr->invalid = 1;
@@ -51,6 +53,4 @@ void			cleans_info_with_prios(t_info *tr)
 		tr->content = ft_reallocates_memory(temp, tr->prec + 1, 1, 0);
 		tr->len = tr->prec;
 	}
-	//if (tr->prec > tr->len && tr->type != 'c' && tr->type != 's')
-	//	tr->width -= tr->prec - tr->len;
 }

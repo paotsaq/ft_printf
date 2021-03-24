@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/23 08:42:48 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 11:54:54 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_base(t_info *tr, unsigned int content, char *base)
+void	number_to_string(t_info *tr, unsigned int content, char *base)
 {
 	int			len_of_base;
 	char		*res;

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/23 08:43:53 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 11:54:03 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,6 @@ void	int_family_allocation(t_info *tr, va_list *pargs)
 		else
 			ft_putnbr_base(tr, number, HEX_BASE);
 	}
-}
-
-void	*ft_calloc(size_t count, size_t size)
-{
-	void			*mem;
-	unsigned char	*iter;
-	int				len;
-
-	len = count * size;
-	mem = (char *)malloc(len);
-	if (!mem)
-		return (0);
-	iter = (unsigned char *)mem;
-	while (len-- != 0)
-		*iter++ = 0;
-	return (mem);
 }
 
 void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset)

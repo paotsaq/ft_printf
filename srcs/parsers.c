@@ -6,12 +6,11 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 04:31:39 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 11:58:34 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 static	void	retrieves_flags(t_info *tr, char *str, int *i)
 {
