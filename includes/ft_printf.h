@@ -6,16 +6,14 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 11:54:38 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 17:57:12 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <limits.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <stdarg.h>
-#include <unistd.h>
+#include "../libft/libft.h"
 
 #define TYPES "cspdiuxX"
 #define DEC_BASE "0123456789"

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 11:54:03 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 17:58:19 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ void	char_family_allocation(t_info *tr, va_list *pargs)
 	else if (tr->type == 's')
 	{
 		prov_str = va_arg(*pargs, char *);
-		(tr->content) = malloc(2 * strlen(prov_str));
+		(tr->content) = malloc(2 * ft_strlen(prov_str));
 		if (!tr->content)
 			return;
-		(tr->content) = strdup(prov_str);
-		tr->len = strlen(prov_str);
+		(tr->content) = ft_strdup(prov_str);
+		tr->len = ft_strlen(prov_str);
 	}
 	// needs to be done!
 	else if (tr->type == 'p')
