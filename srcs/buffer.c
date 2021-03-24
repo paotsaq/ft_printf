@@ -6,11 +6,13 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/23 06:13:14 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 04:14:20 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+// this whole function must have most of its conditions as variables in the struct
 
 char	*creates_buffer(t_info *info)
 {

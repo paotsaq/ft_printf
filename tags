@@ -8,9 +8,7 @@ BLI_ACTION_APPEND	tester/src/help_conf.c	/^# define BLI_ACTION_APPEND /;"	d	file
 BLI_ACTION_NEW	tester/src/help_conf.c	/^# define BLI_ACTION_NEW /;"	d	file:
 BLI_ACTION_PRINT	tester/src/help_conf.c	/^# define BLI_ACTION_PRINT /;"	d	file:
 BLU	tester/src/test.h	/^#define BLU /;"	d
-CC	Makefile	/^CC = gcc$/;"	m
 CC	tester/Makefile	/^CC=clang$/;"	m
-COMP	Makefile	/^COMP = $(CC) $(OPT)$/;"	m
 CONFIG_FILE	tester/src/usage_statistics.php	/^	define("CONFIG_FILE", PFT_ROOT."\/options-config.ini");$/;"	d
 CONFIG_FILE	tester/src/usage_statistics.php	/^	define("CONFIG_FILE", PFT_ROOT."\/options-config.ini.override");$/;"	d
 CYN	tester/src/test.h	/^#define CYN /;"	d
@@ -50,7 +48,6 @@ FTPF_LDBL_MANTS	tester/src/test.h	/^# define FTPF_LDBL_MANTS(/;"	d
 FTPF_LDBL_NEG	tester/src/test.h	/^# define FTPF_LDBL_NEG(/;"	d
 FTPF_LDBL_SIGN	tester/src/test.h	/^# define FTPF_LDBL_SIGN /;"	d
 GRN	tester/src/test.h	/^#define GRN /;"	d
-HDRS	Makefile	/^HDRS = .$/;"	m
 HELP_H	tester/src/help.h	/^#define HELP_H$/;"	d
 HEX_BASE	includes/ft_printf.h	/^#define HEX_BASE /;"	d
 INC	tester/Makefile	/^INC=-I src$/;"	m
@@ -63,13 +60,9 @@ LDBL_PZERO	tester/src/test.h	/^#define LDBL_PZERO /;"	d
 LIB	tester/Makefile	/^LIB=$(LIBFT_DIR_PATH)\/$(LIBFT_NAME)$/;"	m
 LIB	tester/Makefile	/^LIB=$/;"	m
 LOG_FILE	tester/src/test.h	/^#define LOG_FILE /;"	d
-LST	Makefile	/^LST := ft_lst*.c$/;"	m
-LST_OBJS	Makefile	/^LST_OBJS := ${LST:.c=.o}$/;"	m
 MAG	tester/src/test.h	/^#define MAG /;"	d
-NAME	Makefile	/^NAME = libft.a$/;"	m
 NO_HISTORY	tester/src/test.h	/^# define NO_HISTORY /;"	d
 NUMBER_OF_TESTS	tester/Makefile	/^NUMBER_OF_TESTS=$(shell cat $(UNIT_TEST_FILE) | grep -c "^\\s*int\\s*[a-zA-Z0-9_]*(void)" | tr -d " \\n\\t")$/;"	m
-OPT	Makefile	/^OPT = -Wall -Wextra -Werror$/;"	m
 OUTDATED	tester/src/test.h	/^# define OUTDATED /;"	d
 OVERRIDE_EXISTS	tester/Makefile	/^OVERRIDE_EXISTS=$(shell find options-config.ini.override 2>\/dev\/null | grep -c ".*")$/;"	m
 PFT_ROOT	tester/src/usage_statistics.php	/^define("PFT_ROOT", dirname(__FILE__, 2));$/;"	d
@@ -77,9 +70,6 @@ RECENTLY_FAILED	tester/src/test.h	/^# define RECENTLY_FAILED /;"	d
 RECENTLY_PASSED	tester/src/test.h	/^# define RECENTLY_PASSED /;"	d
 RED	tester/src/test.h	/^#define RED /;"	d
 RESET	tester/src/test.h	/^#define RESET /;"	d
-RM	Makefile	/^RM = rm -f$/;"	m
-SRCS	Makefile	/^SRCS = *.c$/;"	m
-SRCS_OBJS	Makefile	/^SRCS_OBJS := ${SRCS:.c=.o}$/;"	m
 SRC_TEST	tester/Makefile	/^SRC_TEST=src\/main.c src\/test.c src\/options.c src\/utils.c \\$/;"	m
 TEST_DEFINES	tester/Makefile	/^TEST_DEFINES=-D OUT_ACTUAL="\\"$(TEST_OUT_ACTUAL)\\"" \\$/;"	m
 TEST_H	tester/src/test.h	/^# define TEST_H$/;"	d

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/23 05:19:15 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/24 04:12:21 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,5 @@ int		ft_printf(char *str, ...)
 	cleans_info_with_prios(&tr);
 	buffer_string = creates_buffer(&tr);
 	printf("%s\n", buffer_string);
-
-
-
 	return (0);
 }
