@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 17:24:42 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/25 05:18:52 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*creates_buffer(t_info *info)
 			min_number = ft_min(2, info->prec - info->len, info->width - info->len);
 		else
 			min_number = info->width - info->len;
-		memset(res, '0', min_number);
+		ft_memset(res, '0', min_number);
 		res = res + min_number;
 	}
 	ft_strlcat(res, info->content, info->len + 1);

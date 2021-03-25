@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 04:12:21 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/25 05:19:14 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	prints_params(t_info *tr)
 int		ft_printf(char *str, ...)
 {
 	va_list 	pargs;
-	int			arg;
 	t_info		tr;
 	char		*buffer_string;
 

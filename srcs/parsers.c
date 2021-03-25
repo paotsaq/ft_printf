@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 11:58:34 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/25 05:20:29 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
 	int t;
-	int prov;
 
 	j = *i;
 	t = -1;
@@ -89,7 +88,7 @@ static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 			if (str[j] == TYPES[t])
 			{
 				tr->type = str[j];
-				if (strchr("csp", tr->type))
+				if (ft_strchr("csp", tr->type))
 					char_family_allocation(tr, pargs);
 				else
 					int_family_allocation(tr, pargs);

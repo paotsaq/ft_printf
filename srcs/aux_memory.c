@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 17:58:19 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/25 05:11:51 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,15 +66,15 @@ void	int_family_allocation(t_info *tr, va_list *pargs)
 			tr->negative = 1;
 			prov_number *= -1;
 		}
-		ft_putnbr_base(tr, (unsigned int)prov_number, DEC_BASE);
+		number_to_string(tr, (unsigned int)prov_number, DEC_BASE);
 	}
 	else
 	{
 		number = va_arg(*pargs, unsigned int);
 		if (tr->type == 'u')
-			ft_putnbr_base(tr, number, DEC_BASE);
+			number_to_string(tr, number, DEC_BASE);
 		else
-			ft_putnbr_base(tr, number, HEX_BASE);
+			number_to_string(tr, number, HEX_BASE);
 	}
 }
 
