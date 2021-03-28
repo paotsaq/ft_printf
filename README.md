@@ -8,6 +8,8 @@
 
 ### What with?
 
+Standard C functions that were previously recoded (the ``libft`` directory), variadic functions and not much more. *You won't be able to access those straight away*. Follow the very easy [Git documentation on submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to be able to import the library. ¹
+
 ### Oh, nice! Tell us more!
 
 A friend relayed a web comment on how ``print_f`` was really not that hard - all it took was a little planning and organisation. I'm terrible at both. 
@@ -23,7 +25,7 @@ That is not really the question I was looking for, and so I present my definitio
 - **it should be concise, and avoid redundancies.** If possible, do not have seven functions that to pretty much the same thing (there are still a couple of perpetrators in my code, though) 🧩
 - **it should be linear and not hard to follow.** Let it be closer to a single thread, instead of having weird branching outs and unnecessary/unelegant auxiliary functions 🧵
 - **it should be easily [extensible](https://english.stackexchange.com/questions/90426/extensible-vs-extendible#90444) .** If I ever were to tackle the bonus conversions, little to no adjustments should be necessary to the main code 🧱
-- **it can have *some* obtuse code**, as long as the idea is worth it and the implementation iis not too insufferable - people are not stupid, and, this being a practice assignment, it's nice to see some new tricks every now and then 🧞‍♂️
+- **it can have *some* obtuse code**, as long as the idea is worth it and the implementation is not too insufferable - people are not stupid, and, this being a practice assignment, it's nice to see some new tricks every now and then 🧞‍♂️
 
 ### So is your code sexy, then?
 
@@ -35,4 +37,4 @@ At the time of writing, it seems like the code handles conversions somewhat well
 
 Ok so first, let's be a little more careful with what you call a bad taste in jokes alright because there's like a whole spectrum of things people can find funny, or have you ever not seen really cute cats doing silly things, and this was me just trying to make a couple people laugh at their computers by the way everyone should really try and stretch regularly that would do wonders for the posture and so back at you if you ever do any of those snide remarks about the way I take my living I might just 
 
-[^1]: Just run `git submodule init`, and then `git submodule update`. It's that easy. 
+¹ Just run `git submodule init`, and then `git submodule update`. It's that easy. 
