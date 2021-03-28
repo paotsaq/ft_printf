@@ -18,13 +18,14 @@ OBJS 		= $(SRCS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): libft.a $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	ar -x libft.a
+	$(AR) $(NAME) *.o $(OBJS)
 
-libft.a: 
+libft.a:
 	$(MAKE) libft.a -C ./libft
-	
+	mv ./libft/libft.a ./libft.a
 
-%.o: %.c 
+%.o: %.c
 	gcc $(CFLAGS) -I $(HDRS) -c $< -o $@
 
 clean:
@@ -33,8 +34,13 @@ clean:
 
 fclean: clean
 	make fclean -C ./libft
+	rm $(OBJS)
+	rm -f libft.a
 	rm -f $(NAME)
 
 re: fclean all
+
+comp: $(NAME)
+	gcc main.c -I includes -L. -lftprintf
 
 .PHONY:		all clean fclean re
