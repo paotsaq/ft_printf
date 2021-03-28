@@ -8,8 +8,9 @@
 #    Updated: 2021/03/24 12:45:23 by apinto           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 HDRS		= includes
-CFLAGS 		= -Wall -Wextra -Werror
+CFLAGS 		= -Wall -Wextra -Werror -g
 AR 			= ar -rcsv
 NAME 		= libftprintf.a
 SRCS		= $(wildcard ./srcs/*.c)
@@ -41,6 +42,6 @@ fclean: clean
 re: fclean all
 
 comp: $(NAME)
-	gcc main.c -I includes -L. -lftprintf
+	gcc main.c -g -I includes -L. -lftprintf
 
 .PHONY:		all clean fclean re

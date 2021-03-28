@@ -8,8 +8,6 @@
 
 ### What with?
 
-Standard C functions that were previously recoded (the ``libft`` directory), variadic functions and not much more. 
-
 ### Oh, nice! Tell us more!
 
 A friend relayed a web comment on how ``print_f`` was really not that hard - all it took was a little planning and organisation. I'm terrible at both. 
@@ -36,3 +34,5 @@ At the time of writing, it seems like the code handles conversions somewhat well
 ### Why would an obsessively edited README, littered with plenty of unnecessary references and bad taste in jokes, be a better use of a waking hour over having the code work better  and, you know, actually making some progress in your life?
 
 Ok so first, let's be a little more careful with what you call a bad taste in jokes alright because there's like a whole spectrum of things people can find funny, or have you ever not seen really cute cats doing silly things, and this was me just trying to make a couple people laugh at their computers by the way everyone should really try and stretch regularly that would do wonders for the posture and so back at you if you ever do any of those snide remarks about the way I take my living I might just 
+
+[^1]: Just run `git submodule init`, and then `git submodule update`. It's that easy. 
