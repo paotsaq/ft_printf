@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 06:56:18 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 10:49:16 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,16 @@
 
 static	void	string_cleaning(t_info *tr)
 {
-	if (!tr->p_inp)
-		tr->prec = tr->width;
+	if (tr->p_inp && tr->prec == 0)
+		tr->len = 0;
+	// negative precision
 	if (tr->prec < 0)
+	{
+		tr->p_inp = 0;
 		tr->prec = tr->len;
+	}
+	if (tr->width < tr->len)
+		tr->width = 0;
 	if (tr->prec > tr->width && tr->prec > tr->len)
 		tr->prec = tr->len;
 	if (tr->p_inp && tr->prec < tr->len)
@@ -60,14 +66,12 @@ static	void	general_attributions(t_info *tr)
 			tr->width = 0;
 	}
 	if (tr->minus)
-		tr->minus = tr->width - tr->len;
+		if (tr->width > tr->prec)
+			tr->minus = tr->width - ft_max(2, tr->prec, tr->len);
 }
 
 void			cleans_info_with_prios(t_info *tr)
 {
-	// needs handling this case; should return?
-	// have a function that reallocates content
-	// up until the % (or end of command)?
 	if (!ft_strchr(TYPES, tr->type))
 		tr->invalid = 1;
 	general_cleaning(tr);
@@ -79,4 +83,5 @@ void			cleans_info_with_prios(t_info *tr)
 			tr->prec = 0;
 	}
 	general_attributions(tr);
+	tr->size = (tr->len + tr->width + tr->zero + tr->minus);
 }

@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 05:26:11 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 09:49:23 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void	initializes_tr(t_info *tr)
 	tr->prec = 0;
 	tr->type = 0;
 	tr->len = 0;
-	tr->base = 0;
 	tr->negative = 0;
 	tr->invalid = 0;
+	tr->size = 0;
 }
 
 void	char_family_allocation(t_info *tr, va_list *pargs)

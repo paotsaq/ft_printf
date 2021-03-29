@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 06:17:58 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 09:49:13 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ typedef struct	s_info{
 	char			type;
 	void			*content;
 	int				len;
+	int				size;
 	// for numbers only!
-	int				base;
 	int				negative;
 	int				invalid;
 }				t_info;
