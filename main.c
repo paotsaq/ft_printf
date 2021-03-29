@@ -17,14 +17,14 @@ int		main()
 	ft_printf("%-0*.*s\n", 9, -5, "abcdef");
 	printf("%-0*.20s\n", 9, "abcdef");
 	ft_printf("%-0*.20s\n", 9, "abcdef");
-	printf("%-0*.20s\n", 4, "abcdef");
-	ft_printf("%-0*.20s\n", 4, "abcdef");
+	//printf("%-0*.20s\n", 4, "abcdef");
+	//ft_printf("%-0*.20s\n", 4, "abcdef");
 	// precision < width < len
 	printf("%-0*.3s\n", 4, "abcdef");
 	ft_printf("%-0*.3s\n", 4, "abcdef");
 	// width < precision < len
-	printf("%-0*.5s\n", 3, "abcdef");
-	ft_printf("%-0*.5s\n", 3, "abcdef");
+	//printf("%-0*.5s\n", 3, "abcdef");
+	//ft_printf("%-0*.5s\n", 3, "abcdef");
 	printf("error\n");
 	printf("%-0*.20d\n", 9, 123456);
 	ft_printf("%-0*.20d\n", 9, 123456);
