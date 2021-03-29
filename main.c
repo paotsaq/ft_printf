@@ -3,10 +3,6 @@
 
 int		main()
 {
-	printf("%0*.*d\n", 9, 5, -1234);
-	ft_printf("%0*.*d\n", 9, 5, -1234);
-	printf("%0*d\n", 9, 1234);
-	ft_printf("%0*d\n", 9, 1234);
 	printf("%0*.*s\n", 9, 5, "abcdef");
 	ft_printf("%0*.*s\n", 9, 5, "abcdef");
 	printf("%-0*.*s\n", 9, 5, "abcdef");
@@ -24,19 +20,29 @@ int		main()
 	printf("%-0*.20s\n", 4, "abcdef");
 	ft_printf("%-0*.20s\n", 4, "abcdef");
 	// precision < width < len
-	printf("test\n");
 	printf("%-0*.3s\n", 4, "abcdef");
 	ft_printf("%-0*.3s\n", 4, "abcdef");
 	// width < precision < len
 	printf("%-0*.5s\n", 3, "abcdef");
 	ft_printf("%-0*.5s\n", 3, "abcdef");
+	printf("error\n");
 	printf("%-0*.20d\n", 9, 123456);
 	ft_printf("%-0*.20d\n", 9, 123456);
+	printf("%10d\n", 123456);
+	ft_printf("%10d\n", 123456);
+	//printf("%10.20d\n", 123456);
+	//ft_printf("%10.20d\n", 123456);
 	printf("width < len\n");
 	printf("%*s\n", 3, "abcdef");
 	ft_printf("%*s\n", 3, "abcdef");
-	printf("zero precision\n");
+	printf("zero precision, width < len\n");
 	printf("%*.0s\n", 3, "abcdef");
 	ft_printf("%*.0s\n", 3, "abcdef");
+	printf("zero precision, width > len\n");
+	printf("%*.0s\n", 10, "abcdef");
+	ft_printf("%*.0s\n", 10, "abcdef");
+	printf("negative precision on string\n");
+	printf("%*.*s\n", 10, -4, "abcdef");
+	ft_printf("%*.*s\n", 10, -4, "abcdef");
 	return (0);
 }

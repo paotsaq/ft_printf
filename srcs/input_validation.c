@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 04:02:04 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 06:13:09 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,17 @@ void			cleans_info_with_prios(t_info *tr)
 	}
 	if (tr->minus)
 		tr->zero = 0;
-	if (tr->prec < 0 && tr->type != 's')
-		tr->prec = 0;
-	if (tr->width < tr->len)
-		tr->width = tr->len;
-	// in this case, another function might be necessary?
 	if (tr->type == 's')
 	{
-		if (tr->prec > tr->width && tr->prec > tr->len)
+		if (!tr->p_inp)
 			tr->prec = tr->width;
 		if (tr->prec < 0)
 			tr->prec = tr->len;
-		if (tr->prec < tr->len)
+		if (tr->prec > tr->width && tr->prec > tr->len)
+			tr->prec = tr->len;
+		if (tr->p_inp && tr->prec < tr->len)
 			tr->len = tr->prec;
 	}
+	else if (tr->prec < 0)
+		tr->prec = 0;
 }

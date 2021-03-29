@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/25 05:13:36 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 04:49:32 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,31 +19,13 @@
 #define DEC_BASE "0123456789"
 #define HEX_BASE "0123456789abcdef"
 
-// 0, -, w, p existem sempre...
-//	     		   zmwppwp
-//# define C_FLAGS 0b0111011
-//# define S_FLAGS 0b0111111
-//# define P_FLAGS 0b0101001
-//# define D_FLAGS 0b1111011
-//# define I_FLAGS 0b1111011
-//# define U_FLAGS 0b1111011
-//# define X_FLAGS 0b1111011
-
-//	     		     zp
-//# define C_FLAGS 0b00
-//# define S_FLAGS 0b01
-//# define P_FLAGS 0b00
-//# define D_FLAGS 0b10
-//# define I_FLAGS 0b10
-//# define U_FLAGS 0b10
-//# define X_FLAGS 0b10
-
-// struct content is not bits because
 typedef struct	s_info{
 	int				zero;
 	int				minus;
 	int				width;
 	int				prec;
+	int				w_inp;
+	int				p_inp;
 	int				w_aster;
 	int				p_aster;
 	char			type;

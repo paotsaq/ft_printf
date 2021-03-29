@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/25 05:20:29 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 05:22:01 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,20 @@ static	void	retrieves_flags(t_info *tr, char *str, int *i)
 static	void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
-	int prov;
 
 	j = *i;
 	while (str[j] && (ft_isdigit(str[j]) || str[j] == '*'))
 		if (str[j] == '*' && !(tr->width || tr->w_aster))
 		{
-			prov = va_arg(*pargs, int);
-			tr->width = prov;
+			tr->width = va_arg(*pargs, int);
 			tr->w_aster = 1;
+			tr->w_inp = 1;
 			j++;
 		}
 		else if (ft_isdigit(str[j]) && !tr->w_aster)
 		{
-			tr->width = tr->width * 10 + str[j] - '0';
-			j++;
+			tr->width = tr->width * 10 + str[j++] - '0';
+			tr->w_inp = 1;
 		}
 	*i = j;
 }
@@ -53,23 +52,24 @@ static	void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)
 static	void	retrieves_prec(t_info *tr, char *str, int *i, va_list *pargs)
 {
 	int j;
-	int prov;
 
 	j = *i;
 	if (str[j] && (str[j] == '.'))
 	{
 		if (str[j + 1] == '*' && !tr->prec)
 		{
-			prov = va_arg(*pargs, int);
-			tr->prec = prov;
+			tr->prec = va_arg(*pargs, int);
 			tr->p_aster = 1;
-			// negative prec and width cases are still missing!
+			tr->p_inp = 1;
 			j += 2;
 		}
-		else if (str[j] == '.' && !tr->p_aster)
+		else
+		{
 			while (ft_isdigit(str[++j]))
 				tr->prec = tr->prec * 10 + str[j] - '0';
-		else
+			tr->p_inp = 1;
+		}
+		if (!tr->p_inp)
 			j++;
 	}
 	*i = j;

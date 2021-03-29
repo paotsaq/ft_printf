@@ -38,7 +38,7 @@ fclean: clean
 	rm -f $(OBJS)
 	rm -f libft.a
 	rm -f $(NAME)
-	./__.SYMDEF\ SORTED
+	rm -rf ./__.SYMDEF\ SORTED
 
 re: fclean all
 

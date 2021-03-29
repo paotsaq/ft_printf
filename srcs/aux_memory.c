@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/25 05:11:51 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/29 05:26:11 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	initializes_tr(t_info *tr)
 	tr->width = 0;
 	tr->w_aster = 0;
 	tr->p_aster = 0;
+	tr->w_inp = 0;
+	tr->p_inp = 0;
 	tr->prec = 0;
 	tr->type = 0;
 	tr->len = 0;
