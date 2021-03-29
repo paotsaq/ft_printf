@@ -22,7 +22,6 @@ SRCS	Makefile	/^SRCS		= $(wildcard .\/srcs\/*.c)$/;"	m
 SRCS	libft/Makefile	/^SRCS	= $(wildcard .\/*.c)$/;"	m
 TYPES	includes/ft_printf.h	/^#define TYPES /;"	d
 aux_split	libft/ft_split.c	/^void			aux_split(char **res, char const *s, int nos, char c)$/;"	f
-base	includes/ft_printf.h	/^	int				base;$/;"	m	struct:s_info
 char_family_allocation	srcs/aux_memory.c	/^void	char_family_allocation(t_info *tr, va_list *pargs)$/;"	f
 check_set	libft/ft_strtrim.c	/^static	int	check_set(const char *s1, char const *set, int i, int step)$/;"	f	file:
 check_sign	libft/ft_itoa.c	/^static	char	*check_sign(char *iter, int sign)$/;"	f	file:
@@ -119,11 +118,13 @@ retrieves_type	srcs/parsers.c	/^static	void	retrieves_type(t_info *tr, char *str
 retrieves_width	srcs/parsers.c	/^static	void	retrieves_width(t_info *tr, char *str, int *i, va_list *pargs)$/;"	f	file:
 s_info	includes/ft_printf.h	/^typedef struct	s_info{$/;"	s
 s_list	libft/libft.h	/^typedef struct	s_list {$/;"	s
+size	includes/ft_printf.h	/^	int				size;$/;"	m	struct:s_info
 string_cleaning	srcs/input_validation.c	/^static	void	string_cleaning(t_info *tr)$/;"	f	file:
 strrev	libft/ft_itoa.c	/^static	char	*strrev(char *s1)$/;"	f	file:
 t_info	includes/ft_printf.h	/^}				t_info;$/;"	t	typeref:struct:s_info
 t_list	libft/libft.h	/^}				t_list;$/;"	t	typeref:struct:s_list
 testing_args	playground/0_vargs.c	/^void	testing_args(char *str, ...)$/;"	f
+tests_buffer	srcs/tests_buffer.c	/^char	*tests_buffer(char *str, ...)$/;"	f
 type	includes/ft_printf.h	/^	char			type;$/;"	m	struct:s_info
 w_aster	includes/ft_printf.h	/^	int				w_aster;$/;"	m	struct:s_info
 w_inp	includes/ft_printf.h	/^	int				w_inp;$/;"	m	struct:s_info

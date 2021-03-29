@@ -1,10 +1,13 @@
 # include <stdio.h>
-#include "ft_printf.h"
+# include <string.h>
+# include "ft_printf.h"
+# include <assert.h>
 
 int		main()
 {
-	printf("%0*.*s\n", 9, 5, "abcdef");
-	ft_printf("%0*.*s\n", 9, 5, "abcdef");
+	printf("0, w > len > p\n")
+	//assert(strcmp("0000abcde", tests_buffer("%0*.*s\n", 9, 5, "abcdef")) == 0);
+
 	printf("%-0*.*s\n", 9, 5, "abcdef");
 	ft_printf("%-0*.*s\n", 9, 5, "abcdef");
 	printf("negative width\n");
@@ -25,16 +28,27 @@ int		main()
 	printf("width > precision\n");
 	printf("%-0*.3s\n", 4, "abcdef");
 	ft_printf("%-0*.3s\n", 4, "abcdef");
+	printf("0 and precision less than width\n");
 	printf("%0*.3s\n", 5, "abcdef");
 	ft_printf("%0*.3s\n", 5, "abcdef");
 	// width < precision < len
 	//printf("%-0*.5s\n", 3, "abcdef");
 	//ft_printf("%-0*.5s\n", 3, "abcdef");
-	printf("error\n");
+	printf("0, precision > width \n");
 	printf("%-0*.20d\n", 9, 123456);
 	ft_printf("%-0*.20d\n", 9, 123456);
-	printf("%10d\n", 123456);
-	ft_printf("%10d\n", 123456);
+	printf("- and width > len\n");
+	printf("%-10d\n", 123456);
+	ft_printf("%-10d\n", 123456);
+	printf("-0 and width > len\n");
+	printf("%-010d\n", 123456);
+	ft_printf("%-010d\n", 123456);
+	printf("-0 and prec > width > len\n");
+	printf("%-010.12d\n", 123456);
+	ft_printf("%-010.12d\n", 123456);
+	printf("-0 and prec > width, but len > prec\n");
+	printf("%-03.4d\n", 123456);
+	ft_printf("%-03.4d\n", 123456);
 	//printf("%10.20d\n", 123456);
 	//ft_printf("%10.20d\n", 123456);
 	printf("width < len\n");
