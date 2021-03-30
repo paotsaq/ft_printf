@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 11:21:55 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/30 16:21:26 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static	void	general_attributions(t_info *tr)
 			tr->width = 0;
 	}
 	if (tr->minus)
-//		if (tr->p_inp && tr->width > tr->prec)
+//	if (tr->p_inp && tr->width > tr->prec)
 			tr->minus = ft_max(2, 0, tr->width - tr->len);
 }
 

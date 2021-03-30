@@ -6,15 +6,15 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/24 14:12:48 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/30 16:40:20 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	number_to_string(t_info *tr, unsigned int content, char *base)
+void	number_to_string(t_info *tr, long long content, char *base)
 {
-	int			len_of_base;
+	long long	len_of_base;
 	char		*res;
 	char		digit;
 	char		*begg;
@@ -23,14 +23,15 @@ void	number_to_string(t_info *tr, unsigned int content, char *base)
 	if (!res)
 		return;
 	begg = res;
-	len_of_base = ft_strlen(base);
+	len_of_base = (long long) ft_strlen(base);
 	while (content != 0)
 	{
 		digit = base[content % len_of_base];
 		*(res++) = digit;
 		content = content / len_of_base;
 	}
-	res = ft_reallocates_memory(ft_strrev(begg), ft_strlen(begg), 1, 0);
+	ft_strrev(begg);
+	res = ft_reallocates_memory(begg, ft_strlen(begg), 1, 0);
 	tr->content = begg;
 	tr->len = ft_strlen(begg);
 }

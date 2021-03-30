@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 11:27:54 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/30 16:23:24 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,4 @@ void			cleans_info_with_prios(t_info *tr);
 void			int_family_allocation(t_info *tr, va_list *pargs);
 char			*tests_buffer(char *str, ...);
 void			char_family_allocation(t_info *tr, va_list *pargs);
-void			number_to_string(t_info *tr, unsigned int content, char *base);
+void			number_to_string(t_info *tr, long long content, char *base);
