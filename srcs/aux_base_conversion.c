@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/30 16:40:20 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/30 17:35:46 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	number_to_string(t_info *tr, long long content, char *base)
 		content = content / len_of_base;
 	}
 	ft_strrev(begg);
-	res = ft_reallocates_memory(begg, ft_strlen(begg), 1, 0);
 	tr->content = begg;
 	tr->len = ft_strlen(begg);
 }

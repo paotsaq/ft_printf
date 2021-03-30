@@ -5,6 +5,21 @@
 
 int		main()
 {
+	printf("prec < width\n");
+	printf("%20.10d\n", 123456);
+	ft_printf("%20.10d\n", 123456);
+	printf("minus && width > prec\n");
+	printf("%-20.10d\n", 123456);
+	ft_printf("%-20.10d\n", 123456);
+	printf("0 and precision less than width\n");
+	printf("%0*.3s\n", 5, "abcdef");
+	ft_printf("%0*.3s\n", 5, "abcdef");
+	printf("minus && prec > width\n");
+	printf("%-10.20d\n", 123456);
+	ft_printf("%-10.20d\n", 123456);
+	printf("prec > width\n");
+	printf("%10.20d\n", 123456);
+	ft_printf("%10.20d\n", 123456);
 	printf("0, w > len > p\n");
 	printf("%-0*.*s\n", 9, 5, "abcdef");
 	ft_printf("%-0*.*s\n", 9, 5, "abcdef");
@@ -26,15 +41,14 @@ int		main()
 	printf("width > precision\n");
 	printf("%-0*.3s\n", 4, "abcdef");
 	ft_printf("%-0*.3s\n", 4, "abcdef");
-	printf("0 and precision less than width\n");
-	printf("%0*.3s\n", 5, "abcdef");
-	ft_printf("%0*.3s\n", 5, "abcdef");
 	printf("%-0*.5s\n", 3, "abcdef");
 	ft_printf("%-0*.5s\n", 3, "abcdef");
-	printf("⚠️ ISSUE AT CLEANS INFO; MINUS SHOULD NOT TRIGGER\n");
 	printf("0, precision > width \n");
 	printf("%-0*.20d\n", 9, 123456);
 	ft_printf("%-0*.20d\n", 9, 123456);
+	printf("0, precision > width \n");
+	printf("%-0*.20s\n", 9, "abcdef");
+	ft_printf("%-0*.20s\n", 9, "abcdef");
 	printf("- and width > len\n");
 	printf("%-10d\n", 123456);
 	ft_printf("%-10d\n", 123456);
@@ -47,8 +61,6 @@ int		main()
 	printf("-0 and prec > width, but len > prec\n");
 	printf("%-03.4d\n", 123456);
 	ft_printf("%-03.4d\n", 123456);
-	printf("%10.20d\n", 123456);
-	ft_printf("%10.20d\n", 123456);
 	printf("width < len\n");
 	printf("%*s\n", 3, "abcdef");
 	ft_printf("%*s\n", 3, "abcdef");
@@ -64,5 +76,14 @@ int		main()
 	printf("negative precision on string\n");
 	printf("%.*s\n", -4, "abcdef");
 	ft_printf("%.*s\n", -4, "abcdef");
+	printf("minus basics\n");
+	printf("%-10.5s\n", "abcdef");
+	ft_printf("%-10.5s\n", "abcdef");
+	printf("minus basics\n");
+	printf("%-09.20s\n", "abcdef");
+	ft_printf("%-09.20s\n", "abcdef");
+	printf("minus basics\n");
+	printf("%-09.20d\n", 123);
+	ft_printf("%-09.20d\n", 123);
 	return (0);
 }
