@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 05:22:01 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/30 15:35:52 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ static	void	retrieves_type(t_info *tr, char *str, int *i, va_list *pargs)
 					char_family_allocation(tr, pargs);
 				else
 					int_family_allocation(tr, pargs);
+				break;
 			}
 	}
 	if (!tr->type)

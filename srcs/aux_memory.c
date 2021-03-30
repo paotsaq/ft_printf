@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/29 09:49:23 by apinto           ###   ########.fr       */
+/*   Updated: 2021/03/30 15:43:29 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,11 @@ void	char_family_allocation(t_info *tr, va_list *pargs)
 
 void	int_family_allocation(t_info *tr, va_list *pargs)
 {
-	int				prov_number;
-	unsigned int	number;
+	long long		prov_number;
 
 	if (tr->type == 'd' || tr->type == 'i')
 	{
-		prov_number = va_arg(*pargs, int);
+		prov_number = va_arg(*pargs, long long);
 		if (prov_number < 0)
 		{
 			tr->negative = 1;
@@ -72,11 +71,11 @@ void	int_family_allocation(t_info *tr, va_list *pargs)
 	}
 	else
 	{
-		number = va_arg(*pargs, unsigned int);
+		prov_number = va_arg(*pargs, long long);
 		if (tr->type == 'u')
-			number_to_string(tr, number, DEC_BASE);
+			number_to_string(tr, prov_number, DEC_BASE);
 		else
-			number_to_string(tr, number, HEX_BASE);
+			number_to_string(tr, prov_number, HEX_BASE);
 	}
 }
 
