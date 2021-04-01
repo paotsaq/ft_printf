@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/01 09:59:54 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/01 17:41:27 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,10 @@ static	void	retrieves_type(t_info *info, char *str, int *i, va_list *pargs)
 		info->invalid = 1;
 }
 
-void			parses_conversion(va_list *pargs, t_bfstr *buffer, int *i)
+void			handles_conversion(va_list *pargs, t_bfstr *buffer, int *i)
 {
 	t_info	info;
+	// could buffer_string be constant?
 	char	*buffer_string;
 
 	initializes_tr(&tr);
@@ -111,9 +112,7 @@ void			parses_conversion(va_list *pargs, t_bfstr *buffer, int *i)
 	retrieves_prec(&info, str, &i, pargs);
 	retrieves_type(&info, str, &i, pargs);
 	cleans_info_with_prios(&info);
-	buffer_string = creates_buffer(&tr);
+	writes_buffer(&tr);
 	if (!buffer_string)
 		return (-1)
-
-
 }

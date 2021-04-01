@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/01 06:27:19 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/01 16:20:53 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static	void	general_attributions(t_info *tr)
 		tr->width = tr->width - tr->len - tr->zero;
 	else
 		tr->width = tr->width - tr->len;
+	// missing negative conditions
 	if (tr->zero == 1 && !tr->minus)
 	{
 		tr->zero = tr->width;

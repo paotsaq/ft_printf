@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/01 10:09:19 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/01 17:12:19 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	reads_string(va_list *pargs, t_bfstr *buffer, int *total_length)
+void	reads_string(va_list *pargs, int *total_length)
 {
 	int		i;
 
@@ -26,9 +26,14 @@ void	reads_string(va_list *pargs, t_bfstr *buffer, int *total_length)
 			i += 2;
 		}
 		else if (str[i] == '%')
-			if (parses_conversion(pargs, buffer, &i) == -1)
+		{
+			if (i != 0)
+				write(1, str, i - 1);
+			handles_conversion(pargs, str, &i);
+			total_length += i;
+		}
+	}
 }
-
 
 int		ft_printf(char *str, ...)
 {
@@ -36,8 +41,7 @@ int		ft_printf(char *str, ...)
 	int			total_length;
 
 	va_start(pargs, str);
-	if (reads_string(&pargs, &tr, str) == -1)
-		return (0);
+	reads_string(&pargs, &total_length)
 	va_end(pargs);
 	return (0);
 }
