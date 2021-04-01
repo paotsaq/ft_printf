@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/30 16:23:24 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/01 09:50:38 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,19 @@ typedef struct	s_info{
 	void			*content;
 	int				len;
 	int				size;
-	// for numbers only!
+	// i am actually not sure negatives are implemented already
 	int				negative;
 	int				invalid;
 }				t_info;
 
+typedef struct	s_bfstr{
+	char	*buffer_string;
+	int		alloc_size;
+}				t_bfstr;
+
 int				ft_printf(char *str, ...);
 void			initializes_tr(t_info *tr);
-void			parses_string(t_info *tr, char *str, va_list *pargs);
+void			parses_conversion(va_list *pargs, t_bfstr *buffer, int *i)
 void			*ft_reallocates_memory(void *old,
 					size_t count, size_t size, int offset);
 char			*creates_buffer(t_info *info);

@@ -6,37 +6,38 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/25 05:19:14 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/01 10:09:19 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	prints_params(t_info *tr)
+void	reads_string(va_list *pargs, t_bfstr *buffer, int *total_length)
 {
-	printf("0: %d\n", tr->zero);
-	printf("-: %d\n", tr->minus);
-	printf("w: %d\n", tr->width);
-	printf("p: %d\n", tr->prec);
-	printf("p*: %d\n", tr->p_aster);
-	printf("w*: %d\n", tr->w_aster);
-	printf("type: %c\n", tr->type);
-	printf("len: %d\n", tr->len);
-	printf("invalid: %d\n", tr->invalid);
+	int		i;
+
+	i = -1;
+	while (str[++i])
+	{
+		if (str[i] == '%' && str[i + 1] == '%')
+		{
+			write(1, "%", 1);
+			total_length++;
+			i += 2;
+		}
+		else if (str[i] == '%')
+			if (parses_conversion(pargs, buffer, &i) == -1)
 }
+
 
 int		ft_printf(char *str, ...)
 {
 	va_list 	pargs;
-	t_info		tr;
-	char		*buffer_string;
+	int			total_length;
 
-	initializes_tr(&tr);
 	va_start(pargs, str);
-	parses_string(&tr, str, &pargs);
+	if (reads_string(&pargs, &tr, str) == -1)
+		return (0);
 	va_end(pargs);
-	cleans_info_with_prios(&tr);
-	buffer_string = creates_buffer(&tr);
-	printf("%s\n", buffer_string);
 	return (0);
 }
