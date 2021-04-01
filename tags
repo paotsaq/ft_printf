@@ -83,15 +83,16 @@ ft_substr	libft/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start,
 ft_tolower	libft/ft_tolower.c	/^char	ft_tolower(int c)$/;"	f
 ft_toupper	libft/ft_toupper.c	/^char	ft_toupper(int c)$/;"	f
 general_attributions	srcs/input_validation.c	/^static	void	general_attributions(t_info *tr)$/;"	f	file:
-general_cleaning	srcs/input_validation.c	/^static	void	general_cleaning(t_info *tr)$/;"	f	file:
 handle_copies	libft/ft_split.c	/^static	void	handle_copies(char **array, const char *s, int size)$/;"	f	file:
 handle_negatives	libft/ft_itoa.c	/^static	char	*handle_negatives(char *iter, int *n)$/;"	f	file:
+handles_negative_width_prec	srcs/input_validation.c	/^static	void	handles_negative_width_prec(t_info *tr)$/;"	f	file:
 initializes_tr	srcs/aux_memory.c	/^void	initializes_tr(t_info *tr)$/;"	f
 int_family_allocation	srcs/aux_memory.c	/^void	int_family_allocation(t_info *tr, va_list *pargs)$/;"	f
 invalid	includes/ft_printf.h	/^	int				invalid;$/;"	m	struct:s_info
 len	includes/ft_printf.h	/^	int				len;$/;"	m	struct:s_info
 main	main.c	/^int		main()$/;"	f
 main	playground/0_vargs.c	/^int		main()$/;"	f
+main	playground/10_width_zeroes.c	/^int		main()$/;"	f
 main	playground/1_validity.c	/^int		main()$/;"	f
 main	playground/3_5_hoist_the_types.c	/^int		main()$/;"	f
 main	playground/3_printf_flags.c	/^int		main()$/;"	f
@@ -100,13 +101,13 @@ main	playground/5_pink_flag.c	/^int		main()$/;"	f
 main	playground/6_money_printer_goes_brrrrrr.c	/^int		main()$/;"	f
 main	playground/7_weird_case.c	/^int		main()$/;"	f
 main	playground/8_bitmasks.c	/^int		main()$/;"	f
-main	playground/9_last.c	/^int		main()$/;"	f
+main	playground/first_testing_main.c	/^int		main()$/;"	f
 main	playground/tests_params.c	/^int		main()$/;"	f
 minus	includes/ft_printf.h	/^	int				minus;$/;"	m	struct:s_info
 negative	includes/ft_printf.h	/^	int				negative;$/;"	m	struct:s_info
 next	libft/libft.h	/^	struct s_list	*next;$/;"	m	struct:s_list	typeref:struct:s_list::s_list
 number_of_chars	libft/ft_itoa.c	/^static	int		number_of_chars(int n)$/;"	f	file:
-number_to_string	srcs/aux_base_conversion.c	/^void	number_to_string(t_info *tr, unsigned int content, char *base)$/;"	f
+number_to_string	srcs/aux_base_conversion.c	/^void	number_to_string(t_info *tr, long long content, char *base)$/;"	f
 p_aster	includes/ft_printf.h	/^	int				p_aster;$/;"	m	struct:s_info
 p_inp	includes/ft_printf.h	/^	int				p_inp;$/;"	m	struct:s_info
 parses_string	srcs/parsers.c	/^void			parses_string(t_info *tr, char *str, va_list *pargs)$/;"	f
@@ -119,7 +120,6 @@ retrieves_width	srcs/parsers.c	/^static	void	retrieves_width(t_info *tr, char *s
 s_info	includes/ft_printf.h	/^typedef struct	s_info{$/;"	s
 s_list	libft/libft.h	/^typedef struct	s_list {$/;"	s
 size	includes/ft_printf.h	/^	int				size;$/;"	m	struct:s_info
-string_cleaning	srcs/input_validation.c	/^static	void	string_cleaning(t_info *tr)$/;"	f	file:
 strrev	libft/ft_itoa.c	/^static	char	*strrev(char *s1)$/;"	f	file:
 t_info	includes/ft_printf.h	/^}				t_info;$/;"	t	typeref:struct:s_info
 t_list	libft/libft.h	/^}				t_list;$/;"	t	typeref:struct:s_list
