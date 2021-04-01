@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/31 17:30:32 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/01 06:27:19 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,29 @@ static	void	handles_negative_width_prec(t_info *tr)
 
 static	void	general_attributions(t_info *tr)
 {
-	// precision 
-	if (tr->p_inp && tr->prec == 0 && tr->type == 's')
-		tr->len = 0;
-	else if (tr->p_inp && tr->prec > 0 && tr->prec < tr->len)
+	if (tr->p_inp && tr->type == 's' && tr->prec < tr->len)
 		tr->len = tr->prec;
-	else if (tr ->p_inp && tr->type != 's')
-		tr->zero = tr->p_inp * tr->prec - tr->len;
+	else if (tr->prec > tr->len > 0 && tr->type != 's')
+		tr->zero = tr->prec - tr->len;
 	tr->prec = 0;
-	// width
-	if (tr->width <= tr->len)
+	if (tr->len > tr->width || (tr->len + tr->zero >= tr->width && tr->zero > 1))
 		tr->width = 0;
-	else 
-		tr->width = tr->width - (tr->len);
-	// zero
-	if (tr->type != 's' && tr->zero)
+	else if (tr->zero > 1)
+		tr->width = tr->width - tr->len - tr->zero;
+	else
+		tr->width = tr->width - tr->len;
+	if (tr->zero == 1 && !tr->minus)
+	{
 		tr->zero = tr->width;
-	if (tr->type != 's' && tr->zero)
-		tr->zero = tr->width;
-	else if (tr->minus)
+		tr->width = 0;
+	}
+	if (tr->minus)
 	{
 		tr->minus = tr->width;
-		tr->zero = 0;
-	}
-	// ERROR: precision *is* zero; must print width as blank space!
-	// could tr->len = 0 be a good test?
-	if (!(tr->zero || tr->minus) && tr->len > 0)
 		tr->width = 0;
+		if (tr->zero == 1)
+			tr->zero = 0;
+	}
 }
 
 void			cleans_info_with_prios(t_info *tr)
