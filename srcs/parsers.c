@@ -6,108 +6,112 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 05:49:30 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 12:13:03 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	retrieves_flags(t_info *info, char *str, int *i)
+static	void	retrieves_flags(t_info *info, char **str)
 {
-	int j;
-
-	j = *i;
-	while (str[j] && (str[j] == '-' || str[j] == '0'))
+	if (str && ft_strchr("-0", **str))
 	{
-		if (str[j] == '-')
+		if (**str == '-')
 			info->minus = 1;
-		else
+		else if (**str == '0')
 			info->zero = 1;
-		j++;
+		*(str) += 1;
 	}
-	*i = j;
 }
 
-static	void	retrieves_width(t_info *info, char *str, int *i, va_list *pargs)
+static	void	retrieves_width(t_info *info, char **str, va_list *pargs)
 {
-	int j;
-
-	j = *i;
-	while (str[j] && (ft_isdigit(str[j]) || str[j] == '*'))
-		if (str[j] == '*' && !(info->width || info->w_aster))
+	while (str && (ft_isdigit(**str) || **str == '*'))
+		if (**str == '*' && !(info->width || info->w_aster))
 		{
 			info->width = va_arg(*pargs, int);
 			info->w_aster = 1;
 			info->w_inp = 1;
-			j++;
+			*(str) += 1;
 		}
-		else if (ft_isdigit(str[j]) && !info->w_aster)
+		else if (!info->w_aster)
 		{
-			info->width = info->width * 10 + str[j++] - '0';
+			while (ft_isdigit(**str))
+			{
+				info->width = info->width * 10 + (int)**str - '0';
+				*(str) += 1;
+			}
 			info->w_inp = 1;
 		}
-	*i = j;
 }
 
-static	void	retrieves_prec(t_info *info, char *str, int *i, va_list *pargs)
+static	void	retrieves_prec(t_info *info, char **str, va_list *pargs)
 {
-	int j;
-
-	j = *i;
-	if (str[j] && (str[j] == '.'))
+	if (str && (**str == '.'))
 	{
-		if (str[j + 1] == '*' && !info->prec)
+		if (**(str + 1) == '*' && !info->prec)
 		{
 			info->prec = va_arg(*pargs, int);
 			info->p_aster = 1;
 			info->p_inp = 1;
-			j += 2;
+			*(str) += 2;
 		}
 		else
 		{
-			while (ft_isdigit(str[++j]))
-				info->prec = info->prec * 10 + str[j] - '0';
+			*(str) += 1;
+			while (*str && ft_isdigit(**str))
+			{
+				info->prec = info->prec * 10 + (int)**str - '0';
+				*(str) += 1;
+			}
 			info->p_inp = 1;
 		}
 		if (!info->p_inp)
-			j++;
+			*(str) += 1;
 	}
-	*i = j;
 }
 
-static	void	retrieves_type(t_info *info, char *str, int *i)
+static	void	retrieves_type(t_info *info, char **str)
 {
-	int j;
-	int t;
+	int i;
 
-	j = *i;
-	t = -1;
-	if (str[j])
-		while (TYPES[++t])
-			if (str[j] == TYPES[t])
-				info->type = str[j];
+	i = -1;
+	if (info->type)
+	{
+		while (TYPES[++i] && str)
+			if (**str == TYPES[i])
+			{
+				info->type = **str;
+				return;
+			}
+		info->invalid = 1;
+	}
 }
 
-void			handles_conversion(va_list *pargs, char *str, int *i)
+void			handles_conversion(va_list *pargs, char **str)
 {
 	t_info	info;
+	char	*begg;
 	char	buffer[12];
-	int		j;
 
+	// do we print the % in case of badly formed format?
+	begg = *str;
 	initializes_info(&info);
-	j = *i;
-	j++;
-	retrieves_flags(&info, str, &j);
-	retrieves_width(&info, str, &j, pargs);
-	retrieves_prec(&info, str, &j, pargs);
-	retrieves_type(&info, str, &j);
-	*i = j;
-	if (!info.type)
-		printf("dude, come on\n");
-	else if (ft_strchr("csp", info.type))
-		char_family_allocation(&info, pargs);
+	retrieves_flags(&info, str);
+	retrieves_width(&info, str, pargs);
+	retrieves_prec(&info, str, pargs);
+	retrieves_type(&info, str);
+	if (info.invalid)
+		writes_passed_chars(begg - 1, *str);
 	else
-		int_family_allocation(&info, pargs, buffer);
-	cleans_info_with_prios(&info);
-	writes_buffer(&info);
+	{
+		if (!info.type)
+			info.content = 0;
+		else if (ft_strchr("csp", info.type))
+			char_family_allocation(&info, pargs);
+		else
+			int_family_allocation(&info, pargs, buffer);
+		cleans_info_with_prios(&info);
+		writes_buffer(&info);
+	}
 }

@@ -6,52 +6,59 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 06:01:09 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 11:25:33 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	reads_string(va_list *pargs, char *str, int *total_length)
+int		writes_passed_chars(char *begg, char *str)
 {
-	int		i;
+	int			length;
+	static	int	total_length;
 
-	i = -1;
-	while (str[++i])
-	{
-		if (str[i] == '%' && str[i + 1] == '%')
+	length = str - begg;
+	if (length)
+		write(1, begg, length);
+	total_length += length;
+	return (total_length);
+}
+
+void	reads_string(va_list *pargs, char *str)
+{
+	char *begg;
+
+	begg = str;
+	while (*str)
+		if (*str == '%')
 		{
-			if (i != 0)
-				write(1, str, i);
-			write(1, "%", 1);
-			*total_length +=  i + 1;
-			i += 2;
-			str = &str[i];
-			i = -1;
+			if (*(str + 1) == '%')
+			{
+				writes_passed_chars(begg, (str + 1));
+				str += 2;
+				begg = str;
+				break;
+			}
+			else
+			{
+				writes_passed_chars(begg, str++);
+				handles_conversion(pargs, &str);
+				str++;
+			}
+			if (*str)
+				begg = str++;
 		}
-		else if (str[i] == '%')
-		{
-			if (i != 0)
-				write(1, str, i);
-			handles_conversion(pargs, str, &i);
-			*total_length += i;
-			str = &str[i + 1];
-			i = -1;
-		}
-	}
-	if (i != 0)
-		write(1, str, i);
-	*total_length += i;
+		else
+			str++;
+	writes_passed_chars(begg, str);
 }
 
 int		ft_printf(char *str, ...)
 {
 	va_list 	pargs;
-	int			total_length;
 
-	total_length = 0;
 	va_start(pargs, str);
-	reads_string(&pargs, str, &total_length);
+	reads_string(&pargs, str);
 	va_end(pargs);
-	return (total_length);
+	return (writes_passed_chars(str, str));
 }
