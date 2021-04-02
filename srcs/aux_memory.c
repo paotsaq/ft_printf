@@ -6,77 +6,69 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/30 16:48:06 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 04:32:17 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	initializes_tr(t_info *tr)
+void	initializes_info(t_info *info)
 {
-	tr->zero = 0;
-	tr->minus = 0;
-	tr->width = 0;
-	tr->w_aster = 0;
-	tr->p_aster = 0;
-	tr->w_inp = 0;
-	tr->p_inp = 0;
-	tr->prec = 0;
-	tr->type = 0;
-	tr->content = 0;
-	tr->len = 0;
-	tr->negative = 0;
-	tr->invalid = 0;
-	tr->size = 0;
+	info->zero = 0;
+	info->minus = 0;
+	info->width = 0;
+	info->w_aster = 0;
+	info->p_aster = 0;
+	info->w_inp = 0;
+	info->p_inp = 0;
+	info->prec = 0;
+	info->type = 0;
+	info->content = 0;
+	info->len = 0;
+	info->negative = 0;
+	info->invalid = 0;
+	info->size = 0;
 }
 
-void	char_family_allocation(t_info *tr, va_list *pargs)
+void	char_family_allocation(t_info *info, va_list *pargs)
 {
-	char *prov_str;
-
-	if (tr->type == 'c')
+	if (info->type == 'c')
 	{
-		(tr->content) = malloc(2 * sizeof(char));
-		if (!tr->content)
-			return;
-		*(char *)(tr->content) = va_arg(*pargs, int);
-		tr->len = 1;
+		*(int *)(info->content) = va_arg(*pargs, int);
+		info->len = 1;
 	}
-	else if (tr->type == 's')
+	else if (info->type == 's')
 	{
-		prov_str = va_arg(*pargs, char *);
-		(tr->content) = malloc(2 * ft_strlen(prov_str));
-		if (!tr->content)
-			return;
-		(tr->content) = ft_strdup(prov_str);
-		tr->len = ft_strlen(prov_str);
+		(info->content) = va_arg(*pargs, char *);
+		info->len = ft_strlen(info->content);
 	}
 	// needs to be done!
-	else if (tr->type == 'p')
+	else if (info->type == 'p')
 		return;
 }
 
-void	int_family_allocation(t_info *tr, va_list *pargs)
+void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
 {
 	long long		prov_number;
 
-	if (tr->type == 'd' || tr->type == 'i')
+	if (info->type == 'd' || info->type == 'i')
 	{
 		prov_number = va_arg(*pargs, long long);
 		if (prov_number < 0)
 		{
-			tr->negative = 1;
+			info->negative = 1;
 			prov_number *= -1;
 		}
-		number_to_string(tr, prov_number, DEC_BASE);
+		ft_bzero(buffer, 12);
+		number_to_string(info, prov_number, DEC_BASE, buffer);
 	}
 	else
 	{
 		prov_number = va_arg(*pargs, long long);
-		if (tr->type == 'u')
-			number_to_string(tr, prov_number, DEC_BASE);
+		if (info->type == 'u')
+			number_to_string(info, prov_number, DEC_BASE, buffer);
 		else
-			number_to_string(tr, prov_number, HEX_BASE);
+			number_to_string(info, prov_number, HEX_BASE, buffer);
 	}
 }
 

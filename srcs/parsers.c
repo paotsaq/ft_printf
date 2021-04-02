@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/01 17:41:27 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 05:49:30 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static	void	retrieves_prec(t_info *info, char *str, int *i, va_list *pargs)
 	*i = j;
 }
 
-static	void	retrieves_type(t_info *info, char *str, int *i, va_list *pargs)
+static	void	retrieves_type(t_info *info, char *str, int *i)
 {
 	int j;
 	int t;
@@ -83,36 +83,31 @@ static	void	retrieves_type(t_info *info, char *str, int *i, va_list *pargs)
 	j = *i;
 	t = -1;
 	if (str[j])
-	{
 		while (TYPES[++t])
 			if (str[j] == TYPES[t])
-			{
 				info->type = str[j];
-				if (ft_strchr("csp", info->type))
-					char_family_allocation(info, pargs);
-				else
-					int_family_allocation(info, pargs);
-				break;
-			}
-	}
-	if (!info->type)
-		info->invalid = 1;
 }
 
-void			handles_conversion(va_list *pargs, t_bfstr *buffer, int *i)
+void			handles_conversion(va_list *pargs, char *str, int *i)
 {
 	t_info	info;
-	// could buffer_string be constant?
-	char	*buffer_string;
+	char	buffer[12];
+	int		j;
 
-	initializes_tr(&tr);
-	i++;
-	retrieves_flags(&info, str, &i);
-	retrieves_width(&info, str, &i, pargs);
-	retrieves_prec(&info, str, &i, pargs);
-	retrieves_type(&info, str, &i, pargs);
+	initializes_info(&info);
+	j = *i;
+	j++;
+	retrieves_flags(&info, str, &j);
+	retrieves_width(&info, str, &j, pargs);
+	retrieves_prec(&info, str, &j, pargs);
+	retrieves_type(&info, str, &j);
+	*i = j;
+	if (!info.type)
+		printf("dude, come on\n");
+	else if (ft_strchr("csp", info.type))
+		char_family_allocation(&info, pargs);
+	else
+		int_family_allocation(&info, pargs, buffer);
 	cleans_info_with_prios(&info);
-	writes_buffer(&tr);
-	if (!buffer_string)
-		return (-1)
+	writes_buffer(&info);
 }

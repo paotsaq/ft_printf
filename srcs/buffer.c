@@ -6,20 +6,22 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/03/31 13:39:53 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 05:25:38 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*creates_buffer(t_info *info)
+void	writes_buffer(t_info *info)
 {
-	char	*res;
 	char	*begg;
+	char	*res;
+	int		size;
 
-	res = ft_calloc(info->len + info->zero + info->width + info->minus + 1, sizeof(char));
+	size = info->width + info->negative + info->zero + info->len + info->minus;
+	res = ft_calloc(size, sizeof(char));
 	if (!res)
-		return (0);
+		return;
 	begg = res;
 	while (!info->minus && info->width-- > 0)
 		*(res++) = ' ';
@@ -32,5 +34,6 @@ char	*creates_buffer(t_info *info)
 	res += info->len;
 	while (info->minus--)
 		*(res++) = ' ';
-	return (begg);
+	write(1, begg, (int)ft_strlen(begg));
+	free(begg);
 }
