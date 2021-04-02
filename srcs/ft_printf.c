@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 11:25:33 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 17:47:47 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,31 +26,28 @@ int		writes_passed_chars(char *begg, char *str)
 
 void	reads_string(va_list *pargs, char *str)
 {
-	char *begg;
+	char	*begg;
+	int		has_passed;	
 
 	begg = str;
+	has_passed = 0;
 	while (*str)
 		if (*str == '%')
 		{
-			if (*(str + 1) == '%')
-			{
-				writes_passed_chars(begg, (str + 1));
-				str += 2;
-				begg = str;
-				break;
-			}
-			else
-			{
-				writes_passed_chars(begg, str++);
-				handles_conversion(pargs, &str);
-				str++;
-			}
+			writes_passed_chars(begg, str++);
+			handles_conversion(pargs, &str);
+			str++;
+			has_passed = 0;
 			if (*str)
-				begg = str++;
+				begg = str;
 		}
 		else
+		{
 			str++;
-	writes_passed_chars(begg, str);
+			has_passed = 1;
+		}
+	if (has_passed)
+		writes_passed_chars(begg, str);
 }
 
 int		ft_printf(char *str, ...)

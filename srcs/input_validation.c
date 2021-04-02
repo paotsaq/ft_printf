@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 06:04:27 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 16:43:55 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static	void	general_attributions(t_info *info)
 {
 	if (info->p_inp && info->type == 's' && info->prec < info->len)
 		info->len = info->prec;
-	else if (info->prec > info->len > 0 && info->type != 's')
+	else if (info->prec > info->len > 0 && !ft_strchr("sc%", info->type))
 		info->zero = info->prec - info->len;
 	info->prec = 0;
 	if (info->len > info->width || (info->len + info->zero >= info->width && info->zero > 1))
@@ -41,7 +41,6 @@ static	void	general_attributions(t_info *info)
 		info->width = info->width - info->len;
 	if (info->negative)
 		info->width -= 1;
-	// missing negative conditions
 	if (info->zero == 1 && !info->minus)
 	{
 		info->zero = info->width;
@@ -58,8 +57,9 @@ static	void	general_attributions(t_info *info)
 
 void			cleans_info_with_prios(t_info *info)
 {
-	if (!ft_strchr(TYPES, info->type))
-		info->invalid = 1;
-	handles_negative_width_prec(info);
-	general_attributions(info);
+	if (!info->invalid)
+	{
+		handles_negative_width_prec(info);
+		general_attributions(info);
+	}
 }

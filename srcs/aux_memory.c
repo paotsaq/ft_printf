@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 06:18:40 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 17:28:35 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,21 @@ void	initializes_info(t_info *info)
 	info->p_inp = 0;
 	info->prec = 0;
 	info->type = 0;
+	info->chr = 0;
 	info->content = 0;
 	info->len = 0;
 	info->negative = 0;
 	info->invalid = 0;
-	info->size = 0;
 }
 
 void	char_family_allocation(t_info *info, va_list *pargs)
 {
-	if (info->type == 'c')
+	if (ft_strchr("c%",info->type))
 	{
-		*(int *)(info->content) = va_arg(*pargs, int);
+		if (info->type == 'c')
+			info->chr = va_arg(*pargs, int);
+		else
+			info->chr = '%';
 		info->len = 1;
 	}
 	else if (info->type == 's')

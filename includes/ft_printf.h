@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 10:48:55 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 17:21:53 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ typedef struct	s_info{
 	int				p_aster;
 	char			type;
 	void			*content;
+	char			chr;
 	int				len;
-	int				size;
-	// i am actually not sure negatives are implemented already
 	int				negative;
 	int				invalid;
 }				t_info;

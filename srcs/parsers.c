@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 12:13:03 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 17:14:25 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,16 +76,13 @@ static	void	retrieves_type(t_info *info, char **str)
 	int i;
 
 	i = -1;
-	if (info->type)
-	{
-		while (TYPES[++i] && str)
-			if (**str == TYPES[i])
-			{
-				info->type = **str;
-				return;
-			}
-		info->invalid = 1;
-	}
+	while (TYPES[++i] && str)
+		if (**str == TYPES[i] || **str == '%')
+		{
+			info->type = **str;
+			return;
+		}
+	info->invalid = 1;
 }
 
 void			handles_conversion(va_list *pargs, char **str)
@@ -94,7 +91,6 @@ void			handles_conversion(va_list *pargs, char **str)
 	char	*begg;
 	char	buffer[12];
 
-	// do we print the % in case of badly formed format?
 	begg = *str;
 	initializes_info(&info);
 	retrieves_flags(&info, str);
@@ -107,7 +103,7 @@ void			handles_conversion(va_list *pargs, char **str)
 	{
 		if (!info.type)
 			info.content = 0;
-		else if (ft_strchr("csp", info.type))
+		else if (ft_strchr("csp%", info.type))
 			char_family_allocation(&info, pargs);
 		else
 			int_family_allocation(&info, pargs, buffer);
