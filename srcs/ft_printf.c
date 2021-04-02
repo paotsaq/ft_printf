@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 05:54:48 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 06:01:09 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ void	reads_string(va_list *pargs, char *str, int *total_length)
 			i = -1;
 		}
 	}
+	if (i != 0)
+		write(1, str, i);
+	*total_length += i;
 }
 
 int		ft_printf(char *str, ...)
@@ -50,6 +53,5 @@ int		ft_printf(char *str, ...)
 	va_start(pargs, str);
 	reads_string(&pargs, str, &total_length);
 	va_end(pargs);
-	printf("\n%d\n", total_length);
 	return (total_length);
 }

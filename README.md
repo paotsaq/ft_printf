@@ -2,6 +2,11 @@
 
 ...and this is my very naive attempt at doing it.
 
+***TO DO***
+- handle negative cases on hexa;
+- handle zeroes and null content;
+- implement pointers;
+
 ### Why? 
 
 42 Cursus assignment (check [the subject](https://github.com/protsaq/ft_printf/blob/master/rsch/en.subject.pdf) for more details). 
@@ -25,11 +30,11 @@ That is not really the question I was looking for, and so I present my definitio
 - **it should be concise, and avoid redundancies.** If possible, do not have seven functions that to pretty much the same thing (there are still a couple of perpetrators in my code, though) 🧩
 - **it should be linear and not hard to follow.** Let it be closer to a single thread, instead of having weird branching outs and unnecessary/unelegant auxiliary functions 🧵
 - **it should be easily [extensible](https://english.stackexchange.com/questions/90426/extensible-vs-extendible#90444) .** If I ever were to tackle the bonus conversions, little to no adjustments should be necessary to the main code 🧱
-- **it can have *some* obtuse code**, as long as the idea is worth it and the implementation is not too insufferable - people are not stupid, and, this being a practice assignment, it's nice to see some new tricks every now and then 🧞‍♂️
+- **it can have *some* obtuse code** (*02/04 so far it has none!*), as long as the idea is worth it and the implementation is not too insufferable - people are not stupid, and, this being a practice assignment, it's nice to see some new tricks every now and then 🧞‍♂️
 
 ### So is your code sexy, then?
 
-As much as non-working, 6/694 [test passing](https://github.com/gavinfielder/pft) code can be, yes, definitely yes.
+~~As much as non-working, 6/694 [test passing](https://github.com/gavinfielder/pft) code can be, yes, definitely yes.~~ *02/04 it might not do* everything *so far, but it looks quite nice, doesn't it?*
 
 At the time of writing, it seems like the code handles conversions somewhat well, but there is no actual printing done. So there's that to work on ASAP. 🕰
 
@@ -37,4 +42,4 @@ At the time of writing, it seems like the code handles conversions somewhat well
 
 Ok so first, let's be a little more careful with what you call a bad taste in jokes alright because there's like a whole spectrum of things people can find funny, or have you ever not seen really cute cats doing silly things, and this was me just trying to make a couple people laugh at their computers by the way everyone should really try and stretch regularly that would do wonders for the posture and so back at you if you ever do any of those snide remarks about the way I take my living I might just 
 
-¹ Just run `git submodule init`, and then `git submodule update`. It's that easy. 
+¹ run `git submodule init`, and then `git submodule update`. It's that easy. 

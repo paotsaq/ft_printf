@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 04:32:17 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 06:18:40 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,18 @@ void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
 {
 	long long		prov_number;
 
-	if (info->type == 'd' || info->type == 'i')
+	if (ft_strchr("diuxX", info->type))
 	{
-		prov_number = va_arg(*pargs, long long);
+		prov_number = va_arg(*pargs, int);
 		if (prov_number < 0)
 		{
 			info->negative = 1;
 			prov_number *= -1;
 		}
 		ft_bzero(buffer, 12);
-		number_to_string(info, prov_number, DEC_BASE, buffer);
-	}
-	else
-	{
-		prov_number = va_arg(*pargs, long long);
-		if (info->type == 'u')
+		if (info->type == 'd' || info->type == 'i')
+			number_to_string(info, prov_number, DEC_BASE, buffer);
+		else if (info->type == 'u')
 			number_to_string(info, prov_number, DEC_BASE, buffer);
 		else
 			number_to_string(info, prov_number, HEX_BASE, buffer);

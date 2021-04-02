@@ -6,58 +6,60 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/01 16:20:53 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/02 06:04:27 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static	void	handles_negative_width_prec(t_info *tr)
+static	void	handles_negative_width_prec(t_info *info)
 {
-	if (tr->width < 0)
+	if (info->width < 0)
 	{
-		tr->minus = 1;
-		tr->width *= -1;
+		info->minus = 1;
+		info->width *= -1;
 	}
-	if (tr->prec < 0)
+	if (info->prec < 0)
 	{
-		tr->p_inp = 0;
-		tr->prec = 0;
+		info->p_inp = 0;
+		info->prec = 0;
 	}
 }
 
-static	void	general_attributions(t_info *tr)
+static	void	general_attributions(t_info *info)
 {
-	if (tr->p_inp && tr->type == 's' && tr->prec < tr->len)
-		tr->len = tr->prec;
-	else if (tr->prec > tr->len > 0 && tr->type != 's')
-		tr->zero = tr->prec - tr->len;
-	tr->prec = 0;
-	if (tr->len > tr->width || (tr->len + tr->zero >= tr->width && tr->zero > 1))
-		tr->width = 0;
-	else if (tr->zero > 1)
-		tr->width = tr->width - tr->len - tr->zero;
+	if (info->p_inp && info->type == 's' && info->prec < info->len)
+		info->len = info->prec;
+	else if (info->prec > info->len > 0 && info->type != 's')
+		info->zero = info->prec - info->len;
+	info->prec = 0;
+	if (info->len > info->width || (info->len + info->zero >= info->width && info->zero > 1))
+		info->width = 0;
+	else if (info->zero > 1)
+		info->width = info->width - info->len - info->zero;
 	else
-		tr->width = tr->width - tr->len;
+		info->width = info->width - info->len;
+	if (info->negative)
+		info->width -= 1;
 	// missing negative conditions
-	if (tr->zero == 1 && !tr->minus)
+	if (info->zero == 1 && !info->minus)
 	{
-		tr->zero = tr->width;
-		tr->width = 0;
+		info->zero = info->width;
+		info->width = 0;
 	}
-	if (tr->minus)
+	if (info->minus)
 	{
-		tr->minus = tr->width;
-		tr->width = 0;
-		if (tr->zero == 1)
-			tr->zero = 0;
+		info->minus = info->width;
+		info->width = 0;
+		if (info->zero == 1)
+			info->zero = 0;
 	}
 }
 
-void			cleans_info_with_prios(t_info *tr)
+void			cleans_info_with_prios(t_info *info)
 {
-	if (!ft_strchr(TYPES, tr->type))
-		tr->invalid = 1;
-	handles_negative_width_prec(tr);
-	general_attributions(tr);
+	if (!ft_strchr(TYPES, info->type))
+		info->invalid = 1;
+	handles_negative_width_prec(info);
+	general_attributions(info);
 }
