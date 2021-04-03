@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 04:13:02 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/03 18:43:18 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	number_to_string(t_info *tr, long long content, char *base, char *buffer)
 
 	begg = buffer;
 	len_of_base = (long long) ft_strlen(base);
+	if (content == 0)
+		*buffer = '0';
 	while (content != 0)
 	{
 		digit = base[content % len_of_base];

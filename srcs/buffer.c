@@ -6,11 +6,12 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/03 06:42:16 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/03 19:44:00 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <string.h>
 
 static void	handles_content(t_info *info, char **begg, char **res, int size)
 {
@@ -32,7 +33,7 @@ static void	handles_content(t_info *info, char **begg, char **res, int size)
 	else if (!info->content && info->type == 's')
 		ft_strlcat(*res, "(null)", info->len + 1);
 	else
-		ft_strlcat(*res, info->content, info->len + 1);
+		ft_strlcat(*res, (char *)info->content, 30);
 }
 
 void		writes_buffer(t_info *info)
@@ -41,8 +42,8 @@ void		writes_buffer(t_info *info)
 	char	*res;
 	int		size;
 
-	size = info->width + info->negative + info->zero + info->len + info->minus;
-	res = ft_calloc(size, sizeof(char));
+	size = info->width + info->negative + info->zero + info->len + info->minus + 1;
+	res = ft_calloc(30, sizeof(char));
 	if (!res)
 		return;
 	begg = res;
@@ -57,6 +58,7 @@ void		writes_buffer(t_info *info)
 	res += info->len;
 	while (info->minus--)
 		*(res++) = ' ';
-	write(1, begg, (int)ft_strlen(begg));
+	write(1, begg, size);
 	free(begg);
+	begg = NULL;
 }

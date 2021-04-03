@@ -10,7 +10,7 @@
 # **************************************************************************** #
 
 HDRS		= includes
-CFLAGS 		= -Wall -Wextra -Werror -g
+CFLAGS 		= -Wall -Wextra -Werror -g -fsanitize=address
 AR 			= ar -rcsv
 NAME 		= libftprintf.a
 SRCS		= $(wildcard ./srcs/*.c)
@@ -45,4 +45,6 @@ re: fclean all
 comp: $(NAME)
 	gcc main.c -g -I includes -L. -lftprintf
 
+sanitize: $(NAME)
+	gcc main.c -fsanitize=address -I includes -L. -lftprintf
 .PHONY:		all clean fclean re
