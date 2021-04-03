@@ -11903,6 +11903,7 @@ char_family_allocation	srcs/aux_memory.c	/^void	char_family_allocation(t_info *i
 check_set	libft/ft_strtrim.c	/^static	int	check_set(const char *s1, char const *set, int i, int step)$/;"	f	file:
 check_sign	libft/ft_itoa.c	/^static	char	*check_sign(char *iter, int sign)$/;"	f	file:
 check_sub	libft/ft_strnstr.c	/^static int	check_sub(const char *haystack, const char *needle, int len)$/;"	f	file:
+chr	includes/ft_printf.h	/^	char			chr;$/;"	m	struct:s_info
 cleans_info_with_prios	srcs/input_validation.c	/^void			cleans_info_with_prios(t_info *info)$/;"	f
 cleanup	pft/src/test.h	/^	char				cleanup: 1;$/;"	m	struct:s_pft_options
 cleanup_temp_files	pft/src/test.c	/^void	cleanup_temp_files()$/;"	f
@@ -12315,7 +12316,7 @@ ft_memcpy	libft/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t
 ft_memmove	libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
 ft_memset	libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
 ft_min	libft/ft_min.c	/^int ft_min(int args, ...)$/;"	f
-ft_printf	srcs/ft_printf.c	/^int		ft_printf(char *str, ...)$/;"	f
+ft_printf	srcs/ft_printf.c	/^int			ft_printf(char *str, ...)$/;"	f
 ft_printf_dir	pft/configurations/42fc/configure_42fc.php	/^$ft_printf_dir = $argv[1];$/;"	v
 ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
 ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f
@@ -12357,7 +12358,8 @@ handle_sigbus	pft/src/test.c	/^static void	handle_sigbus(int sigval)$/;"	f	file:
 handle_sigill	pft/src/test.c	/^static void handle_sigill(int sigval)$/;"	f	file:
 handle_signals	pft/src/test.h	/^	char				handle_signals : 1;$/;"	m	struct:s_pft_options
 handle_sigsegv	pft/src/test.c	/^static void	handle_sigsegv(int sigval)$/;"	f	file:
-handles_conversion	srcs/parsers.c	/^void			handles_conversion(va_list *pargs, char *str)$/;"	f
+handles_content	srcs/buffer.c	/^static void	handles_content(t_info *info, char **begg, char **res, int size)$/;"	f	file:
+handles_conversion	srcs/parsers.c	/^void			handles_conversion(va_list *pargs, char **str)$/;"	f
 handles_negative_width_prec	srcs/input_validation.c	/^static	void	handles_negative_width_prec(t_info *info)$/;"	f	file:
 head	pft/src/history.c	/^static t_test_log_entry		*head = NULL;$/;"	v	file:
 help_adding_tests	pft/src/help.c	/^void		help_adding_tests(void)$/;"	f
@@ -16578,16 +16580,16 @@ query	pft/src/select_query.php	/^$query = get_regex($argv[5]);$/;"	v
 query	pft/src/select_router.php	/^	$query = $argv[5];$/;"	v
 read_retvals_pipe	pft/src/test.c	/^static void		*read_retvals_pipe(void *args_void)$/;"	f	file:
 read_retvals_pipe_async	pft/src/test.c	/^static pthread_t	read_retvals_pipe_async(t_retval_pipe_args *args)$/;"	f	file:
-reads_string	srcs/ft_printf.c	/^void	reads_string(va_list *pargs, char *str)$/;"	f
+reads_string	srcs/ft_printf.c	/^static void	reads_string(va_list *pargs, char *str)$/;"	f	file:
 ready	pft/src/test.c	/^static int			ready = 0;$/;"	v	file:
 refresh_results	pft/src/test.h	/^	char				refresh_results: 1;$/;"	m	struct:s_pft_options
 ret	pft/src/select_query.php	/^	$ret = preg_replace('\/[^a-zA-Z0-9_]\/', '.*', $query);$/;"	v
 ret_val_libc	pft/src/test.h	/^	int						ret_val_libc;$/;"	m	struct:s_retvals
 ret_val_mine	pft/src/test.h	/^	int						ret_val_mine;$/;"	m	struct:s_retvals
-retrieves_flags	srcs/parsers.c	/^static	void	retrieves_flags(t_info *info, char *str)$/;"	f	file:
-retrieves_prec	srcs/parsers.c	/^static	void	retrieves_prec(t_info *info, char *str, va_list *pargs)$/;"	f	file:
-retrieves_type	srcs/parsers.c	/^static	void	retrieves_type(t_info *info, char *str)$/;"	f	file:
-retrieves_width	srcs/parsers.c	/^static	void	retrieves_width(t_info *info, char *str, va_list *pargs)$/;"	f	file:
+retrieves_flags	srcs/parsers.c	/^static	void	retrieves_flags(t_info *info, char **str)$/;"	f	file:
+retrieves_prec	srcs/parsers.c	/^static	void	retrieves_prec(t_info *info, char **str, va_list *pargs)$/;"	f	file:
+retrieves_type	srcs/parsers.c	/^static	void	retrieves_type(t_info *info, char **str)$/;"	f	file:
+retrieves_width	srcs/parsers.c	/^static	void	retrieves_width(t_info *info, char **str, va_list *pargs)$/;"	f	file:
 retvals	pft/src/test.h	/^	t_retvals				retvals;$/;"	m	struct:s_retval_pipe_args
 route_select	pft/src/select_router.php	/^function	route_select($script, $unit_test_file, $history_file, $config_file, $mode, $fnop, $arg1, $arg2 = "")$/;"	f
 run	pft/src/test.h	/^	t_unit_tester_func		run;$/;"	m	struct:s_unit_tester_args
@@ -17094,7 +17096,6 @@ sh_pos_1	pft/src/unit_tests_indexed.c	/^static short		sh_pos_1 = 3047, sh_neg_1 
 sh_pos_1	pft/unit_tests.c	/^static short		sh_pos_1 = 3047, sh_neg_1 = -8875;$/;"	v	file:
 signal	pft/src/test.h	/^	int						signal;$/;"	m	struct:s_timeout_args
 signaled	pft/src/test.c	/^static int			signaled = 0;$/;"	v	file:
-size	includes/ft_printf.h	/^	int				size;$/;"	m	struct:s_info
 split	pft/src/select_history.php	/^			$split = explode("=", $line);$/;"	v
 split	pft/src/select_history.php	/^	$split = explode(",", $line);$/;"	v
 start_timeout	pft/src/test.c	/^static void		start_timeout(pid_t pid, int signal, pthread_t *thread, pthread_t mainthread)$/;"	f	file:
@@ -17399,8 +17400,8 @@ write_ago	pft/src/utils.c	/^void		write_ago(time_t prev_time, time_t now, char *
 write_head_to_log	pft/src/history.c	/^void		write_head_to_log(FILE *fp_out, int test_last_passed,$/;"	f
 write_log	pft/src/history.c	/^void		write_log(void)$/;"	f
 write_retvals_pipe	pft/src/test.c	/^static void		write_retvals_pipe(int fd, t_retvals retvals)$/;"	f	file:
-writes_buffer	srcs/buffer.c	/^void	writes_buffer(t_info *info)$/;"	f
-writes_passed_chars	srcs/ft_printf.c	/^void	writes_passed_chars(char *begg, char *str)$/;"	f
+writes_buffer	srcs/buffer.c	/^void		writes_buffer(t_info *info)$/;"	f
+writes_chars	srcs/ft_printf.c	/^int			writes_chars(char *begg, char *str)$/;"	f
 x_basic_onlypos	pft/configurations/42fc/unit_tests.42fc.c	/^int x_basic_onlypos(void){return test("%x", 3);}$/;"	f
 x_basic_onlypos	pft/src/unit_tests_indexed.c	/^int x_basic_onlypos(void){return ft_printf("%x", 3);}$/;"	f
 x_basic_onlypos	pft/unit_tests.c	/^int x_basic_onlypos(void){return test("%x", 3);}$/;"	f

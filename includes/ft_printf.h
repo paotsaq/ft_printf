@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 04:05:17 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 17:21:53 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/03 06:28:15 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ typedef struct	s_info{
 }				t_info;
 
 int				ft_printf(char *str, ...);
-void			reads_string(va_list *pargs, char *str);
-int				writes_passed_chars(char *begg, char *str);
+int				writes_chars(char *begg, char *str);
 void			initializes_info(t_info *info);
 void			handles_conversion(va_list *pargs, char **str);
 void			*ft_reallocates_memory(void *old,

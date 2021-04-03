@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 17:28:35 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/03 05:58:42 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ void	char_family_allocation(t_info *info, va_list *pargs)
 	else if (info->type == 's')
 	{
 		(info->content) = va_arg(*pargs, char *);
-		info->len = ft_strlen(info->content);
+		if (!(info->content))
+			info->len = ft_strlen("(null)");
+		else
+			info->len = ft_strlen(info->content);
 	}
 	// needs to be done!
 	else if (info->type == 'p')

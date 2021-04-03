@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 17:14:25 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/03 06:28:02 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void			handles_conversion(va_list *pargs, char **str)
 	retrieves_prec(&info, str, pargs);
 	retrieves_type(&info, str);
 	if (info.invalid)
-		writes_passed_chars(begg - 1, *str);
+		writes_chars(begg - 1, *str);
 	else
 	{
 		if (!info.type)

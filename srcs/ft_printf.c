@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/02 17:47:47 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/03 06:27:46 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		writes_passed_chars(char *begg, char *str)
+int			writes_chars(char *begg, char *str)
 {
 	int			length;
 	static	int	total_length;
@@ -24,17 +24,17 @@ int		writes_passed_chars(char *begg, char *str)
 	return (total_length);
 }
 
-void	reads_string(va_list *pargs, char *str)
+static void	reads_string(va_list *pargs, char *str)
 {
 	char	*begg;
-	int		has_passed;	
+	int		has_passed;
 
 	begg = str;
 	has_passed = 0;
 	while (*str)
 		if (*str == '%')
 		{
-			writes_passed_chars(begg, str++);
+			writes_chars(begg, str++);
 			handles_conversion(pargs, &str);
 			str++;
 			has_passed = 0;
@@ -47,15 +47,15 @@ void	reads_string(va_list *pargs, char *str)
 			has_passed = 1;
 		}
 	if (has_passed)
-		writes_passed_chars(begg, str);
+		writes_chars(begg, str);
 }
 
-int		ft_printf(char *str, ...)
+int			ft_printf(char *str, ...)
 {
 	va_list 	pargs;
 
 	va_start(pargs, str);
 	reads_string(&pargs, str);
 	va_end(pargs);
-	return (writes_passed_chars(str, str));
+	return (writes_chars(str, str));
 }
