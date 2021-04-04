@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/03 06:42:16 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/04 19:07:17 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,10 @@ static void	handles_content(t_info *info, char **begg, char **res, int size)
 	if (info->type == 'c' && !info->chr)
 	{
 		writes_chars(*begg, *res);
-		empty = ft_strdup("");
 		writes_chars(empty, empty + 1);
 		ft_bzero(*begg, size);
 		*res = *begg;
 		info->len = 0;
-		free(empty);
 	}
 	else if (info->type == 'c' || info->type == '%')
 		ft_memset(*res, info->chr, 1);
