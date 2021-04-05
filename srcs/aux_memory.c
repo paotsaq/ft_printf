@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/04 06:29:32 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 03:16:29 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ void	char_family_allocation(t_info *info, va_list *pargs)
 		else
 			info->len = ft_strlen(info->content);
 	}
-	// needs to be done!
 	else if (info->type == 'p')
-		return;
+	{
+
+	}
 }
 
 void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
@@ -68,9 +69,7 @@ void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
 			prov_number *= -1;
 		}
 		ft_bzero(buffer, 12);
-		if (info->type == 'd' || info->type == 'i')
-			number_to_string(info, prov_number, DEC_BASE, buffer);
-		else if (info->type == 'u')
+		if (ft_strchr("diu", info->type))
 			number_to_string(info, prov_number, DEC_BASE, buffer);
 		else
 		{
@@ -79,29 +78,10 @@ void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
 				ft_strtoupper((char *)info->content);
 		}
 	}
-}
-
-void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset)
-{
-	void	*ptr;
-	int		i;
-
-	i = -1;
-	if (count == 0 || size == 0)
-		free(old);
-	ptr = ft_calloc(count, size);
-	if (ptr)
+	else
 	{
-		while (++i < (int)count - 1)
-			if (size == 1)
-				((char*)ptr)[i] = ((char*)old)[i + offset];
-			else
-				((char**)ptr)[i] = ((char**)old)[i + offset];
-		if (size == 1)
-			((char*)ptr)[i] = 0;
-		else
-			((char**)ptr)[i] = 0;
-		free(old);
+		prov_number = va_arg(*pargs, unsigned long long int);
+		ft_strlcat(buffer, "0x", BUFF_LEN);
+		number_to_string(info, prov_number, HEX_BASE, buffer);
 	}
-	return (ptr);
 }
