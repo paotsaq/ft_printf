@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 09:45:51 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 16:26:00 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static void	handles_content(t_info *info, char **begg, char **res, int size)
 {
-	char *empty;
+	char	*empty;
 
 	empty = "";
 	if (info->type == 'c' && !info->chr)
@@ -34,16 +34,17 @@ static void	handles_content(t_info *info, char **begg, char **res, int size)
 		ft_strlcat(*res, (char *)info->content, info->len + 1);
 }
 
-void		writes_buffer(t_info *info)
+void	writes_buffer(t_info *info)
 {
 	char	*begg;
 	char	*res;
 	int		size;
 
-	size = info->width + info->negative + info->nbr_zeros + info->len + info->minus + 1;
+	size = info->width + info->negative + info->nbr_zeros
+		+ info->len + info->minus + 1;
 	res = ft_calloc(size, sizeof(char));
 	if (!res)
-		return;
+		return ;
 	begg = res;
 	while (!info->minus && info->width-- > 0)
 		*(res++) = ' ';

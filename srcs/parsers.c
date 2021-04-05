@@ -1,5 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   parsers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -15,6 +13,7 @@
 static	void	retrieves_flags(t_info *info, char **str)
 {
 	while (ft_strchr("0-", **str))
+	{
 		if (**str == '-')
 		{
 			info->minus = 1;
@@ -25,11 +24,13 @@ static	void	retrieves_flags(t_info *info, char **str)
 			info->zero = 1;
 			*(str) += 1;
 		}
+	}
 }
 
 static	void	retrieves_width(t_info *info, char **str, va_list *pargs)
 {
 	while (str && (ft_isdigit(**str) || **str == '*'))
+	{
 		if (**str == '*' && !(info->width || info->w_aster))
 		{
 			info->width = va_arg(*pargs, int);
@@ -46,6 +47,7 @@ static	void	retrieves_width(t_info *info, char **str, va_list *pargs)
 			}
 			info->w_inp = 1;
 		}
+	}
 }
 
 static	void	retrieves_prec(t_info *info, char **str, va_list *pargs)
@@ -76,19 +78,21 @@ static	void	retrieves_prec(t_info *info, char **str, va_list *pargs)
 
 static	void	retrieves_type(t_info *info, char **str)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (TYPES[++i] && str)
+	{
 		if (**str == TYPES[i] || **str == '%')
 		{
 			info->type = **str;
-			return;
+			return ;
 		}
+	}
 	info->invalid = 1;
 }
 
-void			handles_conversion(va_list *pargs, char **str)
+void	handles_conversion(va_list *pargs, char **str)
 {
 	t_info	info;
 	char	*begg;

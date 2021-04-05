@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 10:10:38 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 16:28:35 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static	void	general_attributions(t_info *info)
 	}
 }
 
-void			cleans_info_with_prios(t_info *info)
+void	cleans_info_with_prios(t_info *info)
 {
 	if (!info->invalid)
 	{
