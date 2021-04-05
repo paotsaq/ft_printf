@@ -2,6 +2,6 @@
 
 int		main()
 {
-	printf("%2s%2s\n","a", "b");
-	ft_printf("%2s%2s\n","a", "b");
+	printf("%.*s", 3, "hello");
+	ft_printf("%.*s", 3, "hello");
 }

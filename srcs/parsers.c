@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/03 06:28:02 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/04 06:34:46 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,17 @@
 
 static	void	retrieves_flags(t_info *info, char **str)
 {
-	if (str && ft_strchr("-0", **str))
-	{
+	while (ft_strchr("0-", **str))
 		if (**str == '-')
+		{
 			info->minus = 1;
+			*(str) += 1;
+		}
 		else if (**str == '0')
+		{
 			info->zero = 1;
-		*(str) += 1;
-	}
+			*(str) += 1;
+		}
 }
 
 static	void	retrieves_width(t_info *info, char **str, va_list *pargs)
@@ -49,7 +52,7 @@ static	void	retrieves_prec(t_info *info, char **str, va_list *pargs)
 {
 	if (str && (**str == '.'))
 	{
-		if (**(str + 1) == '*' && !info->prec)
+		if (*(*(str) + 1) == '*' && !info->prec)
 		{
 			info->prec = va_arg(*pargs, int);
 			info->p_aster = 1;

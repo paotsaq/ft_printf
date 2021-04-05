@@ -6,13 +6,13 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:27:09 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/03 18:43:18 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/04 05:33:06 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	number_to_string(t_info *tr, long long content, char *base, char *buffer)
+void	number_to_string(t_info *info, long long content, char *base, char *buffer)
 {
 	long long	len_of_base;
 	char		digit;
@@ -29,6 +29,6 @@ void	number_to_string(t_info *tr, long long content, char *base, char *buffer)
 		content = content / len_of_base;
 	}
 	ft_strrev(begg);
-	tr->content = begg;
-	tr->len = ft_strlen(begg);
+	info->content = begg;
+	info->len = ft_strlen(begg);
 }

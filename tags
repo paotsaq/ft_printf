@@ -12335,6 +12335,7 @@ ft_strncmp	libft/ft_strncmp.c	/^int		ft_strncmp(const char *s1, const char *s2, 
 ft_strnstr	libft/ft_strnstr.c	/^char		*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f
 ft_strrchr	libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
 ft_strrev	libft/ft_strrev.c	/^char	*ft_strrev(char *s1)$/;"	f
+ft_strtoupper	libft/ft_strtoupper.c	/^void	ft_strtoupper(char *str)$/;"	f
 ft_strtrim	libft/ft_strtrim.c	/^char		*ft_strtrim(char const *s1, char const *set)$/;"	f
 ft_substr	libft/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f
 ft_tolower	libft/ft_tolower.c	/^char	ft_tolower(int c)$/;"	f
@@ -16461,7 +16462,7 @@ num_sel	pft/src/test.h	/^	int					num_sel;$/;"	m	struct:s_clopt
 number	pft/src/test.h	/^	int						number;$/;"	m	struct:s_test_entry
 number_of_chars	libft/ft_itoa.c	/^static	int		number_of_chars(int n)$/;"	f	file:
 number_of_tests	pft/src/create_index.php	/^$number_of_tests = $i;$/;"	v
-number_to_string	srcs/aux_base_conversion.c	/^void	number_to_string(t_info *tr, long long content, char *base, char *buffer)$/;"	f
+number_to_string	srcs/aux_base_conversion.c	/^void	number_to_string(t_info *info, long long content, char *base, char *buffer)$/;"	f
 options	pft/src/options.c	/^t_pft_options	options = {$/;"	v
 options_check	pft/src/options.c	/^void	options_check(void)$/;"	f
 out	pft/src/create_index.php	/^$out = preg_replace($pattern, $replace, $test_file_contents);$/;"	v
