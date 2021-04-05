@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42lisboa.c>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 09:51:16 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 10:49:54 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 16:49:27 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	initializes_info(t_info *info)
 
 void	char_family_allocation(t_info *info, va_list *pargs)
 {
-	if (ft_strchr("c%",info->type))
+	if (ft_strchr("c%", info->type))
 	{
 		if (info->type == 'c')
 			info->chr = va_arg(*pargs, int);
@@ -51,6 +51,30 @@ void	char_family_allocation(t_info *info, va_list *pargs)
 	}
 }
 
+static	void	numeric_cases(t_info *info, long long prov_number, char *buffer)
+{
+	if (prov_number < 0)
+	{
+		if (!ft_strchr("uxX", info->type))
+		{
+			info->negative = 1;
+			prov_number *= -1;
+		}
+		else
+			prov_number = UINT_MAX + prov_number + 1;
+	}
+	if (!prov_number && info->p_inp && !info->prec)
+		return ;
+	if (ft_strchr("diu", info->type))
+		number_to_string(info, prov_number, DEC_BASE, buffer);
+	else
+	{
+		number_to_string(info, prov_number, HEX_BASE, buffer);
+		if (info->type == 'X')
+			ft_strtoupper(info->content);
+	}
+}
+
 void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
 {
 	long long		prov_number;
@@ -59,26 +83,7 @@ void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)
 	if (ft_strchr("diuxX", info->type))
 	{
 		prov_number = va_arg(*pargs, int);
-		if (prov_number < 0)
-		{
-			if (!ft_strchr("uxX", info->type))
-			{
-				info->negative = 1;
-				prov_number *= -1;
-			}
-			else
-				prov_number = UINT_MAX + prov_number + 1;
-		}
-		if (!prov_number && info->p_inp && !info->prec)
-			return;
-		if (ft_strchr("diu", info->type))
-			number_to_string(info, prov_number, DEC_BASE, buffer);
-		else
-		{
-			number_to_string(info, prov_number, HEX_BASE, buffer);
-			if (info->type == 'X')
-				ft_strtoupper((char *)info->content);
-		}
+		numeric_cases(info, prov_number, buffer);
 	}
 	else
 	{

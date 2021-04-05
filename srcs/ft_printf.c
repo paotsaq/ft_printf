@@ -6,16 +6,16 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 07:26:24 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 16:28:08 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			writes_chars(char *begg, char *str)
+int	writes_chars(char *begg, char *str)
 {
 	int			length;
-	static	int	total_length;
+	static int	total_length;
 
 	length = str - begg;
 	if (length)
@@ -32,6 +32,7 @@ static void	reads_string(va_list *pargs, char *str)
 	begg = str;
 	has_passed = 0;
 	while (*str)
+	{
 		if (*str == '%')
 		{
 			writes_chars(begg, str++);
@@ -46,13 +47,14 @@ static void	reads_string(va_list *pargs, char *str)
 			str++;
 			has_passed = 1;
 		}
+	}
 	if (has_passed)
 		writes_chars(begg, str);
 }
 
-int			ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list 	pargs;
+	va_list	pargs;
 
 	va_start(pargs, str);
 	reads_string(&pargs, (char *)str);
