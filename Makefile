@@ -10,7 +10,7 @@
 # **************************************************************************** #
 
 HDRS		= includes
-CFLAGS 		= -Wall -Wextra -Werror -g
+CFLAGS 		= -Wall -Wextra -Werror
 AR 			= ar -rcsv
 NAME 		= libftprintf.a
 SRCS		= $(wildcard ./srcs/*.c)
@@ -23,8 +23,8 @@ $(NAME): libft.a $(OBJS)
 	$(AR) $(NAME) *.o $(OBJS)
 
 libft.a:
-	$(MAKE) libft.a -C ./libft
-	mv ./libft/libft.a ./libft.a
+	$(MAKE) libft.a -C ./libft_func
+	mv ./libft_func/libft.a ./libft.a
 
 %.o: %.c
 	gcc $(CFLAGS) -I $(HDRS) -c $< -o $@
@@ -41,8 +41,5 @@ fclean: clean
 	rm -rf ./__.SYMDEF\ SORTED
 
 re: fclean all
-
-comp: $(NAME)
-	gcc main.c -g -I includes -L. -lftprintf
 
 .PHONY:		all clean fclean re
