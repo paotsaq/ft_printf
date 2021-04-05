@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 03:22:48 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 09:32:32 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void		writes_buffer(t_info *info)
 	res += info->len;
 	while (info->minus--)
 		*(res++) = ' ';
-	write(1, begg, ft_strlen(begg));
+	writes_chars(begg, res);
 	free(begg);
+	begg = NULL;
 }

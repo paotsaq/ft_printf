@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 08:30:43 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 05:08:50 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 07:17:42 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,13 @@ static	void	handles_negative_width_prec(t_info *info)
 
 static	void	general_attributions(t_info *info)
 {
-	if (info->p_inp && info->type == 's' && info->prec < info->len)
+	if (info->type == 's' && info->p_inp && info->prec < info->len)
 		info->len = info->prec;
-	else if (info->p_inp && info->prec < info->len)
+	else if (info->p_inp && info->prec <= info->len)
 		info->zero = 0;
-	else if (info->prec > info->len > 0 && !ft_strchr("sc%", info->type))
+	else if (!ft_strchr("sc%", info->type) && info->prec > info->len)
 		info->zero = ft_max(2, info->prec - info->len, 0);
-	info->prec = 0;
-	if (info->len > info->width || (info->len + info->zero >= info->width && info->zero > 1))
+	if (info->len >= info->width || (info->len + info->zero >= info->width && info->zero > 1))
 		info->width = 0;
 	else if (info->zero > 1)
 		info->width = info->width - info->len - info->zero;

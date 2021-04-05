@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:40:07 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/03 06:27:46 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 07:26:24 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ static void	reads_string(va_list *pargs, char *str)
 		writes_chars(begg, str);
 }
 
-int			ft_printf(char *str, ...)
+int			ft_printf(const char *str, ...)
 {
 	va_list 	pargs;
 
 	va_start(pargs, str);
-	reads_string(&pargs, str);
+	reads_string(&pargs, (char *)str);
 	va_end(pargs);
-	return (writes_chars(str, str));
+	return (writes_chars((char *)str, (char *)str));
 }
