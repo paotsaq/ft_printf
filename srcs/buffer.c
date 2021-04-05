@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 09:32:32 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 09:45:51 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void		writes_buffer(t_info *info)
 	char	*res;
 	int		size;
 
-	size = info->width + info->negative + info->zero + info->len + info->minus + 1;
+	size = info->width + info->negative + info->nbr_zeros + info->len + info->minus + 1;
 	res = ft_calloc(size, sizeof(char));
 	if (!res)
 		return;
@@ -49,9 +49,9 @@ void		writes_buffer(t_info *info)
 		*(res++) = ' ';
 	if (info->negative)
 		ft_memset(res++, '-', 1);
-	if (info->zero)
-		ft_memset(res, '0', info->zero);
-	res += info->zero;
+	if (info->nbr_zeros)
+		ft_memset(res, '0', info->nbr_zeros);
+	res += info->nbr_zeros;
 	handles_content(info, &begg, &res, size);
 	res += info->len;
 	while (info->minus--)
