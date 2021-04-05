@@ -10,6 +10,7 @@ BLI_ACTION_APPEND	pft/src/help_conf.c	/^# define BLI_ACTION_APPEND /;"	d	file:
 BLI_ACTION_NEW	pft/src/help_conf.c	/^# define BLI_ACTION_NEW /;"	d	file:
 BLI_ACTION_PRINT	pft/src/help_conf.c	/^# define BLI_ACTION_PRINT /;"	d	file:
 BLU	pft/src/test.h	/^#define BLU /;"	d
+BUFF_LEN	includes/ft_printf.h	/^#define BUFF_LEN /;"	d
 CC	libft/Makefile	/^CC		= gcc$/;"	m
 CC	pft/Makefile	/^CC=clang$/;"	m
 CFLAGS	Makefile	/^CFLAGS 		= -Wall -Wextra -Werror -g$/;"	m
@@ -11899,7 +11900,7 @@ ch_neg_1	pft/unit_tests.c	/^static char 		ch_pos_1 = 100, ch_neg_1 = -87;$/;"	v	
 ch_pos_1	pft/configurations/42fc/unit_tests.42fc.c	/^static char 		ch_pos_1 = 100, ch_neg_1 = -87;$/;"	v	file:
 ch_pos_1	pft/src/unit_tests_indexed.c	/^static char 		ch_pos_1 = 100, ch_neg_1 = -87;$/;"	v	file:
 ch_pos_1	pft/unit_tests.c	/^static char 		ch_pos_1 = 100, ch_neg_1 = -87;$/;"	v	file:
-char_family_allocation	srcs/aux_memory.c	/^void	char_family_allocation(t_info *info, va_list *pargs)$/;"	f
+char_family_allocation	srcs/memory.c	/^void	char_family_allocation(t_info *info, va_list *pargs)$/;"	f
 check_set	libft/ft_strtrim.c	/^static	int	check_set(const char *s1, char const *set, int i, int step)$/;"	f	file:
 check_sign	libft/ft_itoa.c	/^static	char	*check_sign(char *iter, int sign)$/;"	f	file:
 check_sub	libft/ft_strnstr.c	/^static int	check_sub(const char *haystack, const char *needle, int len)$/;"	f	file:
@@ -12322,7 +12323,6 @@ ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
 ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f
 ft_putnbr_fd	libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int nb, int fd)$/;"	f
 ft_putstr_fd	libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f
-ft_reallocates_memory	srcs/aux_memory.c	/^void	*ft_reallocates_memory(void *old, size_t count, size_t size, int offset)$/;"	f
 ft_split	libft/ft_split.c	/^char			**ft_split(char const *s, char c)$/;"	f
 ft_strchr	libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
 ft_strdup	libft/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
@@ -12728,10 +12728,10 @@ i_zp_zero_fits	pft/unit_tests.c	/^int i_zp_zero_fits(void){return test("%03i", 0
 i_zp_zero_fits_bench	pft/src/unit_tests_indexed.c	/^int i_zp_zero_fits_bench(void){return printf("%03i", 0);}$/;"	f
 init_args	pft/src/main.c	/^static void		init_args(t_unit_tester_args *args, char *pattern,$/;"	f	file:
 init_printing	pft/src/print.c	/^void			init_printing(void)$/;"	f
-initializes_info	srcs/aux_memory.c	/^void	initializes_info(t_info *info)$/;"	f
+initializes_info	srcs/memory.c	/^void	initializes_info(t_info *info)$/;"	f
 install	pft/src/usage_statistics.php	/^	$install = "no";$/;"	v
 install	pft/src/usage_statistics.php	/^	$install = "yes";$/;"	v
-int_family_allocation	srcs/aux_memory.c	/^void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)$/;"	f
+int_family_allocation	srcs/memory.c	/^void	int_family_allocation(t_info *info, va_list *pargs, char *buffer)$/;"	f
 invalid	includes/ft_printf.h	/^	int				invalid;$/;"	m	struct:s_info
 j	pft/src/select_router.php	/^				$j = -2;$/;"	v
 j	pft/src/select_router.php	/^				$j = 0;$/;"	v
@@ -12784,6 +12784,7 @@ main	pft/src/main.c	/^int main(int argc, char **argv)$/;"	f
 main	pft/src/show_disabled_postprocess.c	/^int		main(void)$/;"	f
 main	playground/0_vargs.c	/^int		main()$/;"	f
 main	playground/10_width_zeroes.c	/^int		main()$/;"	f
+main	playground/11_pointers.c	/^int		main()$/;"	f
 main	playground/1_validity.c	/^int		main()$/;"	f
 main	playground/3_5_hoist_the_types.c	/^int		main()$/;"	f
 main	playground/3_printf_flags.c	/^int		main()$/;"	f

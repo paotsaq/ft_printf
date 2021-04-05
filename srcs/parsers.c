@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 05:13:12 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/04 06:34:46 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/05 03:28:25 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ void			handles_conversion(va_list *pargs, char **str)
 {
 	t_info	info;
 	char	*begg;
-	char	buffer[12];
+	char	buffer[BUFF_LEN];
 
 	begg = *str;
 	initializes_info(&info);
@@ -106,7 +106,7 @@ void			handles_conversion(va_list *pargs, char **str)
 	{
 		if (!info.type)
 			info.content = 0;
-		else if (ft_strchr("csp%", info.type))
+		else if (ft_strchr("cs%", info.type))
 			char_family_allocation(&info, pargs);
 		else
 			int_family_allocation(&info, pargs, buffer);

@@ -6,11 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/04/04 05:29:15 by apinto           ###   ########.fr       */
-=======
-/*   Updated: 2021/04/04 19:07:17 by apinto           ###   ########.fr       */
->>>>>>> ec483d21bd4d06d5b4b13d0a9e74d144327734d9
+/*   Updated: 2021/04/05 03:22:48 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +58,4 @@ void		writes_buffer(t_info *info)
 		*(res++) = ' ';
 	write(1, begg, ft_strlen(begg));
 	free(begg);
-	begg = NULL;
 }

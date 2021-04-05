@@ -1,7 +1,10 @@
 #include "ft_printf.h"
+#include <limits.h>
 
 int		main()
 {
-	printf("%.*s", 3, "hello");
-	ft_printf("%.*s", 3, "hello");
+	printf("%3.2d\n", 2);
+	ft_printf("%3.2d\n", 2);
+	printf("%%04.3i 42 == |%04.3i|\n", 42);
+	ft_printf("%%04.3i 42 == |%04.3i|\n", 42);
 }
