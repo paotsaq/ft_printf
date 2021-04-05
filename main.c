@@ -1,9 +1,14 @@
-#include "ft_printf.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+void	ft_strtoupper(char *str);
+char	ft_toupper(int c);
+
 
 int		main()
 {
-	printf(" %p %p \n", LONG_MIN, LONG_MAX);
-	ft_printf(" %p %p \n", LONG_MIN, LONG_MAX);
-	printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
-	ft_printf(" %p %p \n", ULONG_MAX, -ULONG_MAX);
+	char *test= strdup("abcde");
+	ft_strtoupper(test);
+	printf("%s\n", test);
 }
