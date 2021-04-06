@@ -23,8 +23,8 @@ $(NAME): libft.a $(OBJS)
 	$(AR) $(NAME) *.o $(OBJS)
 
 libft.a:
-	$(MAKE) libft.a -C ./libft_func
-	mv ./libft_func/libft.a ./libft.a
+	$(MAKE) libft.a -C ./libft
+	mv ./libft/libft.a ./libft.a
 
 %.o: %.c
 	gcc $(CFLAGS) -I $(HDRS) -c $< -o $@
