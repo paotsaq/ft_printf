@@ -105,7 +105,7 @@ void	handles_conversion(va_list *pargs, char **str)
 	retrieves_prec(&info, str, pargs);
 	retrieves_type(&info, str);
 	if (info.invalid)
-		writes_chars(begg - 1, *str);
+		writes_chars(begg - 1, *str, 0);
 	else
 	{
 		if (!info.type)

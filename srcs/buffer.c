@@ -6,7 +6,7 @@
 /*   By: apinto <apinto@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 04:10:46 by apinto            #+#    #+#             */
-/*   Updated: 2021/04/05 16:26:00 by apinto           ###   ########.fr       */
+/*   Updated: 2021/04/07 04:06:36 by apinto           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static void	handles_content(t_info *info, char **begg, char **res, int size)
 	empty = "";
 	if (info->type == 'c' && !info->chr)
 	{
-		writes_chars(*begg, *res);
-		writes_chars(empty, empty + 1);
+		writes_chars(*begg, *res, 0);
+		writes_chars(empty, empty + 1, 0);
 		ft_bzero(*begg, size);
 		*res = *begg;
 		info->len = 0;
@@ -57,7 +57,7 @@ void	writes_buffer(t_info *info)
 	res += info->len;
 	while (info->minus--)
 		*(res++) = ' ';
-	writes_chars(begg, res);
+	writes_chars(begg, res, 0);
 	free(begg);
 	begg = NULL;
 }

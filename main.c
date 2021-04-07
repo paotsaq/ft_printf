@@ -5,7 +5,6 @@
 void	ft_strtoupper(char *str);
 char	ft_toupper(int c);
 
-
 int		main()
 {
 	char *test= strdup("abcde");
