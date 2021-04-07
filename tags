@@ -4,29 +4,79 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+.DEFAULT_GOAL	printfTester/Makefile	/^.DEFAULT_GOAL	:= m$/;"	m
+AR	42TESTERS-PRINTF/srcs/Makefile	/^AR			= ar rc$/;"	m
 AR	Makefile	/^AR 			= ar -rcsv$/;"	m
 ARRC	libft/Makefile	/^ARRC	= ar rcs$/;"	m
+BG_BLACK	printfTester/utils/color.hpp	/^	BG_BLACK			= 40,$/;"	e	enum:Color
+BG_BLUE	printfTester/utils/color.hpp	/^	BG_BLUE				= 44,$/;"	e	enum:Color
+BG_CYAN	printfTester/utils/color.hpp	/^	BG_CYAN				= 46,$/;"	e	enum:Color
+BG_DEFAULT	printfTester/utils/color.hpp	/^	BG_DEFAULT			= 49,$/;"	e	enum:Color
+BG_DGRAY	printfTester/utils/color.hpp	/^	BG_DGRAY			= 100,$/;"	e	enum:Color
+BG_GREEN	printfTester/utils/color.hpp	/^	BG_GREEN			= 42,$/;"	e	enum:Color
+BG_LBLUE	printfTester/utils/color.hpp	/^	BG_LBLUE			= 104,$/;"	e	enum:Color
+BG_LCYAN	printfTester/utils/color.hpp	/^	BG_LCYAN			= 106,$/;"	e	enum:Color
+BG_LGRAY	printfTester/utils/color.hpp	/^	BG_LGRAY			= 47,$/;"	e	enum:Color
+BG_LGREEN	printfTester/utils/color.hpp	/^	BG_LGREEN			= 102,$/;"	e	enum:Color
+BG_LMAGENTA	printfTester/utils/color.hpp	/^	BG_LMAGENTA			= 105,$/;"	e	enum:Color
+BG_LRED	printfTester/utils/color.hpp	/^	BG_LRED				= 101,$/;"	e	enum:Color
+BG_LYELLOW	printfTester/utils/color.hpp	/^	BG_LYELLOW			= 103,$/;"	e	enum:Color
+BG_MAGENTA	printfTester/utils/color.hpp	/^	BG_MAGENTA			= 45,$/;"	e	enum:Color
+BG_RED	printfTester/utils/color.hpp	/^	BG_RED				= 41,$/;"	e	enum:Color
+BG_WHITE	printfTester/utils/color.hpp	/^	BG_WHITE			= 107$/;"	e	enum:Color
+BG_YELLOW	printfTester/utils/color.hpp	/^	BG_YELLOW 			= 43,$/;"	e	enum:Color
+BLINK	printfTester/utils/color.hpp	/^	BLINK				= 5,$/;"	e	enum:Color
 BLI_ACTION_APPEND	pft/src/help_conf.c	/^# define BLI_ACTION_APPEND /;"	d	file:
 BLI_ACTION_NEW	pft/src/help_conf.c	/^# define BLI_ACTION_NEW /;"	d	file:
 BLI_ACTION_PRINT	pft/src/help_conf.c	/^# define BLI_ACTION_PRINT /;"	d	file:
 BLU	pft/src/test.h	/^#define BLU /;"	d
-BUFF_LEN	includes/ft_printf.h	/^#define BUFF_LEN /;"	d
+BOLD	printfTester/utils/color.hpp	/^	BOLD				= 1,$/;"	e	enum:Color
+BONUS	printfTester/Makefile	/^BONUS			= n f g e l ll h hh sharp space +$/;"	m
+BPRINT	42TESTERS-PRINTF/srcs/main_tester.c	/^#define BPRINT(/;"	d	file:
+BUFF_LEN	includes/ft_printf.h	/^# define BUFF_LEN /;"	d
+B_SIZE	printfTester/utils/print.hpp	/^# define B_SIZE /;"	d
+CC	42TESTERS-PRINTF/srcs/Makefile	/^CC			= gcc$/;"	m
 CC	libft/Makefile	/^CC		= gcc$/;"	m
 CC	pft/Makefile	/^CC=clang$/;"	m
+CC	printfTester/Makefile	/^CC				= clang++ -std=c11 -Wno-everything$/;"	m
+CFLAGS	42TESTERS-PRINTF/srcs/Makefile	/^CFLAGS		= -w -Wall -Werror -Wextra -D PRINT="ft_printf" -g3 -fsanitize=address$/;"	m
 CFLAGS	Makefile	/^CFLAGS 		= -Wall -Wextra -Werror -g$/;"	m
 CFLAGS	libft/Makefile	/^CFLAGS	= -Wall -Wextra -Werror$/;"	m
+CFLAGS	printfTester/Makefile	/^CFLAGS			= -g3 -ldl -std=c++11 -I utils\/ -I.. $(addprefix -I, $(shell find .. -regex ".*\/.*\\.h" | grep -oh ".*\\\/"))$/;"	m
+CHECK_HPP	printfTester/utils/check.hpp	/^# define CHECK_HPP$/;"	d
+COLOR_HPP	printfTester/utils/color.hpp	/^# define COLOR_HPP$/;"	d
 CONFIG_FILE	pft/src/usage_statistics.php	/^	define("CONFIG_FILE", PFT_ROOT."\/options-config.ini");$/;"	d
 CONFIG_FILE	pft/src/usage_statistics.php	/^	define("CONFIG_FILE", PFT_ROOT."\/options-config.ini.override");$/;"	d
 CYN	pft/src/test.h	/^#define CYN /;"	d
+Color	printfTester/utils/color.hpp	/^enum Color$/;"	g
 DBL_INF	pft/src/test.h	/^#define DBL_INF /;"	d
 DBL_NAN	pft/src/test.h	/^#define DBL_NAN /;"	d
 DBL_NINF	pft/src/test.h	/^#define DBL_NINF /;"	d
 DBL_NZERO	pft/src/test.h	/^#define DBL_NZERO /;"	d
 DBL_PZERO	pft/src/test.h	/^#define DBL_PZERO /;"	d
 DEBUG	pft/src/test.h	/^#define DEBUG /;"	d
-DEC_BASE	includes/ft_printf.h	/^#define DEC_BASE /;"	d
+DEC_BASE	includes/ft_printf.h	/^# define DEC_BASE /;"	d
 DIM	pft/src/test.h	/^#define DIM /;"	d
+DIM	printfTester/utils/color.hpp	/^	DIM					= 2,$/;"	e	enum:Color
+ENDL	printfTester/utils/color.hpp	/^# define ENDL /;"	d
 FAULT	pft/src/test.h	/^#define FAULT /;"	d
+FG_BLACK	printfTester/utils/color.hpp	/^	FG_BLACK			= 30,$/;"	e	enum:Color
+FG_BLUE	printfTester/utils/color.hpp	/^	FG_BLUE				= 34,$/;"	e	enum:Color
+FG_CYAN	printfTester/utils/color.hpp	/^	FG_CYAN				= 36,$/;"	e	enum:Color
+FG_DEFAULT	printfTester/utils/color.hpp	/^	FG_DEFAULT			= 39,$/;"	e	enum:Color
+FG_DGRAY	printfTester/utils/color.hpp	/^	FG_DGRAY			= 90,$/;"	e	enum:Color
+FG_GREEN	printfTester/utils/color.hpp	/^	FG_GREEN			= 32,$/;"	e	enum:Color
+FG_LBLUE	printfTester/utils/color.hpp	/^	FG_LBLUE			= 94,$/;"	e	enum:Color
+FG_LCYAN	printfTester/utils/color.hpp	/^	FG_LCYAN			= 96,$/;"	e	enum:Color
+FG_LGRAY	printfTester/utils/color.hpp	/^	FG_LGRAY			= 37,$/;"	e	enum:Color
+FG_LGREEN	printfTester/utils/color.hpp	/^	FG_LGREEN			= 92,$/;"	e	enum:Color
+FG_LMAGENTA	printfTester/utils/color.hpp	/^	FG_LMAGENTA			= 95,$/;"	e	enum:Color
+FG_LRED	printfTester/utils/color.hpp	/^	FG_LRED				= 91,$/;"	e	enum:Color
+FG_LYELLOW	printfTester/utils/color.hpp	/^	FG_LYELLOW			= 93,$/;"	e	enum:Color
+FG_MAGENTA	printfTester/utils/color.hpp	/^	FG_MAGENTA			= 35,$/;"	e	enum:Color
+FG_RED	printfTester/utils/color.hpp	/^	FG_RED				= 31,$/;"	e	enum:Color
+FG_WHITE	printfTester/utils/color.hpp	/^	FG_WHITE			= 97,$/;"	e	enum:Color
+FG_YELLOW	printfTester/utils/color.hpp	/^	FG_YELLOW 			= 33,$/;"	e	enum:Color
 FTBFM1	pft/src/test.h	/^# define FTBFM1 /;"	d
 FTBF_BIAS_D	pft/src/test.h	/^# define FTBF_BIAS_D /;"	d
 FTBF_BIAS_F	pft/src/test.h	/^# define FTBF_BIAS_F /;"	d
@@ -53,10 +103,12 @@ FTPF_LDBL_INF	pft/src/test.h	/^# define FTPF_LDBL_INF /;"	d
 FTPF_LDBL_MANTS	pft/src/test.h	/^# define FTPF_LDBL_MANTS(/;"	d
 FTPF_LDBL_NEG	pft/src/test.h	/^# define FTPF_LDBL_NEG(/;"	d
 FTPF_LDBL_SIGN	pft/src/test.h	/^# define FTPF_LDBL_SIGN /;"	d
+FT_PRINTF_H	includes/ft_printf.h	/^# define FT_PRINTF_H$/;"	d
 GRN	pft/src/test.h	/^#define GRN /;"	d
 HDRS	Makefile	/^HDRS		= includes$/;"	m
 HELP_H	pft/src/help.h	/^#define HELP_H$/;"	d
-HEX_BASE	includes/ft_printf.h	/^#define HEX_BASE /;"	d
+HEX_BASE	includes/ft_printf.h	/^# define HEX_BASE /;"	d
+HIDDEN	printfTester/utils/color.hpp	/^	HIDDEN				= 8,$/;"	e	enum:Color
 INC	pft/Makefile	/^INC=-I src$/;"	m
 INDEXED_TESTS	pft/Makefile	/^INDEXED_TESTS=src\/unit_tests_indexed.c$/;"	m
 LDBL_INF	pft/src/test.h	/^#define LDBL_INF /;"	d
@@ -64,37 +116,95 @@ LDBL_NAN	pft/src/test.h	/^#define LDBL_NAN /;"	d
 LDBL_NINF	pft/src/test.h	/^#define LDBL_NINF /;"	d
 LDBL_NZERO	pft/src/test.h	/^#define LDBL_NZERO /;"	d
 LDBL_PZERO	pft/src/test.h	/^#define LDBL_PZERO /;"	d
+LEAK_HPP	printfTester/utils/leaks.hpp	/^# define LEAK_HPP$/;"	d
+LIB	42TESTERS-PRINTF/srcs/Makefile	/^LIB			= -L${LIBPATH} -lftprintf$/;"	m
 LIB	pft/Makefile	/^LIB=$(LIBFT_DIR_PATH)\/$(LIBFT_NAME)$/;"	m
 LIB	pft/Makefile	/^LIB=$/;"	m
 LIBFT_H	libft/libft.h	/^# define LIBFT_H$/;"	d
+LIBPATH	42TESTERS-PRINTF/srcs/Makefile	/^LIBPATH		= ..\/..\/$/;"	m
 LOG_FILE	pft/src/test.h	/^#define LOG_FILE /;"	d
 MAG	pft/src/test.h	/^#define MAG /;"	d
+MANDATORY	printfTester/Makefile	/^MANDATORY		= c s p d i u x upperx percent mix$/;"	m
+NAME	42TESTERS-PRINTF/srcs/Makefile	/^NAME		= tester.out$/;"	m
 NAME	Makefile	/^NAME 		= libftprintf.a$/;"	m
 NAME	libft/Makefile	/^NAME	= libft.a$/;"	m
 NO_HISTORY	pft/src/test.h	/^# define NO_HISTORY /;"	d
 NUMBER_OF_TESTS	pft/Makefile	/^NUMBER_OF_TESTS=$(shell cat $(UNIT_TEST_FILE) | grep -c "^\\s*int\\s*[a-zA-Z0-9_]*(void)" | tr -d " \\n\\t")$/;"	m
+OBJS	42TESTERS-PRINTF/srcs/Makefile	/^OBJS		= ${SRCS:.c=.o}$/;"	m
 OBJS	Makefile	/^OBJS 		= $(SRCS:%.c=%.o)$/;"	m
 OBJS	libft/Makefile	/^OBJS	= ${SRCS:.c=.o}$/;"	m
 OUTDATED	pft/src/test.h	/^# define OUTDATED /;"	d
 OVERRIDE_EXISTS	pft/Makefile	/^OVERRIDE_EXISTS=$(shell find options-config.ini.override 2>\/dev\/null | grep -c ".*")$/;"	m
 PFT_ROOT	pft/src/usage_statistics.php	/^define("PFT_ROOT", dirname(__FILE__, 2));$/;"	d
+PREFIXE	42TESTERS-PRINTF/srcs/Makefile	/^PREFIXE		= .\/$/;"	m
+PRINTF_MAKE	42TESTERS-PRINTF/srcs/Makefile	/^PRINTF_MAKE	= ${MAKE} -C ${LIBPATH}$/;"	m
+PRINT_HPP	printfTester/utils/print.hpp	/^# define PRINT_HPP$/;"	d
 RECENTLY_FAILED	pft/src/test.h	/^# define RECENTLY_FAILED /;"	d
 RECENTLY_PASSED	pft/src/test.h	/^# define RECENTLY_PASSED /;"	d
 RED	pft/src/test.h	/^#define RED /;"	d
 RESET	pft/src/test.h	/^#define RESET /;"	d
+RESET_ALL	printfTester/utils/color.hpp	/^	RESET_ALL			= 0,$/;"	e	enum:Color
+RESET_BLINK	printfTester/utils/color.hpp	/^	RESET_BLINK			= 25,$/;"	e	enum:Color
+RESET_BOLD	printfTester/utils/color.hpp	/^	RESET_BOLD			= 21,$/;"	e	enum:Color
+RESET_DIM	printfTester/utils/color.hpp	/^	RESET_DIM			= 22,$/;"	e	enum:Color
+RESET_HIDDEN	printfTester/utils/color.hpp	/^	RESET_HIDDEN		= 28,$/;"	e	enum:Color
+RESET_REVERSED	printfTester/utils/color.hpp	/^	RESET_REVERSED		= 27,$/;"	e	enum:Color
+RESET_UNDERLINED	printfTester/utils/color.hpp	/^	RESET_UNDERLINED	= 24,$/;"	e	enum:Color
+REVERSED	printfTester/utils/color.hpp	/^	REVERSED			= 7,$/;"	e	enum:Color
+RM	42TESTERS-PRINTF/srcs/Makefile	/^RM			= rm -f$/;"	m
 RM	libft/Makefile	/^RM		= rm -f$/;"	m
+SHELL	printfTester/Makefile	/^SHELL			= bash$/;"	m
+SIGSEGV_HPP	printfTester/utils/sigsegv.hpp	/^# define SIGSEGV_HPP$/;"	d
+SRCS	42TESTERS-PRINTF/srcs/Makefile	/^SRCS		= $(addprefix ${PREFIXE}, main_tester.c)$/;"	m
 SRCS	Makefile	/^SRCS		= $(wildcard .\/srcs\/*.c)$/;"	m
-SRCS	libft/Makefile	/^SRCS	= $(wildcard .\/*.c)$/;"	m
+SRCS	libft/Makefile	/^SRCS	=	ft_memset.c			\\$/;"	m
 SRC_TEST	pft/Makefile	/^SRC_TEST=src\/main.c src\/test.c src\/options.c src\/utils.c \\$/;"	m
+SUBCATEGORY	printfTester/utils/print.hpp	/^# define SUBCATEGORY(/;"	d
+TEST	printfTester/utils/print.hpp	/^# define TEST(/;"	d
+TESTS_PATH	printfTester/Makefile	/^TESTS_PATH		= tests\/$/;"	m
 TEST_DEFINES	pft/Makefile	/^TEST_DEFINES=-D OUT_ACTUAL="\\"$(TEST_OUT_ACTUAL)\\"" \\$/;"	m
 TEST_H	pft/src/test.h	/^# define TEST_H$/;"	d
 TEST_HISTORY_MOD_TIME	pft/Makefile	/^TEST_HISTORY_MOD_TIME:=$(shell stat -r $(TEST_LOG) 2> \/dev\/null | awk '{ print $$9 }' 2> \/dev\/null)$/;"	m
 TEST_HISTORY_MOD_TIME	pft/Makefile	/^TEST_HISTORY_MOD_TIME:=0$/;"	m
+TEST_LIMIT	printfTester/tests/+_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/c_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/d_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/e_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/f_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/g_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/h_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/hh_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/i_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/l_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/ll_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/mix_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/n_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/p_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/percent_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/s_test.cpp	/^# define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/sharp_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/space_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/u_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/upperx_test.cpp	/^#define TEST_LIMIT /;"	d	file:
+TEST_LIMIT	printfTester/tests/x_test.cpp	/^#define TEST_LIMIT /;"	d	file:
 TEST_LOG	pft/Makefile	/^TEST_LOG=history.csv$/;"	m
+TEST_NUMBER	printfTester/Makefile	/^TEST_NUMBER := $(wordlist 2, $(words $(MAKECMDGOALS)), $(MAKECMDGOALS))$/;"	m
 TEST_OUT_ACTUAL	pft/Makefile	/^TEST_OUT_ACTUAL=test.mine$/;"	m
 TEST_OUT_EXPECTED	pft/Makefile	/^TEST_OUT_EXPECTED=test.libc$/;"	m
-TYPES	includes/ft_printf.h	/^#define TYPES /;"	d
+TIMEOUT_US	printfTester/Makefile	/^TIMEOUT_US 		= 150000 #if you timeout you can try to increase this value$/;"	m
+TYPES	includes/ft_printf.h	/^# define TYPES /;"	d
+UCHAR_MIN	printfTester/tests/hh_test.cpp	/^#define UCHAR_MIN /;"	d	file:
+ULLONG_MIN	printfTester/tests/ll_test.cpp	/^#define ULLONG_MIN /;"	d	file:
+ULONG_MIN	printfTester/tests/l_test.cpp	/^#define ULONG_MIN /;"	d	file:
+UNAME	printfTester/Makefile	/^UNAME = $(shell uname -s)$/;"	m
+UNDERLINED	printfTester/utils/color.hpp	/^	UNDERLINED			= 4,$/;"	e	enum:Color
 UNIT_TESTS_MOD_TIME	pft/Makefile	/^UNIT_TESTS_MOD_TIME:=$(shell stat -r $(UNIT_TEST_FILE) 2> \/dev\/null | awk '{ print $$9 }' 2> \/dev\/null)$/;"	m
+USHRT_MIN	printfTester/tests/h_test.cpp	/^#define USHRT_MIN /;"	d	file:
+UTILS	printfTester/Makefile	/^UTILS			= $(addprefix $(UTILS_PATH), sigsegv.cpp color.cpp check.cpp leaks.cpp)$/;"	m
+UTILS_PATH	printfTester/Makefile	/^UTILS_PATH		= utils\/$/;"	m
+VALGRIND	printfTester/Makefile	/^    VALGRIND = valgrind -q --leak-check=full$/;"	m
+VBONUS	printfTester/Makefile	/^VBONUS			= $(addprefix v, $(BONUS))$/;"	m
+VMANDATORY	printfTester/Makefile	/^VMANDATORY		= $(addprefix v, $(MANDATORY))$/;"	m
 WHT	pft/src/test.h	/^#define WHT /;"	d
 X_basic_hexu_onlypos	pft/configurations/42fc/unit_tests.42fc.c	/^int X_basic_hexu_onlypos(void){return test("%X", 3);}$/;"	f
 X_basic_hexu_onlypos	pft/src/unit_tests_indexed.c	/^int X_basic_hexu_onlypos(void){return ft_printf("%X", 3);}$/;"	f
@@ -397,7 +507,7 @@ argnum_notinsubject_ultimate_2_with_pct_throwswarning	pft/unit_tests.c	/^ int ar
 argnum_notinsubject_ultimate_2_with_pct_throwswarning_bench	pft/src/unit_tests_indexed.c	/^int argnum_notinsubject_ultimate_2_with_pct_throwswarning_bench(void){return printf("%% %4$.5s %.4i %lli %% %1$Lf %c %7$20.6s %5$i %% %2$c %1$.2Lf %c %i", \/\/CAN-SEGFAULT$/;"	f
 args	pft/src/test.h	/^	t_argsarr			args;$/;"	m	struct:s_clopt
 argv	pft/src/test.h	/^	char				**argv;$/;"	m	struct:s_argsarr
-aux_split	libft/ft_split.c	/^void			aux_split(char **res, char const *s, int nos, char c)$/;"	f
+aux_split	libft/ft_split.c	/^void	aux_split(char **res, char const *s, int nos, char c)$/;"	f
 bench	pft/src/test.h	/^	t_unit_test				bench;$/;"	m	struct:s_test_entry
 bonus_af_X_basic_hexu_onlypos	pft/configurations/42fc/unit_tests.42fc.c	/^ int bonus_af_X_basic_hexu_onlypos(void){return test("%#X", 3);}$/;"	f
 bonus_af_X_basic_hexu_onlypos	pft/src/unit_tests_indexed.c	/^ int bonus_af_X_basic_hexu_onlypos(void){return ft_printf("%#X", 3);}$/;"	f
@@ -11901,11 +12011,13 @@ ch_pos_1	pft/configurations/42fc/unit_tests.42fc.c	/^static char 		ch_pos_1 = 10
 ch_pos_1	pft/src/unit_tests_indexed.c	/^static char 		ch_pos_1 = 100, ch_neg_1 = -87;$/;"	v	file:
 ch_pos_1	pft/unit_tests.c	/^static char 		ch_pos_1 = 100, ch_neg_1 = -87;$/;"	v	file:
 char_family_allocation	srcs/memory.c	/^void	char_family_allocation(t_info *info, va_list *pargs)$/;"	f
+check	printfTester/utils/check.cpp	/^void check(bool succes)$/;"	f
 check_set	libft/ft_strtrim.c	/^static	int	check_set(const char *s1, char const *set, int i, int step)$/;"	f	file:
 check_sign	libft/ft_itoa.c	/^static	char	*check_sign(char *iter, int sign)$/;"	f	file:
 check_sub	libft/ft_strnstr.c	/^static int	check_sub(const char *haystack, const char *needle, int len)$/;"	f	file:
+checkn	printfTester/utils/print.hpp	/^void checkn(const char * s, Args... args)$/;"	f
 chr	includes/ft_printf.h	/^	char			chr;$/;"	m	struct:s_info
-cleans_info_with_prios	srcs/input_validation.c	/^void			cleans_info_with_prios(t_info *info)$/;"	f
+cleans_info_with_prios	srcs/input_validation.c	/^void	cleans_info_with_prios(t_info *info)$/;"	f
 cleanup	pft/src/test.h	/^	char				cleanup: 1;$/;"	m	struct:s_pft_options
 cleanup_temp_files	pft/src/test.c	/^void	cleanup_temp_files()$/;"	f
 conf	pft/configurations/42fc/configure_42fc.php	/^$conf = file_get_contents($conf42fc_root."\/42fc.conf");$/;"	v
@@ -11916,9 +12028,9 @@ config_file	pft/src/select_query.php	/^$config_file = $argv[3];$/;"	v
 config_file	pft/src/select_router.php	/^	$config_file = $argv[4];$/;"	v
 config_name	pft/src/usage_statistics.php	/^$config_name = rawurlencode(trim(shell_exec("cat ".CONFIG_FILE." | grep 'CONFIG_NAME' | cut -d '=' -f 2")));$/;"	v
 content	includes/ft_printf.h	/^	void			*content;$/;"	m	struct:s_info
-content	libft/libft.h	/^	void 			*content;$/;"	m	struct:s_list
+content	libft/libft.h	/^	void			*content;$/;"	m	struct:s_list
 convert_nonalphanum_to_wildcard	pft/src/utils.c	/^void 		convert_nonalphanum_to_wildcard(char *str)$/;"	f
-count_separators	libft/ft_split.c	/^static	int		count_separators(const char *s, char c)$/;"	f	file:
+count_separators	libft/ft_split.c	/^static	int	count_separators(const char *s, char c)$/;"	f	file:
 current	pft/src/test.h	/^	int						current;$/;"	m	struct:s_unit_tester_args
 d_basic_neg	pft/configurations/42fc/unit_tests.42fc.c	/^int d_basic_neg(void){return test("this %d number", -267);}$/;"	f
 d_basic_neg	pft/src/unit_tests_indexed.c	/^int d_basic_neg(void){return ft_printf("this %d number", -267);}$/;"	f
@@ -12281,49 +12393,41 @@ fout	pft/configurations/42fc/configure_42fc.php	/^$fout = fopen($pft_root."\/opt
 fout	pft/src/create_index.php	/^$fout = fopen($output_indexed, "w");$/;"	v
 fout	pft/src/select_numeric.php	/^	$fout = fopen($unit_test_file.".new", "w");$/;"	v
 fout	pft/src/select_query.php	/^$fout = fopen($unit_test_file.".new", "w");$/;"	v
+free	printfTester/utils/leaks.cpp	/^void free(void * p) throw()$/;"	f
 from	pft/src/select_numeric.php	/^	$from = intval($argv[5]);$/;"	v
 from	pft/src/select_router.php	/^	$from = $argv[5];$/;"	v
 from	pft/src/select_router.php	/^	$from = 0;$/;"	v
 from	pft/src/test.h	/^	int						from;$/;"	m	struct:s_unit_tester_args
-ft_atoi	libft/ft_atoi.c	/^int			ft_atoi(const char *str)$/;"	f
+ft_atoi	libft/ft_atoi.c	/^int	ft_atoi(const char *str)$/;"	f
 ft_bzero	libft/ft_bzero.c	/^void	ft_bzero(void *s, size_t n)$/;"	f
 ft_calloc	libft/ft_calloc.c	/^void	*ft_calloc(size_t count, size_t size)$/;"	f
-ft_isalnum	libft/ft_isalnum.c	/^int		ft_isalnum(int c)$/;"	f
+ft_isalnum	libft/ft_isalnum.c	/^int	ft_isalnum(int c)$/;"	f
 ft_isalpha	libft/ft_isalpha.c	/^int	ft_isalpha(int c)$/;"	f
-ft_isascii	libft/ft_isascii.c	/^int		ft_isascii(int c)$/;"	f
+ft_isascii	libft/ft_isascii.c	/^int	ft_isascii(int c)$/;"	f
 ft_isdigit	libft/ft_atoi.c	/^static	int	ft_isdigit(char chr)$/;"	f	file:
-ft_isdigit	libft/ft_isdigit.c	/^int		ft_isdigit(int c)$/;"	f
-ft_isprint	libft/ft_isprint.c	/^int		ft_isprint(int c)$/;"	f
+ft_isdigit	libft/ft_isdigit.c	/^int	ft_isdigit(int c)$/;"	f
+ft_isprint	libft/ft_isprint.c	/^int	ft_isprint(int c)$/;"	f
 ft_issel	pft/src/options.c	/^int			ft_issel(t_clopt *opt, char c)$/;"	f
 ft_issign	libft/ft_atoi.c	/^static	int	ft_issign(char chr)$/;"	f	file:
 ft_isspace	libft/ft_atoi.c	/^static	int	ft_isspace(int chr)$/;"	f	file:
-ft_itoa	libft/ft_itoa.c	/^char			*ft_itoa(int n)$/;"	f
-ft_lstadd_back	libft/ft_lstadd_back.c	/^void	ft_lstadd_back(t_list **lst, t_list *new)$/;"	f
-ft_lstadd_front	libft/ft_lstadd_front.c	/^void	ft_lstadd_front(t_list **lst, t_list *new)$/;"	f
-ft_lstclear	libft/ft_lstclear.c	/^void	ft_lstclear(t_list **lst, void (*del)(void *))$/;"	f
-ft_lstdelone	libft/ft_lstdelone.c	/^void	ft_lstdelone(t_list *lst, void (*del)(void *))$/;"	f
-ft_lstiter	libft/ft_lstiter.c	/^void	ft_lstiter(t_list *lst, void (*f)(void *))$/;"	f
-ft_lstlast	libft/ft_lstlast.c	/^t_list	*ft_lstlast(t_list *lst)$/;"	f
-ft_lstmap	libft/ft_lstmap.c	/^t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))$/;"	f
-ft_lstnew	libft/ft_lstnew.c	/^t_list	*ft_lstnew(void *content)$/;"	f
-ft_lstsize	libft/ft_lstsize.c	/^int	ft_lstsize(t_list *lst)$/;"	f
+ft_itoa	libft/ft_itoa.c	/^char	*ft_itoa(int n)$/;"	f
 ft_match	pft/src/utils.c	/^int			ft_match(const char *s1, char *s2)$/;"	f
 ft_match_helper	pft/src/utils.c	/^int			ft_match_helper(const char *s1, char *s2)$/;"	f
-ft_max	libft/ft_max.c	/^int ft_max(int args, ...)$/;"	f
+ft_max	libft/ft_max.c	/^int	ft_max(int args, ...)$/;"	f
 ft_memccpy	libft/ft_memccpy.c	/^void	*ft_memccpy(void *dst, const void *src, int c, size_t n)$/;"	f
 ft_memchr	libft/ft_memchr.c	/^void	*ft_memchr(const void *s, int c, size_t n)$/;"	f
-ft_memcmp	libft/ft_memcmp.c	/^int		ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
+ft_memcmp	libft/ft_memcmp.c	/^int	ft_memcmp(const void *s1, const void *s2, size_t n)$/;"	f
 ft_memcpy	libft/ft_memcpy.c	/^void	*ft_memcpy(void *dst, const void *src, size_t n)$/;"	f
 ft_memmove	libft/ft_memmove.c	/^void	*ft_memmove(void *dst, const void *src, size_t len)$/;"	f
 ft_memset	libft/ft_memset.c	/^void	*ft_memset(void *b, int c, size_t len)$/;"	f
-ft_min	libft/ft_min.c	/^int ft_min(int args, ...)$/;"	f
-ft_printf	srcs/ft_printf.c	/^int			ft_printf(char *str, ...)$/;"	f
+ft_min	libft/ft_min.c	/^int	ft_min(int args, ...)$/;"	f
+ft_printf	srcs/ft_printf.c	/^int	ft_printf(const char *str, ...)$/;"	f
 ft_printf_dir	pft/configurations/42fc/configure_42fc.php	/^$ft_printf_dir = $argv[1];$/;"	v
 ft_putchar_fd	libft/ft_putchar_fd.c	/^void	ft_putchar_fd(char c, int fd)$/;"	f
 ft_putendl_fd	libft/ft_putendl_fd.c	/^void	ft_putendl_fd(char *s, int fd)$/;"	f
 ft_putnbr_fd	libft/ft_putnbr_fd.c	/^void	ft_putnbr_fd(int nb, int fd)$/;"	f
 ft_putstr_fd	libft/ft_putstr_fd.c	/^void	ft_putstr_fd(char *s, int fd)$/;"	f
-ft_split	libft/ft_split.c	/^char			**ft_split(char const *s, char c)$/;"	f
+ft_split	libft/ft_split.c	/^char	**ft_split(char const *s, char c)$/;"	f
 ft_strchr	libft/ft_strchr.c	/^char	*ft_strchr(const char *s, int c)$/;"	f
 ft_strdup	libft/ft_strdup.c	/^char	*ft_strdup(const char *s1)$/;"	f
 ft_strjoin	libft/ft_strjoin.c	/^char	*ft_strjoin(char const *s1, char const *s2)$/;"	f
@@ -12331,12 +12435,12 @@ ft_strlcat	libft/ft_strlcat.c	/^size_t	ft_strlcat(char *dst, const char *src, si
 ft_strlcpy	libft/ft_strlcpy.c	/^size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)$/;"	f
 ft_strlen	libft/ft_strlen.c	/^size_t	ft_strlen(const char *s)$/;"	f
 ft_strmapi	libft/ft_strmapi.c	/^char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))$/;"	f
-ft_strncmp	libft/ft_strncmp.c	/^int		ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
-ft_strnstr	libft/ft_strnstr.c	/^char		*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f
+ft_strncmp	libft/ft_strncmp.c	/^int	ft_strncmp(const char *s1, const char *s2, size_t n)$/;"	f
+ft_strnstr	libft/ft_strnstr.c	/^char	*ft_strnstr(const char *haystack, const char *needle, size_t len)$/;"	f
 ft_strrchr	libft/ft_strrchr.c	/^char	*ft_strrchr(const char *s, int c)$/;"	f
 ft_strrev	libft/ft_strrev.c	/^char	*ft_strrev(char *s1)$/;"	f
 ft_strtoupper	libft/ft_strtoupper.c	/^void	ft_strtoupper(char *str)$/;"	f
-ft_strtrim	libft/ft_strtrim.c	/^char		*ft_strtrim(char const *s1, char const *set)$/;"	f
+ft_strtrim	libft/ft_strtrim.c	/^char	*ft_strtrim(char const *s1, char const *set)$/;"	f
 ft_substr	libft/ft_substr.c	/^char	*ft_substr(char const *s, unsigned int start, size_t len)$/;"	f
 ft_tolower	libft/ft_tolower.c	/^char	ft_tolower(int c)$/;"	f
 ft_toupper	libft/ft_toupper.c	/^char	ft_toupper(int c)$/;"	f
@@ -12360,7 +12464,7 @@ handle_sigill	pft/src/test.c	/^static void handle_sigill(int sigval)$/;"	f	file:
 handle_signals	pft/src/test.h	/^	char				handle_signals : 1;$/;"	m	struct:s_pft_options
 handle_sigsegv	pft/src/test.c	/^static void	handle_sigsegv(int sigval)$/;"	f	file:
 handles_content	srcs/buffer.c	/^static void	handles_content(t_info *info, char **begg, char **res, int size)$/;"	f	file:
-handles_conversion	srcs/parsers.c	/^void			handles_conversion(va_list *pargs, char **str)$/;"	f
+handles_conversion	srcs/parsers.c	/^void	handles_conversion(va_list *pargs, char **str)$/;"	f
 handles_negative_width_prec	srcs/input_validation.c	/^static	void	handles_negative_width_prec(t_info *info)$/;"	f	file:
 head	pft/src/history.c	/^static t_test_log_entry		*head = NULL;$/;"	v	file:
 help_adding_tests	pft/src/help.c	/^void		help_adding_tests(void)$/;"	f
@@ -12415,6 +12519,27 @@ i	pft/src/select_numeric.php	/^	$i = 0;$/;"	v
 i	pft/src/select_query.php	/^		$i = 0;$/;"	v
 i	pft/src/select_router.php	/^		$i = 0;$/;"	v
 i	pft/src/select_router.php	/^	$i = 5;$/;"	v
+iTest	printfTester/tests/+_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/c_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/d_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/e_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/f_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/g_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/h_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/hh_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/i_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/l_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/ll_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/mix_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/n_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/p_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/percent_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/s_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/sharp_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/space_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/u_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/upperx_test.cpp	/^int iTest = 1;$/;"	v
+iTest	printfTester/tests/x_test.cpp	/^int iTest = 1;$/;"	v
 i_basic_neg	pft/configurations/42fc/unit_tests.42fc.c	/^int i_basic_neg(void){return test("this %i number", -267);}$/;"	f
 i_basic_neg	pft/src/unit_tests_indexed.c	/^int i_basic_neg(void){return ft_printf("this %i number", -267);}$/;"	f
 i_basic_neg	pft/unit_tests.c	/^int i_basic_neg(void){return test("this %i number", -267);}$/;"	f
@@ -12779,6 +12904,7 @@ log_failed_test	pft/src/test.c	/^void	log_failed_test(int test_number, int expec
 log_history	pft/src/test.h	/^	char				log_history : 1;$/;"	m	struct:s_pft_options
 log_msg	pft/src/utils.c	/^void		log_msg(const char *msg)$/;"	f
 log_write_enabled	pft/src/test.h	/^	char				log_write_enabled : 1;$/;"	m	struct:s_pft_options
+main	42TESTERS-PRINTF/srcs/main_tester.c	/^int main()$/;"	f
 main	main.c	/^int		main()$/;"	f
 main	pft/src/main.c	/^int main(int argc, char **argv)$/;"	f
 main	pft/src/show_disabled_postprocess.c	/^int		main(void)$/;"	f
@@ -12795,8 +12921,34 @@ main	playground/7_weird_case.c	/^int		main()$/;"	f
 main	playground/8_bitmasks.c	/^int		main()$/;"	f
 main	playground/first_testing_main.c	/^int		main()$/;"	f
 main	playground/tests_params.c	/^int		main()$/;"	f
+main	printfTester/tests/+_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/c_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/d_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/e_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/f_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/g_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/h_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/hh_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/i_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/l_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/ll_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/mix_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/n_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/p_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/percent_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/s_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/sharp_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/space_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/u_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/upperx_test.cpp	/^int main(int ac, char ** av)$/;"	f
+main	printfTester/tests/x_test.cpp	/^int main(int ac, char ** av)$/;"	f
 mainthread	pft/src/test.h	/^	pthread_t				mainthread;$/;"	m	struct:s_timeout_args
 make_fnop_filter	pft/src/select_router.php	/^function	make_fnop_filter()$/;"	f
+malloc	printfTester/utils/leaks.cpp	/^void * malloc(size_t size) throw()$/;"	f
+mallocList	printfTester/utils/leaks.cpp	/^std::vector<ptr> mallocList;$/;"	v
+mallocListAdd	printfTester/utils/leaks.cpp	/^void mallocListAdd(void * p, size_t size)$/;"	f
+mallocListRemove	printfTester/utils/leaks.cpp	/^void mallocListRemove(void * p)$/;"	f
+mcheck	printfTester/utils/check.cpp	/^void mcheck(void * p, size_t required_size)$/;"	f
 minus	includes/ft_printf.h	/^	int				minus;$/;"	m	struct:s_info
 mix_successive_0	pft/configurations/42fc/unit_tests.42fc.c	/^int		mix_successive_0(void){return ( test("%c", mx_c) + test("%u", mx_u));}$/;"	f
 mix_successive_0	pft/src/unit_tests_indexed.c	/^int		mix_successive_0(void){return ( ft_printf("%c", mx_c) + ft_printf("%u", mx_u));}$/;"	f
@@ -13740,10 +13892,54 @@ n	pft/configurations/42fc/unit_tests.42fc.c	/^int n;$/;"	v
 n	pft/src/unit_tests_indexed.c	/^int n;$/;"	v
 n	pft/unit_tests.c	/^int n;$/;"	v
 name	pft/src/test.h	/^	const char				*name;$/;"	m	struct:s_test_entry
+nbr_zeros	includes/ft_printf.h	/^	int				nbr_zeros;$/;"	m	struct:s_info
 ncm_p	pft/configurations/42fc/unit_tests.42fc.c	/^static int ncm_p = 5;$/;"	v	file:
 ncm_p	pft/src/unit_tests_indexed.c	/^static int ncm_p = 5;$/;"	v	file:
 ncm_p	pft/unit_tests.c	/^static int ncm_p = 5;$/;"	v	file:
 negative	includes/ft_printf.h	/^	int				negative;$/;"	m	struct:s_info
+negative_cases	srcs/number_to_string.c	/^static	void	negative_cases(t_info *info, unsigned long long *content)$/;"	f	file:
+new	printfTester/tests/+_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/+_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/c_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/c_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/d_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/d_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/e_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/e_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/f_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/f_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/g_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/g_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/h_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/h_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/hh_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/hh_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/i_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/i_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/l_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/l_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/ll_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/ll_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/mix_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/mix_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/n_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/n_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/p_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/p_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/percent_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/percent_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/s_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/s_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/sharp_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/sharp_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/space_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/space_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/u_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/u_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/upperx_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/upperx_test.cpp	/^#undef new$/;"	d	file:
+new	printfTester/tests/x_test.cpp	/^#define new /;"	d	file:
+new	printfTester/tests/x_test.cpp	/^#undef new$/;"	d	file:
 new2019_negstar_1	pft/configurations/42fc/unit_tests.42fc.c	/^int new2019_negstar_1(void){return test("%*s", -32, "abc");}$/;"	f
 new2019_negstar_1	pft/src/unit_tests_indexed.c	/^int new2019_negstar_1(void){return ft_printf("%*s", -32, "abc");}$/;"	f
 new2019_negstar_1	pft/unit_tests.c	/^int new2019_negstar_1(void){return test("%*s", -32, "abc");}$/;"	f
@@ -16461,9 +16657,12 @@ num_fails	pft/src/test.h	/^	int						num_fails;$/;"	m	struct:s_unit_tester_args
 num_run	pft/src/test.h	/^	int						num_run;$/;"	m	struct:s_unit_tester_args
 num_sel	pft/src/test.h	/^	int					num_sel;$/;"	m	struct:s_clopt
 number	pft/src/test.h	/^	int						number;$/;"	m	struct:s_test_entry
-number_of_chars	libft/ft_itoa.c	/^static	int		number_of_chars(int n)$/;"	f	file:
+number_of_chars	libft/ft_itoa.c	/^static	int	number_of_chars(int n)$/;"	f	file:
 number_of_tests	pft/src/create_index.php	/^$number_of_tests = $i;$/;"	v
-number_to_string	srcs/aux_base_conversion.c	/^void	number_to_string(t_info *info, long long content, char *base, char *buffer)$/;"	f
+number_to_string	srcs/number_to_string.c	/^void	number_to_string(t_info *info, unsigned long long content,$/;"	f
+numeric_cases	srcs/memory.c	/^static	void	numeric_cases(t_info *info, long long prov_number, char *buffer)$/;"	f	file:
+operator <<	printfTester/utils/color.cpp	/^operator<<(std::ostream & os, Color c)$/;"	f
+operator ==	printfTester/utils/leaks.cpp	/^bool operator==(ptr const & p1, ptr const & p2)$/;"	f
 options	pft/src/options.c	/^t_pft_options	options = {$/;"	v
 options_check	pft/src/options.c	/^void	options_check(void)$/;"	f
 out	pft/src/create_index.php	/^$out = preg_replace($pattern, $replace, $test_file_contents);$/;"	v
@@ -16471,6 +16670,7 @@ outdated_time	pft/src/select_history.php	/^	$outdated_time = $test_time + $test_
 output_indexed	pft/src/create_index.php	/^$output_indexed = $argv[2];$/;"	v
 output_test	pft/src/test.c	/^static t_retvals	output_test(int test_number)$/;"	f	file:
 output_to_file	pft/src/test.c	/^static int	output_to_file(char *filename, t_unit_test f)$/;"	f	file:
+p	printfTester/utils/leaks.hpp	/^	void * p;$/;"	m	struct:ptr
 p_aster	includes/ft_printf.h	/^	int				p_aster;$/;"	m	struct:s_info
 p_basic	pft/configurations/42fc/unit_tests.42fc.c	/^int p_basic(void){return test("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);}$/;"	f
 p_basic	pft/src/unit_tests_indexed.c	/^int p_basic(void){return ft_printf("%p%p%p%p%p%p%p%p%p%p%p%p",&a01,&a02,&a03,&a04,&a05,&a06,&a07,&a08,&a09,&a10,&a11,&a12);}$/;"	f
@@ -16568,8 +16768,11 @@ pct_basic	pft/unit_tests.c	/^int pct_basic(void){return test("%%");}$/;"	f
 pct_basic_bench	pft/src/unit_tests_indexed.c	/^int pct_basic_bench(void){return printf("%%");}$/;"	f
 pft_root	pft/configurations/42fc/configure_42fc.php	/^$pft_root = dirname(__FILE__, 3);$/;"	v
 pid	pft/src/test.h	/^	pid_t					pid;$/;"	m	struct:s_timeout_args
+pipeOut	printfTester/utils/print.hpp	/^int pipeOut, stdOut;$/;"	v
 prec	includes/ft_printf.h	/^	int				prec;$/;"	m	struct:s_info
 print	pft/src/help.h	/^	t_help_func		print;$/;"	m	struct:s_help_entry
+print	printfTester/utils/print.hpp	/^void print(const char * s, Args... args)$/;"	f
+printTestNumber	printfTester/utils/print.hpp	/^void printTestNumber(char * n, int limit)$/;"	f
 print_configuration_info	pft/src/print.c	/^void		print_configuration_info(const t_pft_options options,$/;"	f
 print_end_test_message	pft/src/print.c	/^void		print_end_test_message(int num_tests, int num_passed)$/;"	f
 print_info	pft/src/test.h	/^	char				print_info: 1;$/;"	m	struct:s_pft_options
@@ -16577,6 +16780,8 @@ print_responsive	pft/src/test.h	/^	char				print_responsive: 1;$/;"	m	struct:s_p
 print_test_end	pft/src/print.c	/^void		print_test_end(int test_number, int failed,$/;"	f
 print_test_start	pft/src/print.c	/^void		print_test_start(int test_number)$/;"	f
 program_name	pft/src/test.h	/^	char				*program_name;$/;"	m	struct:s_clopt
+ptr	printfTester/utils/leaks.hpp	/^	ptr(void * _p = 0, size_t _size = 0) : p(_p), size(_size) {}$/;"	f	struct:ptr
+ptr	printfTester/utils/leaks.hpp	/^struct ptr$/;"	s
 query	pft/src/help.h	/^	const char		*query;$/;"	m	struct:s_help_entry
 query	pft/src/select_query.php	/^$query = get_regex($argv[5]);$/;"	v
 query	pft/src/select_router.php	/^	$query = $argv[5];$/;"	v
@@ -16631,8 +16836,8 @@ s_help_entry	pft/src/help.h	/^typedef struct		s_help_entry$/;"	s
 s_hidden	pft/configurations/42fc/unit_tests.42fc.c	/^static char *s_hidden = "hi low\\0don't print me lol\\0";$/;"	v	file:
 s_hidden	pft/src/unit_tests_indexed.c	/^static char *s_hidden = "hi low\\0don't print me lol\\0";$/;"	v	file:
 s_hidden	pft/unit_tests.c	/^static char *s_hidden = "hi low\\0don't print me lol\\0";$/;"	v	file:
-s_info	includes/ft_printf.h	/^typedef struct	s_info{$/;"	s
-s_list	libft/libft.h	/^typedef struct	s_list {$/;"	s
+s_info	includes/ft_printf.h	/^typedef struct s_info{$/;"	s
+s_list	libft/libft.h	/^typedef struct s_list {$/;"	s
 s_neg_prec_star_01	pft/configurations/42fc/unit_tests.42fc.c	/^int s_neg_prec_star_01(void){return test("%.*s", -3, 0);}$/;"	f
 s_neg_prec_star_01	pft/src/unit_tests_indexed.c	/^int s_neg_prec_star_01(void){return ft_printf("%.*s", -3, 0);}$/;"	f
 s_neg_prec_star_01	pft/unit_tests.c	/^int s_neg_prec_star_01(void){return test("%.*s", -3, 0);}$/;"	f
@@ -17096,8 +17301,33 @@ sh_neg_1	pft/unit_tests.c	/^static short		sh_pos_1 = 3047, sh_neg_1 = -8875;$/;"
 sh_pos_1	pft/configurations/42fc/unit_tests.42fc.c	/^static short		sh_pos_1 = 3047, sh_neg_1 = -8875;$/;"	v	file:
 sh_pos_1	pft/src/unit_tests_indexed.c	/^static short		sh_pos_1 = 3047, sh_neg_1 = -8875;$/;"	v	file:
 sh_pos_1	pft/unit_tests.c	/^static short		sh_pos_1 = 3047, sh_neg_1 = -8875;$/;"	v	file:
+showLeaks	printfTester/utils/leaks.cpp	/^void showLeaks(void)$/;"	f
+showTest	printfTester/tests/+_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/c_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/d_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/e_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/f_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/g_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/h_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/hh_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/i_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/l_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/ll_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/mix_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/n_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/p_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/percent_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/s_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/sharp_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/space_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/u_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/upperx_test.cpp	/^bool showTest = false;$/;"	v
+showTest	printfTester/tests/x_test.cpp	/^bool showTest = false;$/;"	v
+showTestInfos	printfTester/utils/print.hpp	/^void showTestInfos(void)$/;"	f
 signal	pft/src/test.h	/^	int						signal;$/;"	m	struct:s_timeout_args
 signaled	pft/src/test.c	/^static int			signaled = 0;$/;"	v	file:
+sigsegv	printfTester/utils/sigsegv.cpp	/^void sigsegv(int signal)$/;"	f
+size	printfTester/utils/leaks.hpp	/^	size_t size;$/;"	m	struct:ptr
 split	pft/src/select_history.php	/^			$split = explode("=", $line);$/;"	v
 split	pft/src/select_history.php	/^	$split = explode(",", $line);$/;"	v
 start_timeout	pft/src/test.c	/^static void		start_timeout(pid_t pid, int signal, pthread_t *thread, pthread_t mainthread)$/;"	f	file:
@@ -17107,6 +17337,7 @@ status	pft/src/select_history.php	/^		$status = 3;$/;"	v
 status	pft/src/select_numeric.php	/^function	exit_error($msg, $status = -1)$/;"	v
 status	pft/src/select_query.php	/^function	exit_error($msg, $status = -1)$/;"	v
 status	pft/src/select_router.php	/^function	exit_error($msg, $status = -1)$/;"	v
+stdOut	printfTester/utils/print.hpp	/^int pipeOut, stdOut;$/;"	v
 str_1	pft/configurations/42fc/unit_tests.42fc.c	/^static char	str_1[] = "hello world", str_2[] = "panda", str_3[] = "this is a longer string";$/;"	v	file:
 str_1	pft/src/unit_tests_indexed.c	/^static char	str_1[] = "hello world", str_2[] = "panda", str_3[] = "this is a longer string";$/;"	v	file:
 str_1	pft/unit_tests.c	/^static char	str_1[] = "hello world", str_2[] = "panda", str_3[] = "this is a longer string";$/;"	v	file:
@@ -17141,6 +17372,48 @@ t_unit_tester_func	pft/src/test.h	/^typedef void (*t_unit_tester_func) (t_unit_t
 tail	pft/src/history.c	/^static t_test_log_entry		*tail = NULL;$/;"	v	file:
 test	pft/src/test.h	/^	const t_test_entry		*test;$/;"	m	struct:s_test_log_entry
 test	pft/src/test.h	/^	t_unit_test				test;$/;"	m	struct:s_test_entry
+testName	printfTester/tests/+_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/c_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/d_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/e_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/f_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/g_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/h_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/hh_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/i_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/l_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/ll_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/mix_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/n_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/p_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/percent_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/s_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/sharp_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/space_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/u_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/upperx_test.cpp	/^char * testName;$/;"	v
+testName	printfTester/tests/x_test.cpp	/^char * testName;$/;"	v
+testNumber	printfTester/tests/+_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/c_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/d_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/e_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/f_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/g_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/h_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/hh_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/i_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/l_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/ll_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/mix_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/n_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/p_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/percent_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/s_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/sharp_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/space_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/u_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/upperx_test.cpp	/^int testNumber;$/;"	v
+testNumber	printfTester/tests/x_test.cpp	/^int testNumber;$/;"	v
 test_file_contents	pft/src/create_index.php	/^$test_file_contents = file_get_contents($unit_tests_file);$/;"	v
 test_history	pft/src/history.c	/^t_test_history			test_history[NUMBER_OF_TESTS + 4];$/;"	v
 test_history_fmt_str	pft/src/print.c	/^static  char *test_history_fmt_str = "   \\x1B[2mLast %s %s\\x1B[0m";$/;"	v	file:
@@ -17158,6 +17431,7 @@ timeout_thread	pft/src/test.c	/^static void		*timeout_thread(void *args_void)$/;
 timestamp	pft/src/test.h	/^	time_t				timestamp;$/;"	m	struct:s_test_history
 timestamp_fail	pft/src/test.h	/^	time_t					timestamp_fail;$/;"	m	struct:s_test_log_entry
 timestamp_pass	pft/src/test.h	/^	time_t					timestamp_pass;$/;"	m	struct:s_test_log_entry
+title	printfTester/utils/check.hpp	/^# define title(/;"	d
 tmp	pft/src/create_index.php	/^	$tmp = preg_replace('\/"\/', '\\\\"', $tmp);$/;"	v
 tmp	pft/src/create_index.php	/^	$tmp = preg_replace('\/TEMP_ESCAPED_QUOTE\/', '\\\\\\\\"', $tmp);$/;"	v
 tmp	pft/src/create_index.php	/^	$tmp = preg_replace('\/\\\\"\/', 'TEMP_ESCAPED_QUOTE', $matches[2]);$/;"	v
@@ -17402,8 +17676,8 @@ write_ago	pft/src/utils.c	/^void		write_ago(time_t prev_time, time_t now, char *
 write_head_to_log	pft/src/history.c	/^void		write_head_to_log(FILE *fp_out, int test_last_passed,$/;"	f
 write_log	pft/src/history.c	/^void		write_log(void)$/;"	f
 write_retvals_pipe	pft/src/test.c	/^static void		write_retvals_pipe(int fd, t_retvals retvals)$/;"	f	file:
-writes_buffer	srcs/buffer.c	/^void		writes_buffer(t_info *info)$/;"	f
-writes_chars	srcs/ft_printf.c	/^int			writes_chars(char *begg, char *str)$/;"	f
+writes_buffer	srcs/buffer.c	/^void	writes_buffer(t_info *info)$/;"	f
+writes_chars	srcs/ft_printf.c	/^int	writes_chars(char *begg, char *str, int last)$/;"	f
 x_basic_onlypos	pft/configurations/42fc/unit_tests.42fc.c	/^int x_basic_onlypos(void){return test("%x", 3);}$/;"	f
 x_basic_onlypos	pft/src/unit_tests_indexed.c	/^int x_basic_onlypos(void){return ft_printf("%x", 3);}$/;"	f
 x_basic_onlypos	pft/unit_tests.c	/^int x_basic_onlypos(void){return test("%x", 3);}$/;"	f
