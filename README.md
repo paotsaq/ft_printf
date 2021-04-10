@@ -43,6 +43,6 @@ Ok so first, let's be a little more careful with what you call a bad taste in jo
 
 ### Oh, man -- sorry for triggering that out of you. But you really should let your emotions run wild. Do you need someone to talk to?
 
-Not really - and thanks for asking - but I have to thank a great many colleagues for both the emotional support and patience of saints, as I am well aware of having drilled them daily about my approach and progress. Special mentions to **msessa** for the guidance and very honest feedback; **ncameir** for being very enthusiastic about the whole idea; **rramos** for constantly grounding my feet everytime I got too enthusiastic about the end product, and the most precious **mvaldeta** who never lets anyone feel alone in any coding endeavour. The others shall remain unnamed and we'll very soon meet at 🏓
+Not really - and thanks for asking - but I have to thank a great many colleagues for both the emotional support and patience of saints, as I am well aware of having drilled them daily about my approach and progress. Special mentions to **msessa** for the guidance and very honest feedback; **ncameir** for being very enthusiastic about the whole idea; **rramos** for constantly grounding my feet everytime I got too enthusiastic about the end product, and the most precious **mvaldeta** who never lets anyone feel alone in any coding endeavour. The others shall remain unnamed and we'll very soon meet for some phisically demanding activity! 🏓
 
 ¹ run `git submodule init`, and then `git submodule update`. It's that easy. 
